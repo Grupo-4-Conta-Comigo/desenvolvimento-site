@@ -1,0 +1,50 @@
+/* Variáveis que guardam cores e fontes padronizadas */
+:root{
+    --background-color: #F2F2F2;
+    --secundary-color: #221F1F;
+    --fontGray: #888888;
+    --paletaNum1: #2FE6A3;
+    --paletaNum2: #FBBF66;
+    --paletaNum3: #FF805D;
+}
+/**/
+
+
+/* Padrões de estilização */
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--secundary-color) rgba(0, 0, 0, 0);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 20px;
+  }
+  
+a{
+    text-decoration: none;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secundary-color);
+}
+/**/
+
+
+/* Fugindo de redundâncias de código 
+(Implementando CSSs que valem para todas páginas, como exemplo o Header da página)*/
+body{
+    background-color: var(--background-color);
+}

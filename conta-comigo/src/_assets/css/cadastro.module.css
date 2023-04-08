@@ -1,0 +1,147 @@
+.bodyF{
+    display: flex;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+}
+
+.left_side{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left_side .head{
+    padding: 50px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head span{
+    font-size: 20px;
+}
+
+.left_side img{
+    width: 200px;
+}
+
+.left_side .form{
+    width: 400px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    font-size: 18px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    outline-style: none;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0,25%);
+    border-radius: 5px;
+}
+
+.form .container_ipt{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form .container_ipt input{
+    width: 155px;
+}
+
+.form button{
+    border: none;
+    font-size: 18px;
+    background-color: var(--secundary-color);
+    color: white;
+    font-weight: bold;
+    padding: 10px 0px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.left_side p{
+    font-size: 15px;
+    color: var(--fontGray);
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.left_side .btn{
+    font-size: 18px;
+    color: var(--fontGray);
+    font-weight: bold;
+    padding: 10px 0px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0,25%);
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.right_side{
+    background-color: var(--secundary-color);
+    width: 50%;
+    display: flex;
+}
+
+.right_side img{
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .bodyF{
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .right_side{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .bodyF{
+        /* background-color: red; */
+    }
+
+    .head{
+        flex-direction: column;
+    }
+
+    .head span{
+        font-size: 15px;
+    }
+
+    .left_side .form{
+        width: 300px;
+    }
+
+    .left_side .form input{
+        font-size: 15px;
+    }
+
+    .form .container_ipt input{
+        width: 110px;
+    }
+
+    .form button{
+        font-size: 15px;
+    }
+
+    .left_side .btn{
+        font-size: 15px;
+        width: 300px;
+    }
+
+    .left_side p{
+        font-size: 14px;
+    }
+}
