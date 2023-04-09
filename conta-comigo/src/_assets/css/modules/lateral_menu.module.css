@@ -1,0 +1,155 @@
+.bodyF{
+    display: flex;
+    height: 100vh;
+    position: fixed;
+}
+
+.menu_lateral{
+    width: 200px;
+    background-color: white;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.head img{
+    width: 150px;
+}
+
+.menus{
+    margin-top: 60px;
+}
+
+.menus .menu{
+    display: flex;
+}
+
+.menu .line{
+    width: 30%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.menu .line .verticalAtv{
+    height: 40px;
+    width: 5px;
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.menu .icon{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .icon img{
+    width: 20px;
+}
+
+.menu .info , .infoAtv{
+    width: 40%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    color: #616060;
+}
+
+.menu .infoAtv{
+    color: var(--secundary-color);
+    font-weight: bold;
+}
+
+.suporte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.suporte .box .sup_head{
+    display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.sup_head .titulo{
+    width: 100px;
+    color: white;
+}
+
+.box .sup_main{
+    font-size: 12px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.sup_icon{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.suporte .sup_head .sup_icon img{
+    width: 22px;
+}
+
+.suporte .box{
+    width: 148px;
+    height: 100px;
+    background-color: var(--secundary-color);
+    border-radius: 13px;
+}
+
+.box .btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.box button{
+    width: 119px;
+    height: 37px;
+    font-size: 15px;
+    background-color: white;
+    border: none;
+    border-radius: 24px;
+    font-weight: bold;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+}
+
+.sair{
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.sair .sair_txt{
+    color: #616060;
+    margin-left: 10px;
+}
+
+.sair img{
+    width: 18px;
+    margin-left: -10px;
+}
+

@@ -1,0 +1,94 @@
+/* main */
+
+.main{
+    width: 80%;
+    padding: 50px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    float: right;
+}
+
+.main .main_head{
+    font-size: 16px;
+    color: #888888;
+    font-weight: bold;
+    width: 100%;
+}
+
+.main_head p{
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #888888;
+}
+
+.main .principal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.main .principal .titulo{
+    font-size: 27px;
+    display: flex;
+    color: #424242;
+    font-weight: bold;
+}
+
+.principal .titulo .qtd{
+    background-color: #C1FFE8;
+    margin: 0px 5px;
+    padding: 0px 7px;
+    border-radius: 5px;
+    color: #424242;
+}
+
+.pesquisa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.pesquisa .busca{
+    background-color: white;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    padding: 8px 20px;
+    border-radius: 30px;
+}
+
+.busca input{
+    width: 350px;
+    height: 30px;
+    outline: none;
+    font-size: 18px;
+    border: none;
+}
+
+.pesquisa .busca img{
+    width: 35px;
+    cursor: pointer;
+}
+
+.pesquisa button{
+    width: 116px;
+    height: 46px;
+    background-color: var(--secundary-color);
+    border: none;
+    border-radius: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.pesquisa button img{
+    width: 20px;
+    margin-top: 5px;
+}

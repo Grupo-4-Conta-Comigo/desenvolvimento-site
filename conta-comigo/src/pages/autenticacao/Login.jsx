@@ -1,4 +1,4 @@
-import styles from "../../_assets/css/login.module.css"
+import styles from "../../_assets/css/modules/login.module.css"
 import logomarca from "../../_assets/img/logo-logotipo/logomarca.png"
 
 function Login() {

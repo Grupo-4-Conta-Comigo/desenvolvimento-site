@@ -1,0 +1,65 @@
+.pedidos{
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 800px;
+    flex-wrap: wrap;
+    overflow: scroll;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pedido{
+    height: 68px;
+    display: flex;
+    background-color: white;
+    width: 365px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    cursor: pointer;
+}
+
+.pedido:hover .number{
+    background-color: var(--paletaNum3);
+}
+
+.pedido:hover .mesa{
+    color: var(--secundaryColor);
+    font-weight: bold;
+}
+
+.pedido:hover .pessoas{
+    color: var(--secundaryColor);
+    font-weight: bold;
+}
+
+.pedido img{
+    width: 17px;
+}
+
+.pedido .number{
+    width: 37px;
+    height: 37px;
+    font-size: 20px;
+    background-color: var(--paletaNum1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+}
+
+.pedido .mesa{
+    color: #888888;
+    font-size: 15px;
+}
+
+.pedido .pessoas{
+    font-size: 11px;
+    color: #888888;
+}

@@ -1,6 +1,6 @@
 import logotipo from "../../_assets/img/logo-logotipo/logotipo.png"
 import cmMobile from "../../_assets/img/cmMobile.png"
-import styles from "../../_assets/css/cadastro.module.css"
+import styles from "../../_assets/css/modules/cadastro.module.css"
 
 function Cadastro(){
     return(
