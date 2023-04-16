@@ -28,38 +28,42 @@ function Inicio(){
 
     getPedidos();
 
-    return(
-        <div>
-            <Menu/>
-
-            <div className={styles.main}>
-                {/* <button onClick={getPedidos}>teste</button> */}
-                <div className={styles.principal}>
-                    <div className={styles.titulo}>
-                        Temos <div className={styles.qtd}>4 pedidos</div> em andamento
-                    </div>
-                    <div className={styles.pesquisa}>
-                        <div className={styles.busca}>
-                            <input type="text" placeholder="Buscar pedido..."/>
-                            <img src={lupa} alt="" />
+    if(sessionStorage.length > 0){
+        return(
+            <div>
+                <Menu/>
+    
+                <div className={styles.main}>
+                    {/* <button onClick={getPedidos}>teste</button> */}
+                    <div className={styles.principal}>
+                        <div className={styles.titulo}>
+                            Temos <div className={styles.qtd}>4 pedidos</div> em andamento
                         </div>
-                        <button>
-                            <img src={add} alt="" />
-                        </button>
-                    </div>
-                    <div className={styles.pedidos}>
-                    {
-                    pedidos.map((pedido) => {
-                        return (
-                            <Pedidos pedido={pedido} key={pedido.id} />
-                        )
-                    })
-                }
+                        <div className={styles.pesquisa}>
+                            <div className={styles.busca}>
+                                <input type="text" placeholder="Buscar pedido..."/>
+                                <img src={lupa} alt="" />
+                            </div>
+                            <button>
+                                <img src={add} alt="" />
+                            </button>
+                        </div>
+                        <div className={styles.pedidos}>
+                        {
+                        pedidos.map((pedido) => {
+                            return (
+                                <Pedidos pedido={pedido} key={pedido.id} />
+                            )
+                        })
+                    }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }else{
+        window.location.href = "http://localhost:3000/login";
+    }
 }
 
 export default Inicio;

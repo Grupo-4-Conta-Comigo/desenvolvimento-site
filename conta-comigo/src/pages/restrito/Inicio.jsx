@@ -3,13 +3,15 @@ import styles from "../../_assets/css/modules/inicio.module.css"
 import Lista_pagamentos from "../../components/Lista_pagamentos";
 
 function Inicio() {
+    if(sessionStorage.length > 0){
+
     return (
         <div>
             <Lateral_menu />
             <div className={styles.main}>
                 <div className={styles.container}>
                     <div className={styles.container_head}>
-                        <p>Olá, restaurante</p>
+                        <p>Olá, {sessionStorage.nome_user}</p>
                         <div className={styles.passagem}>
                         <p className={styles.desc}>Temos 4 pedidos em andamento</p>
                         <div className={styles.line}></div>
@@ -26,7 +28,11 @@ function Inicio() {
                 </div>
             </div>
         </div>
-    );
+    );}
+
+    else{
+        window.location.href = "http://localhost:3000/login";
+    }
 }
 
 export default Inicio;

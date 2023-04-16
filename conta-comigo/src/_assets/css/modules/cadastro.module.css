@@ -5,6 +5,24 @@
     padding: 0;
 }
 
+.form .erro{
+    color: red;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    display: none;
+}
+
+.form .ativo{
+    display: block;
+    color: red;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+}
+
 .left_side{
     width: 50%;
     display: flex;

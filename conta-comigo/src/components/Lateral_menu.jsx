@@ -11,6 +11,12 @@ import interrogacao from "../_assets/img/icons/interrogation.png"
 import sair from "../_assets/img/icons/sair.png"
 
 function Lateral_menu() {
+
+    function logoff(){
+        sessionStorage.clear();
+        window.location.href = "http://localhost:3000/login";
+
+    }
     return (
         <div className={styles.bodyF}>
             <div className={styles.menu_lateral}>
@@ -77,7 +83,7 @@ function Lateral_menu() {
                     </div>
                 </div>
 
-                <div className={styles.sair}>
+                <div className={styles.sair} onClick={logoff}>
                     <img src={sair} alt="" />
                     <div className={styles.sair_txt}>Sair</div>
                 </div>
