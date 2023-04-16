@@ -9,14 +9,23 @@ import perfil from "../_assets/img/icons/perfil.png"
 import perfilAtv from "../_assets/img/icons/perfilAtv.png"
 import interrogacao from "../_assets/img/icons/interrogation.png"
 import sair from "../_assets/img/icons/sair.png"
+import { useState } from "react"
 
 function Lateral_menu() {
 
-    function logoff(){
+    function logoff() {
         sessionStorage.clear();
         window.location.href = "http://localhost:3000/login";
-
     }
+
+    function irInicio(){
+        window.location.href = "http://localhost:3000/inicio";
+    }
+
+    function irPedido(){
+        window.location.href = "http://localhost:3000/pedidos";
+    }
+
     return (
         <div className={styles.bodyF}>
             <div className={styles.menu_lateral}>
@@ -29,7 +38,7 @@ function Lateral_menu() {
                     </div>
                 </div>
                 <div className={styles.menus}>
-                    <div className={styles.menu}>
+                    <div className={styles.menu} onClick={irInicio}>
                         <div className={styles.line}>
                             <div className={styles.vertical}>
 
@@ -41,7 +50,7 @@ function Lateral_menu() {
                         <div className={styles.info}>Início</div>
                     </div>
 
-                    <div className={styles.menu}>
+                    <div className={styles.menu} onClick={irPedido}>
                         <div className={styles.line}>
                             <div className={styles.verticalAtv}>
 

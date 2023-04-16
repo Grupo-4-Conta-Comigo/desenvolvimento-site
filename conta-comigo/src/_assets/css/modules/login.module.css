@@ -5,6 +5,10 @@
     height: 100vh;
 }
 
+.ativo{
+    color: red;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -40,6 +44,7 @@ width: 50px;
     margin-top: 30px;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .container .fpsw{
@@ -53,6 +58,7 @@ width: 50px;
     color: #7a7a7a;
     font-weight: bold;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 .container .btn{
@@ -67,4 +73,5 @@ width: 50px;
     color: #7a7a7a;
     font-weight: bold;
     margin-top: 20px;
+    cursor: pointer;
 }

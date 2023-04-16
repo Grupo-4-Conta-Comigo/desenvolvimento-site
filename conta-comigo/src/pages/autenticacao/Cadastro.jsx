@@ -13,6 +13,7 @@ function Cadastro() {
     const [senhaIpt, setSenha] = useState('');
     const [senhaDoisIpt, setSenhaDois] = useState('');
 
+
     const changeNome = (event) => {
         setNome(event.target.value);
       };
@@ -33,6 +34,7 @@ function Cadastro() {
         setSenhaDois(event.target.value);
       };
 
+
     function cadastrar() {
 
         console.log("NOME: " + nomeIpt);
@@ -40,6 +42,7 @@ function Cadastro() {
         console.log("EMAIL: " + emailIpt);
         console.log("SENHA: " + senhaIpt);
         console.log("SENHA DOIS: " + senhaDoisIpt);
+
 
 
         api.post("/restaurantes/criar",{
@@ -67,6 +70,8 @@ function Cadastro() {
                     }
                     else if(err.response.data.errors[i].defaultMessage === "tamanho deve ser entre 8 e 2147483647"){
                         alert("A senha deve ter no mínimo 8 caracteres")
+                    }else if(err.response.data.errors[i].defaultMessage === "não deve estar em branco"){
+                        alert("Não pode campos vazios")
                     }
                     i = i + 1;
                 }
@@ -84,15 +89,15 @@ function Cadastro() {
                     <input id="nomeid" type="text" placeholder="Nome completo" onChange={changeNome} />
                     <p className={styles.erro} id="erroNome"></p>
                     <input type="text" placeholder="Email" onChange={changeEmail}/>
-                    <p className={styles.erro}>Email inválido</p>
+                    <p className={styles.erro}></p>
                     <input type="text" placeholder="CNPJ" onChange={changeCnpj}/>
-                    <p className={styles.erro}>CNPJ inválido</p>
+                    <p className={styles.erro}></p>
                     <div className={styles.container_ipt}>
                         <input type="password" placeholder="Senha" onChange={changeSenha}/>
                         <input type="password" placeholder="Repita a senha" onChange={changeSenhaDois}/>
                     </div>
-                    <p className={styles.erro}>A senha precisa ter mais de 8 caracteres</p>
-                    <p className={styles.erro}>As senhas precisam ser iguais</p>
+                    <p className={styles.erro}></p>
+                    <p className={styles.erro}></p>
                     <button onClick={cadastrar}>Cadastrar</button>
                 </div>
                 <p>Já possui conta?</p>

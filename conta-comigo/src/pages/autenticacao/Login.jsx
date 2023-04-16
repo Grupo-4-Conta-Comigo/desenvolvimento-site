@@ -3,9 +3,22 @@ import styles from "../../_assets/css/modules/login.module.css"
 import logomarca from "../../_assets/img/logo-logotipo/logomarca.png"
 import api from "../../config/api";
 
+function goCadastro(){
+    window.location.href = "http://localhost:3000/cadastro";
+}
+
+
+
 function Login() {
     const [usuario,setUsuario] = useState('')
     const [senhaIpt,setSenha] = useState('')
+    const [erro,setErro] = useState('');
+
+    
+
+    const getErro = () => {
+        setErro("Email ou senha incorreta");
+      };
 
     const changeUsuario = (event) => {
         setUsuario(event.target.value);
@@ -21,8 +34,8 @@ function Login() {
             senha: senhaIpt
         })
             .then((response) => {
+                setErro("");
                 console.log("RESPONSE: ", response)
-                alert("LOGADO" + "nome: " + response.data.nome)
                 sessionStorage.setItem("nome_user", response.data.nome);
                 sessionStorage.setItem("email_user", response.data.email);
                 sessionStorage.setItem("cnpj_user", response.data.cnpj);
@@ -30,7 +43,7 @@ function Login() {
                 window.location.href = "http://localhost:3000/inicio";
 
             }).catch((err) => {
-                alert("SENHA OU EMAIL INCORRETOS")
+                getErro();
             })
       }
 
@@ -46,10 +59,12 @@ function Login() {
                 <p className={styles.login}>Login</p>
                 <input type="text" placeholder="Email" onChange={changeUsuario}/>
                 <input type="password" placeholder="Senha" onChange={changeSenha}/>
+                <p className={styles.ativo}>{erro}</p>
                 <button onClick={logar}>Entrar</button>
+                
                 <p className={styles.fpsw}>Esqueceu a senha?</p>
-                <p className={styles.novaConta}>Não possui conta?</p>
-                <div className={styles.btn}>Cadastre-se</div>
+                <p className={styles.novaConta} onClick={goCadastro}>Não possui conta?</p>
+                <div className={styles.btn} onClick={goCadastro}>Cadastre-se</div>
             </div>
             </div>
         );
