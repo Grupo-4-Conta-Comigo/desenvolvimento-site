@@ -1,0 +1,25 @@
+.pagamento{
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    width: 300px;
+    padding: 2px 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.pagamento .titulo{
+    font-size: 18px;
+    color: var(--paletaNum1);
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.pagamento .desc_mesa{
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.pagamento img{
+    width: 300px;
+    margin-top: 10px;
+}

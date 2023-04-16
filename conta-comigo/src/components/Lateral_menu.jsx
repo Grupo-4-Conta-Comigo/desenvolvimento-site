@@ -1,5 +1,6 @@
 import styles from "../_assets/css/modules/lateral_menu.module.css"
 import logotipo from "../_assets/img/logo-logotipo/logotipo.png"
+import logo from "../_assets/img/logo-logotipo/logomarca.png"
 import inicio from "../_assets/img/icons/inicio.png"
 import inicioAtv from "../_assets/img/icons/inicioAtv.png"
 import editar from "../_assets/img/icons/editar.png"
@@ -15,6 +16,11 @@ function Lateral_menu() {
             <div className={styles.menu_lateral}>
                 <div className={styles.head}>
                     <img src={logotipo} alt="" />
+                    <div className={styles.logomarca}>
+                        <div className={styles.line}></div>
+                        <div className={styles.line}></div>
+                        <div className={styles.line}></div>
+                    </div>
                 </div>
                 <div className={styles.menus}>
                     <div className={styles.menu}>

@@ -153,3 +153,54 @@
     margin-left: -10px;
 }
 
+.logomarca{
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+
+.logomarca .line{
+    height: 6px;
+    width: 100%;
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .head img{
+        display: none;
+    }
+    
+
+    .suporte{
+        display: none;
+    }
+
+    .menu{
+        display: flex;
+        justify-content: center;
+        margin-left: -30px;
+    }
+
+
+    .menu .info, .infoAtv{
+        display: none;
+    }
+  
+
+    .logomarca {
+        display: flex;
+    }
+
+    .menu_lateral{
+        width: 100px;
+    }
+    
+    .sair .sair_txt{
+        display: none;
+    }
+}

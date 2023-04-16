@@ -3,19 +3,37 @@ import lupa from "../../_assets/img/icons/lupa.png"
 import add from "../../_assets/img/icons/mais.png"
 import Pedidos from "../../components/Lista_pedidos"
 import styles from "../../_assets/css/modules/pedidos.module.css"
+import { useState } from "react"
+import api from "../../config/api"
 
 function Inicio(){
+    const [pedidos, setPedidos] = useState([])
+
+
+    function getPedidos() {
+        api.get("/pedidos")
+            .then((response) => {
+                console.log("RESPONSE: ", response)
+                console.log("PEDIDOS: ", response.data)
+                setPedidos(response.data)
+            }).catch((err) => {
+                if (err.response.status === 404) {
+                    console.log("Este endpoint não existe")
+                } else {
+                    console.error(err)
+                }
+            })
+
+    }
+
+    getPedidos();
+
     return(
         <div>
             <Menu/>
 
             <div className={styles.main}>
-                <div className={styles.main_head}>
-                    Olá, restaurante
-                    <p>
-                        &gt; início
-                    </p>
-                </div>
+                {/* <button onClick={getPedidos}>teste</button> */}
                 <div className={styles.principal}>
                     <div className={styles.titulo}>
                         Temos <div className={styles.qtd}>4 pedidos</div> em andamento
@@ -29,7 +47,15 @@ function Inicio(){
                             <img src={add} alt="" />
                         </button>
                     </div>
-                    <Pedidos/>
+                    <div className={styles.pedidos}>
+                    {
+                    pedidos.map((pedido) => {
+                        return (
+                            <Pedidos pedido={pedido} key={pedido.id} />
+                        )
+                    })
+                }
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,79 @@
+.main{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    float: right;
+}
+
+.main .main_head{
+    font-size: 16px;
+    color: #888888;
+    font-weight: bold;
+    width: 100%;
+}
+
+.main_head p{
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #888888;
+}
+
+
+.container{
+    background-color: white;
+    border-radius: 16px;
+    width: 800px;
+    padding: 70px 0px 50px 80px;
+    margin-top: 50px;
+    margin-left: -70px;
+    z-index: -2;
+}
+
+.container_head{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.container_head .desc{
+    font-size: 22px;
+    font-weight: normal;
+    margin-top: 5px;
+    z-index:auto;
+}
+
+.container_head .passagem .line{
+    width: 90px;
+    height: 5px;
+    background-color: var(--paletaNum1);
+    position: absolute;
+    z-index: -1;
+    margin-top: -15px;
+    margin-left: 70px;
+}
+
+.container .container_head button{
+    width: 220px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+
+.container .container_main .titulo{
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.pagamentos{
+    padding: 20px 20px 20px 0px;
+    width: 710px;
+    display: flex;
+    justify-content: space-between;
+}

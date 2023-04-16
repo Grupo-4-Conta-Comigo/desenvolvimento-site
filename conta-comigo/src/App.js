@@ -4,6 +4,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Login from './pages/autenticacao/Login';
 import Cadastro from './pages/autenticacao/Cadastro';
 import Pedidos from './pages/restrito/Pedidos';
+import Inicio from './pages/restrito/Inicio';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/cadastro" element={<Cadastro/>}/>
         <Route path="/pedidos" element={<Pedidos/>}/>
+        <Route path='/inicio' element={<Inicio/>}/>
       </Routes>
       </BrowserRouter>
     </div>
