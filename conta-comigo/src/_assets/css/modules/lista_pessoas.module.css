@@ -1,0 +1,66 @@
+
+.pessoa{
+    height: 68px;
+    display: flex;
+    background-color: white;
+    width: 330px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    cursor: pointer;
+}
+
+.pessoa:hover .number{
+    background-color: var(--paletaNum3);
+}
+
+.pessoa:hover .mesa{
+    color: var(--secundaryColor);
+    font-weight: bold;
+}
+
+.pessoa:hover .pessoas{
+    color: var(--secundaryColor);
+    font-weight: bold;
+}
+
+.pessoa img{
+    width: 17px;
+}
+
+.pessoa .icon{
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+    background-color: var(--paletaNum2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+}
+
+.pessoa .nome{
+    color: #888888;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pessoa .valor{
+    font-size: 11px;
+    color: #888888;
+}
+
+.pessoa .icon{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pessoa .icon img{
+    width: 20px;
+}

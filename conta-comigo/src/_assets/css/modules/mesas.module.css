@@ -34,6 +34,9 @@
 .container_head{
     font-size: 25px;
     font-weight: bold;
+    width: 100px;
+    
+    
 }
 
 .container_head .desc{
@@ -44,19 +47,38 @@
 }
 
 .container_head .passagem .line{
-    width: 94px;
-    height: 17px;
+    width: 82px;
+    height: 5px;
     background-color: var(--paletaNum1);
     position: absolute;
     z-index: -1;
-    margin-top: -20px;
-    margin-left: 70px;
+    margin-top: 5px;
+    margin-left: 2px;
 }
 
-.container .container_head button{
+
+
+.pessoas{
+    padding: 20px 20px 20px 0px;
+    width: 710px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.buttons{
+    width: 520px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 210px;
+ 
+}
+
+
+.buttons button{
     width: 220px;
     height: 50px;
-    font-size: 20px;
+    font-size: 13px;
     font-weight: bold;
     color: white;
     border: none;
@@ -65,17 +87,25 @@
     margin-top: 30px;
     z-index: 0;
     cursor: pointer;
+
 }
-
-
-.container .container_main .titulo{
-    font-size: 20px;
-    margin-top: 50px;
-}
-
-.pagamentos{
-    padding: 20px 20px 20px 0px;
-    width: 710px;
+.container .container_right{
+    height: 30px;
     display: flex;
-    justify-content: space-between;
+    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: -25px;
+    margin-left: 450px;
+
 }
+
+.container_right .total{
+    color: var(--paletaNum1);
+    font-weight: bold;
+}
+
+.container_right .valor{
+    color: #888888;
+}
+
