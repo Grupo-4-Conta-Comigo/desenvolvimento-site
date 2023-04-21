@@ -1,5 +1,5 @@
 import Lateral_menu from "../../components/Lateral_menu";
-import styles from "../../_assets/css/modules/mesas.module.css"
+import styles from "../../_assets/css/modules/pag_singular.module.css"
 import Lista_pessoas from "../../components/Lista_pessoas";
 
 
@@ -7,7 +7,7 @@ function irPedidos() {
     window.location.href = "http://localhost:3000/pedidos";
 }
 
-function Mesas() {
+function Pagamento_singular() {
     if (sessionStorage.length > 0) {
 
         var infoAtv = 'infoAtv';
@@ -17,7 +17,7 @@ function Mesas() {
                 <div className={styles.main}>
                     <div className={styles.container}>
                         <div className={styles.container_head}>
-                            <p>Mesa 3</p>
+                            <p>Pagamento Singular</p>
                             <div className={styles.passagem}>
                             <div className={styles.line}></div>
                           
@@ -30,18 +30,24 @@ function Mesas() {
                             <div className={styles.total}>R$215,90</div>
                         </div>
                         <div className={styles.container_main}>
+                            <div className={styles.center}>
+                        <p>Quem irá pagar?</p>
 
-                            <div className={styles.pessoas}>
-                                <Lista_pessoas />
-                                <Lista_pessoas />
-                                <Lista_pessoas />
-                                <Lista_pessoas />
-                            </div>
-
+                           <div className={styles.select}>
+                           <select name="format" id="format">
+                            <option selected disabled>Larissa</option>
+                            <option value="damasceno">Damasceno</option>
+                            <option value="rafael">Rafael</option>
+                            <option value="lucas">Lucas</option>
+                            <option value="pinheiro">Pinehiro</option>
+                            <option value="valentim">Valentim</option>
+                        </select>
+                              </div>
+                           </div>
                         </div>
                         <div className={styles.buttons}>
-                            <button className={styles.button_one}>Apenas uma pessoa irá pagar</button>
-                            <button className={styles.button_two}>Dividir conta em conjunto</button>
+                            <button className={styles.button_one}>Voltar</button>
+                            <button className={styles.button_two}>Pagar</button>
                         </div>
                     </div>
                 </div>
@@ -54,4 +60,4 @@ function Mesas() {
     }
 }
 
-export default Mesas;
+export default Pagamento_singular;

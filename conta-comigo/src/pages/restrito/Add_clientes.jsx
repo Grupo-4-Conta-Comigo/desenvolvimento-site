@@ -1,13 +1,13 @@
-import Lateral_menu from "../../components/Lateral_menu";
-import styles from "../../_assets/css/modules/mesas.module.css"
-import Lista_pessoas from "../../components/Lista_pessoas";
-
+import Lateral_menu from "../../components/Lateral_menu"
+import styles from "../../_assets/css/modules/add_cliente.module.css"
+import Lista_pessoas from "../../components/Lista_pessoas"
+import add from "../../_assets/img/icons/mais.png"
 
 function irPedidos() {
     window.location.href = "http://localhost:3000/pedidos";
 }
 
-function Mesas() {
+function Add_clientes() {
     if (sessionStorage.length > 0) {
 
         var infoAtv = 'infoAtv';
@@ -26,8 +26,10 @@ function Mesas() {
 
                         </div>
                         <div className={styles.container_right}>
-                            <div className={styles.valor}>Valor total: </div>
-                            <div className={styles.total}>R$215,90</div>
+                            <div className={styles.valor}>Adicionar cliente</div>
+                            <button className={styles.add_cliente}>
+                                <img src={add} alt="" />
+                            </button>
                         </div>
                         <div className={styles.container_main}>
 
@@ -39,10 +41,7 @@ function Mesas() {
                             </div>
 
                         </div>
-                        <div className={styles.buttons}>
-                            <button className={styles.button_one}>Apenas uma pessoa irá pagar</button>
-                            <button className={styles.button_two}>Dividir conta em conjunto</button>
-                        </div>
+                  
                     </div>
                 </div>
             </div>
@@ -54,4 +53,4 @@ function Mesas() {
     }
 }
 
-export default Mesas;
+export default Add_clientes;

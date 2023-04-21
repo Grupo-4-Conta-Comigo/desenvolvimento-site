@@ -29,13 +29,14 @@
     margin-top: 50px;
     margin-left: -70px;
     z-index: -2;
+    height: 340px;
 }
 
 .container_head{
     font-size: 25px;
     font-weight: bold;
-    width: 100px;
-    
+    width: 250px;
+  
     
 }
 
@@ -47,13 +48,13 @@
 }
 
 .container_head .passagem .line{
-    width: 82px;
-    height: 5px;
+    width: 238px;
+    height: 3px;
     background-color: var(--paletaNum1);
     position: absolute;
     z-index: -1;
     margin-top: 5px;
-    margin-left: 2px;
+    margin-left: 3px;
 }
 
 
@@ -67,18 +68,19 @@
 
 }
 .buttons{
-    width: 520px;
+    margin-top: 45px;
+    width: 380px;
     display: flex;
     justify-content: space-around;
-    margin-left: 210px;
+    margin-left: 170px;
+ 
  
 }
 .buttons .button_one{
-    width: 220px;
-    height: 50px;
+    width: 140px;
+    height: 45px;
     font-size: 13px;
     font-weight: bold;
-
     background-color: white;
     border-radius: 10px;
     margin-top: 30px;
@@ -89,8 +91,8 @@
 
 
 .buttons .button_two{
-    width: 220px;
-    height: 50px;
+    width: 140px;
+    height: 45px;
     font-size: 13px;
     font-weight: bold;
     color: white;
@@ -116,9 +118,45 @@
 .container_right .total{
     color: var(--paletaNum1);
     font-weight: bold;
+    font-size: large;
+    
 }
 
 .container_right .valor{
     color: #888888;
+    margin-left: 100px;
+}
+.select{
+    width: 220px;
+    height: 34px;
+    overflow: hidden;
+}
+.select select{
+    display: flex;
+    position: absolute;
+    width: 220px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    background-color:#F2F2F2;
+    color: var(--secundary-color);
+    font-size: 16px;
+    
+  
+
 }
 
+.center{
+    margin-top: 75px;
+    margin-right: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;flex-direction: column;
+}
+.center p{
+    font-weight: bold;
+    font-size:22px;
+    
+}
+ 
