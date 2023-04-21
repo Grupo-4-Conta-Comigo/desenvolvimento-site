@@ -6,11 +6,12 @@
 }
 
 .form .erro{
-    color: red;
+    color: #ff3030;
     font-weight: normal;
     padding: 0;
     margin: 0;
     margin-left: 10px;
+    display: none;
 }
 
 .form .ativo{

@@ -65,6 +65,8 @@ function Login() {
                 <p className={styles.fpsw}>Esqueceu a senha?</p>
                 <p className={styles.novaConta} onClick={goCadastro}>Não possui conta?</p>
                 <div className={styles.btn} onClick={goCadastro}>Cadastre-se</div>
+
+                
             </div>
             </div>
         );

@@ -7,6 +7,7 @@ import bebida from "../_assets/img/icons/bebida-de-coquetel.png"
 import logotipo from "../_assets/img/logo-logotipo/logotipo.png"
 import "../_assets/css/index.css"
 import "../_assets/css/menu.css"
+import Swal from "sweetalert2"
 
 function Index() {
     return (
@@ -93,7 +94,7 @@ function Index() {
                 </div>
             </div>
 
-<br />
+            <br />
 
             <div className="container" id="container">
                 <div className="card">
@@ -142,7 +143,20 @@ function Index() {
                                     <img src={personWhite} alt="" />
                                 </div>
 
-                                <div className="btn">Iniciar</div>
+                                <div className="btn" onClick={() => {
+                                    Swal.fire(
+                                        'Restaurante cadastrado!',
+                                        '',
+                                        'success',
+                                        {
+                                            function() {
+                                                window.location = 'http://wikipedia.com';
+                                            }
+                                        }
+                                    ).then((value) => {
+                                        window.location = "https://google.com"
+                                    })
+                                }}>Iniciar</div>
 
                                 <div className="profile cor3">
                                     <img src={person} alt="" />
