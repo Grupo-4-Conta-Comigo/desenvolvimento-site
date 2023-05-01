@@ -9,6 +9,8 @@ import Mesas from './pages/restrito/Mesas';
 import Add_clientes from './pages/restrito/Add_clientes';
 import Add_itens from './pages/restrito/Add_itens';
 import Pagamento_singular from './pages/restrito/Pagamento_singular';
+import Opcao_divisao from './pages/restrito/Opcao_divisao';
+import Total_divisao from './pages/restrito/Total_divisao';
 
 
 
@@ -30,6 +32,8 @@ function App() {
         <Route path='/add_clientes' element={<Add_clientes/>}/>
         <Route path='/add_itens' element={<Add_itens/>}/>
         <Route path='/pagamento_singular' element={<Pagamento_singular/>}/>
+        <Route path='/opcao_divisao' element={<Opcao_divisao/>} />
+        <Route path='/Total_divisao' element={<Total_divisao/>} />
 
 
 

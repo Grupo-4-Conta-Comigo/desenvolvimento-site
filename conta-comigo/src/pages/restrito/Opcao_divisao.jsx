@@ -1,13 +1,13 @@
 import Lateral_menu from "../../components/Lateral_menu";
-import styles from "../../_assets/css/modules/pag_singular.module.css"
-import Lista_pessoas from "../../components/Lista_pessoas";
+import styles from "../../_assets/css/modules/opcao_divisao.module.css"
+
 
 
 function irPedidos() {
     window.location.href = "http://localhost:3000/pedidos";
 }
 
-function Pagamento_singular() {
+function Opcao_divisao() {
     if (sessionStorage.length > 0) {
 
         var infoAtv = 'infoAtv';
@@ -17,13 +17,10 @@ function Pagamento_singular() {
                 <div className={styles.main}>
                     <div className={styles.container}>
                         <div className={styles.container_head}>
-                            <p>Pagamento Singular</p>
+                            <p>Divisão da Conta</p>
                             <div className={styles.passagem}>
                                 <div className={styles.line}></div>
-
-
                             </div>
-
                         </div>
                         <div className={styles.container_right}>
                             <div className={styles.valor}>Valor total: </div>
@@ -31,23 +28,29 @@ function Pagamento_singular() {
                         </div>
                         <div className={styles.container_main}>
                             <div className={styles.center}>
-                                <p>Quem irá pagar?</p>
+                                <p>Como a conta será dividida?</p>
 
                                 <div className={styles.select}>
-                                    <select name="format" id="format">
-                                        <option selected disabled>Larissa</option>
-                                        <option value="damasceno">Damasceno</option>
-                                        <option value="rafael">Rafael</option>
-                                        <option value="lucas">Lucas</option>
-                                        <option value="pinheiro">Pinehiro</option>
-                                        <option value="valentim">Valentim</option>
-                                    </select>
+                                    <div>
+                                        <label for="f-option" className="l-radio">
+                                            <input type="radio" checked="checked"/>
+                                            <span>Igualmente</span>
+                                        </label>
+                                        <label for="s-option" className="l-radio">
+                                            <input type="radio"/>
+                                            <span>Por consumo</span>
+                                        </label>
+                                        <label for="t-option" className="l-radio">
+                                            <input type="radio"  />
+                                            <span>Personalizada</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.buttons}>
                             <button className={styles.button_one}>Voltar</button>
-                            <button className={styles.button_two}>Pagar</button>
+                            <button className={styles.button_two}>Próximo</button>
                         </div>
                     </div>
                 </div>
@@ -60,4 +63,4 @@ function Pagamento_singular() {
     }
 }
 
-export default Pagamento_singular;
+export default Opcao_divisao;

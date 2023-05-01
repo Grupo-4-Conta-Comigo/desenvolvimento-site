@@ -1,0 +1,59 @@
+
+.pessoa{
+    height: 30px;
+    display: flex;
+    background-color: white;
+    width: 320px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+
+
+.pessoa:hover .pessoas{
+    color: var(--secundaryColor);
+    font-weight: bold;
+}
+
+.pessoa img{
+    width: 17px;
+}
+
+.pessoa .icon{
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+    background-color: var(--paletaNum2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+}
+
+.pessoa .nome{
+    margin-right: 130px;
+    color: #888888;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pessoa .valor{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--secundaryColor);
+}
+
+.pessoa .icon{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pessoa .icon img{
+    width: 20px;
+}

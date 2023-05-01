@@ -1,4 +1,4 @@
-.main{
+.main {
     width: 80%;
     display: flex;
     align-items: center;
@@ -6,14 +6,14 @@
     float: right;
 }
 
-.main .main_head{
+.main .main_head {
     font-size: 16px;
     color: #888888;
     font-weight: bold;
     width: 100%;
 }
 
-.main_head p{
+.main_head p {
     font-weight: normal;
     font-size: 12px;
     margin-top: 10px;
@@ -21,7 +21,7 @@
 }
 
 
-.container{
+.container {
     background-color: white;
     border-radius: 16px;
     width: 800px;
@@ -32,23 +32,23 @@
     height: 340px;
 }
 
-.container_head{
+.container_head {
     font-size: 25px;
     font-weight: bold;
     width: 250px;
-  
-    
+
+
 }
 
-.container_head .desc{
+.container_head .desc {
     font-size: 22px;
     font-weight: normal;
     margin-top: 5px;
-    z-index:auto;
+    z-index: auto;
 }
 
-.container_head .passagem .line{
-    width: 238px;
+.container_head .passagem .line {
+    width: 195px;
     height: 3px;
     background-color: var(--paletaNum1);
     position: absolute;
@@ -57,16 +57,18 @@
     margin-left: 3px;
 }
 
-.buttons{
+
+.buttons {
     margin-top: 45px;
     width: 380px;
     display: flex;
     justify-content: space-around;
     margin-left: 170px;
- 
- 
+
+
 }
-.buttons .button_one{
+
+.buttons .button_one {
     width: 140px;
     height: 45px;
     font-size: 13px;
@@ -80,7 +82,7 @@
 }
 
 
-.buttons .button_two{
+.buttons .button_two {
     width: 140px;
     height: 45px;
     font-size: 13px;
@@ -94,7 +96,8 @@
     cursor: pointer;
 
 }
-.container .container_right{
+
+.container .container_right {
     height: 30px;
     display: flex;
     width: 300px;
@@ -105,48 +108,53 @@
 
 }
 
-.container_right .total{
+.container_right .total {
     color: var(--paletaNum1);
     font-weight: bold;
     font-size: large;
-    
+
 }
 
-.container_right .valor{
+.container_right .valor {
     color: #888888;
     margin-left: 100px;
 }
-.select{
-    width: 220px;
-    height: 34px;
-    overflow: hidden;
-}
-.select select{
-    display: flex;
-    position: absolute;
-    width: 220px;
-    height: 35px;
-    border-radius: 8px;
-    border: none;
+
+.select {
     margin-top: 10px;
-    background-color:#F2F2F2;
-    color: var(--secundary-color);
-    font-size: 16px;
-    
-  
+    width: 500px;
+    height: 34px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    color: var(--paletaNum1);
+
 
 }
 
-.center{
+
+.select input {
+    width: 15px;
+    height: 15px;
+    color: var(--paletaNum1);
+}
+
+.select span {
+    padding: 10px;
+}
+
+.center {
     margin-top: 75px;
     margin-right: 90px;
     display: flex;
     justify-content: center;
-    align-items: center;flex-direction: column;
+    align-items: center;
+    flex-direction: column;
 }
-.center p{
+
+.center p {
     font-weight: bold;
-    font-size:22px;
-    
+    font-size: 22px;
+
 }
- 

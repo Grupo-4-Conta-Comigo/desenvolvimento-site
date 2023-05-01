@@ -4,6 +4,7 @@
     align-items: center;
     flex-direction: column;
     float: right;
+    /* filter: saturate(120%); */
 }
 
 .main .main_head{
