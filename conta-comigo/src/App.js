@@ -11,6 +11,7 @@ import Add_itens from './pages/restrito/Add_itens';
 import Pagamento_singular from './pages/restrito/Pagamento_singular';
 import Opcao_divisao from './pages/restrito/Opcao_divisao';
 import Total_divisao from './pages/restrito/Total_divisao';
+import Divisao_personalizada from './pages/restrito/Divisao_personalizada';
 
 
 
@@ -34,6 +35,8 @@ function App() {
         <Route path='/pagamento_singular' element={<Pagamento_singular/>}/>
         <Route path='/opcao_divisao' element={<Opcao_divisao/>} />
         <Route path='/Total_divisao' element={<Total_divisao/>} />
+        <Route path='/Divisao_personalizada' element={<Divisao_personalizada/>} />
+
 
 
 
