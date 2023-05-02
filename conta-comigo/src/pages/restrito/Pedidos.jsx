@@ -3,15 +3,18 @@ import lupa from "../../_assets/img/icons/lupa.png"
 import add from "../../_assets/img/icons/mais.png"
 import Pedidos from "../../components/Lista_pedidos"
 import styles from "../../_assets/css/modules/pedidos.module.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import api from "../../config/api"
+import Swal from "sweetalert2"
+import Bot from "../../components/Bot"
 
-function Inicio(){
+
+function Inicio() {
+
     const [pedidos, setPedidos] = useState([])
 
-
     function getPedidos() {
-        api.get("/pedidos")
+        api.get("/pedidos/todos/" + sessionStorage.userId)
             .then((response) => {
                 console.log("RESPONSE: ", response)
                 console.log("PEDIDOS: ", response.data)
@@ -26,42 +29,95 @@ function Inicio(){
 
     }
 
-    getPedidos();
+    useEffect(() => {
+        getPedidos()
+      }, []);
 
-    if(sessionStorage.length > 0){
-        return(
-            <div>
-                <Menu/>
-    
+    sessionStorage.setItem("qtdPedidos",pedidos.length)
+
+
+
+    if (sessionStorage.length > 0) {
+        return (
+            <div className="fBody">
+                <Bot />
+                <Menu />
+
                 <div className={styles.main}>
+                    
                     {/* <button onClick={getPedidos}>teste</button> */}
                     <div className={styles.principal}>
                         <div className={styles.titulo}>
-                            Temos <div className={styles.qtd}>4 pedidos</div> em andamento
+                            Temos <div className={styles.qtd}>{pedidos.length} {sessionStorage.qtdPedidos > 1 ? 'pedidos' : 'pedido'}</div> em andamento
                         </div>
                         <div className={styles.pesquisa}>
                             <div className={styles.busca}>
-                                <input type="text" placeholder="Buscar pedido..."/>
+                                <input type="text" placeholder="Buscar pedido..." />
                                 <img src={lupa} alt="" />
                             </div>
-                            <button>
+                            <button onClick={
+                                () => {
+                                    const ipAPI = '//api.ipify.org?format=json'
+
+                                    const inputValue = fetch(ipAPI)
+                                        .then(response => response.json())
+                                        .then(data => data.ip)
+
+                                    const { value: ipAddress } = Swal.fire({
+                                        title: 'Digite o número da mesa',
+                                        input: 'number',
+                                        inputLabel: '',
+                                        inputAttributes: {
+                                            min: 1,
+                                            max: 100,
+                                            step: 1
+                                          },
+                                        showCancelButton: true,
+                                        inputValidator: (value) => {
+                                            if (!value) {
+                                                return 'You need to write something!'
+                                            } else {
+                                                api.post("/pedidos/criar/"+ sessionStorage.userId, {
+                                                    mesa : value
+                                                })
+                                                    .then((response) => {
+                                                        console.log("RESPONSE: ", response)
+                                                        getPedidos();
+                                                        
+                                                    }).catch((err) => {
+                                                        console.log("TINHA QUE ENTRAR AQUI")
+                                                        console.log(err.response.data.errors[0].defaultMessage)
+
+                
+                                                        
+                                                    })
+                                            }
+                                        }
+                                    })
+
+
+                                }
+                            }>
                                 <img src={add} alt="" />
                             </button>
                         </div>
                         <div className={styles.pedidos}>
-                        {
-                        pedidos.map((pedido) => {
-                            return (
-                                <Pedidos pedido={pedido} key={pedido.id} />
-                            )
-                        })
-                    }
+                            {
+                                pedidos ? (
+                                    pedidos.map((pedido) => {
+                                        return (
+                                            <Pedidos pedido={pedido} key={pedido.id} />
+                                        )
+                                    })
+                                ) : <div className={styles.msg}>Não há pedidos em andamento</div>
+
+                            }
                         </div>
                     </div>
                 </div>
             </div>
         );
-    }else{
+    } else {
         window.location.href = "http://localhost:3000/login";
     }
 }

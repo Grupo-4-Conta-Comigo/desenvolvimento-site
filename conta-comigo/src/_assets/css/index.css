@@ -1,3 +1,71 @@
+.btn_d{
+    display: none;
+}
+
+.ou{
+    margin-left: 30px;
+}
+
+.vic{
+    margin-left: -30px;
+}
+
+.vict{
+    margin-left: 0px;
+}
+
+.reload{
+    position: absolute;
+    margin-left: 230px;
+    margin-top: -45px;
+    cursor: pointer;
+}
+
+.mar{
+    margin-left: 20px;
+}
+
+.mari{
+    margin-left: 190px;
+}
+
+.gab{
+    margin-top: -15px;
+}
+
+.gabr{
+    margin-top: -60px;
+}
+
+
+.valorPagar{
+    font-weight: bold;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+.main_one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+    margin-left: 10px;
+}
+
+.main_one .dindin{
+    font-size: 30px;
+    color: #00AB4F;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
 .banner {
     display: flex;
     justify-content: space-between;
@@ -292,9 +360,24 @@
 
 .simulador .right-side .mesa .top {
     /* background-color: pink; */
-    height: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.nome_valor{
+    display: flex;
+    font-weight: bold;
+}
+
+.nome_valor_d{
+    display: none;
+}
+
+.nome_valor .dinheiro{
+    margin-left: 15px;
+    color: #00AB4F;
 }
 
 .top .profile {
@@ -313,6 +396,18 @@
     align-items: center;
 }
 
+.simulador .right-side .mesa .mid .nome_valor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.dividir{
+    font-size: 18px;
+}
+
 .mid .cor2 {
     margin-left: -20px;
 }
@@ -322,10 +417,10 @@
 }
 
 .simulador .right-side .mesa .bot {
-    /* background-color: green; */
-    height: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .bot .profile {
@@ -375,6 +470,43 @@
     align-items: center;
 }
 
+.simulador .btn_dividir {
+    width: 150px;
+    height: 45px;
+    font-size: 15px;
+
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+
+.simulador .btn_consumo {
+    width: 150px;
+    height: 45px;
+    font-size: 13px;
+
+    background-color: white;
+    border-radius: 10px;
+    color: var(--secundary-color);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
 
 /* ESTILIZANDO O FOOTER */
 

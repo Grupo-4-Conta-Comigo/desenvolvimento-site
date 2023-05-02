@@ -1,6 +1,5 @@
 import styles from "../_assets/css/modules/lateral_menu.module.css"
 import logotipo from "../_assets/img/logo-logotipo/logotipo.png"
-import logo from "../_assets/img/logo-logotipo/logomarca.png"
 import inicio from "../_assets/img/icons/inicio.png"
 import inicioAtv from "../_assets/img/icons/inicioAtv.png"
 import editar from "../_assets/img/icons/editar.png"
@@ -9,7 +8,8 @@ import perfil from "../_assets/img/icons/perfil.png"
 import perfilAtv from "../_assets/img/icons/perfilAtv.png"
 import interrogacao from "../_assets/img/icons/interrogation.png"
 import sair from "../_assets/img/icons/sair.png"
-import { useState } from "react"
+import cardapio from "../_assets/img/icons/cardapio.png"
+import cardapioAtv from "../_assets/img/icons/cardapioAtv.png"
 
 function Lateral_menu() {
 
@@ -19,11 +19,23 @@ function Lateral_menu() {
     }
 
     function irInicio(){
+        sessionStorage.pagina = 'inicio';
         window.location.href = "http://localhost:3000/inicio";
     }
 
     function irPedido(){
+        sessionStorage.pagina = 'pedidos';
         window.location.href = "http://localhost:3000/pedidos";
+    }
+
+    function irCardapio(){
+        sessionStorage.pagina = 'cardapio';
+        window.location.href = "http://localhost:3000/cardapio";
+    }
+
+    function irPerfil(){
+        sessionStorage.pagina = 'perfil';
+        window.location.href = "http://localhost:3000/perfil";
     }
 
     return (
@@ -31,47 +43,60 @@ function Lateral_menu() {
             <div className={styles.menu_lateral}>
                 <div className={styles.head}>
                     <img src={logotipo} alt="" />
-                    <div className={styles.logomarca}>
-                        <div className={styles.line}></div>
-                        <div className={styles.line}></div>
-                        <div className={styles.line}></div>
-                    </div>
+                    <div className={styles.sairDois} onClick={logoff}>
+                    <img src={sair} alt="" />
+                    <div className={styles.sair_txt}>Sair</div>
+                </div>
                 </div>
                 <div className={styles.menus}>
                     <div className={styles.menu} onClick={irInicio}>
                         <div className={styles.line}>
-                            <div className={styles.vertical}>
+                            <div className={sessionStorage.pagina === "inicio" ? styles.verticalAtv : styles.vertical}>
 
                             </div>
                         </div>
                         <div className={styles.icon}>
-                            <img src={inicio} alt="" />
+                            <img src={
+                                sessionStorage.pagina === "inicio" ? inicioAtv : inicio
+                            } alt="" />
                         </div>
-                        <div className={styles.info}>Início</div>
+                        <div className={sessionStorage.pagina === "inicio" ? styles.infoAtv : styles.info}>Início</div>
                     </div>
 
                     <div className={styles.menu} onClick={irPedido}>
                         <div className={styles.line}>
-                            <div className={styles.verticalAtv}>
+                            <div className={sessionStorage.pagina === "pedidos" ? styles.verticalAtv : styles.vertical}>
 
                             </div>
                         </div>
                         <div className={styles.icon}>
-                            <img src={editarAtv} alt="" />
+                            <img src={sessionStorage.pagina === "pedidos" ? editarAtv : editar} alt="" />
                         </div>
-                        <div className={styles.infoAtv}>Pedidos</div>
+                        <div className={sessionStorage.pagina === "pedidos" ? styles.infoAtv : styles.info}>Pedidos</div>
                     </div>
 
-                    <div className={styles.menu}>
+                    <div className={styles.menu} onClick={irCardapio}>
                         <div className={styles.line}>
-                            <div className={styles.vertical}>
+                            <div className={sessionStorage.pagina === "cardapio" ? styles.verticalAtv : styles.vertical}>
 
                             </div>
                         </div>
                         <div className={styles.icon}>
-                            <img src={perfil} alt="" />
+                            <img src={sessionStorage.pagina === "cardapio" ? cardapioAtv : cardapio} alt="" />
                         </div>
-                        <div className={styles.info}>Perfil</div>
+                        <div className={sessionStorage.pagina === "cardapio" ? styles.infoAtv : styles.info}>Cardápio</div>
+                    </div>
+
+                    <div className={styles.menu} onClick={irPerfil}>
+                        <div className={styles.line}>
+                            <div className={sessionStorage.pagina === "perfil" ? styles.verticalAtv : styles.vertical}>
+
+                            </div>
+                        </div>
+                        <div className={styles.icon}>
+                            <img src={sessionStorage.pagina === "perfil" ? perfilAtv : perfil} alt="" />
+                        </div>
+                        <div className={sessionStorage.pagina === "perfil" ? styles.infoAtv : styles.info}>Perfil</div>
                     </div>
 
 

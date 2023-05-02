@@ -14,9 +14,18 @@ function Login() {
     const [senhaIpt,setSenha] = useState('')
     const [erro,setErro] = useState('');
 
-    
+    const [carregando, setCarregando] = useState(false)
+
+    function carregar(){
+        setCarregando(true);
+    }
+
+    function pararLoading(){
+        setCarregando(false);
+    }
 
     const getErro = () => {
+        pararLoading()
         setErro("Email ou senha incorreta");
       };
 
@@ -29,6 +38,7 @@ function Login() {
       };
 
       function logar(){
+        carregar()
         api.post("/restaurantes/login",{
             email: usuario,
             senha: senhaIpt
@@ -36,10 +46,14 @@ function Login() {
             .then((response) => {
                 setErro("");
                 console.log("RESPONSE: ", response)
+                sessionStorage.setItem("userId", response.data.userId);
                 sessionStorage.setItem("nome_user", response.data.nome);
                 sessionStorage.setItem("email_user", response.data.email);
                 sessionStorage.setItem("cnpj_user", response.data.cnpj);
                 sessionStorage.setItem("senha_user", response.data.senha);
+                sessionStorage.setItem("token",response.data.token);
+                sessionStorage.setItem("pagina", "inicio")
+                pararLoading()
                 window.location.href = "http://localhost:3000/inicio";
 
             }).catch((err) => {
@@ -61,9 +75,10 @@ function Login() {
                 <input type="password" placeholder="Senha" onChange={changeSenha}/>
                 <p className={styles.ativo}>{erro}</p>
                 <button onClick={logar}>Entrar</button>
-                
-                <p className={styles.fpsw}>Esqueceu a senha?</p>
-                <p className={styles.novaConta} onClick={goCadastro}>Não possui conta?</p>
+
+                <span class={carregando ? "loader" : ""}></span>
+                <p className={carregando ? "disable" : styles.fpsw}>Esqueceu a senha?</p>
+                <p className={carregando ? "disable" : styles.novaConta} onClick={goCadastro}>Não possui conta?</p>
                 <div className={styles.btn} onClick={goCadastro}>Cadastre-se</div>
 
                 

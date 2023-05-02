@@ -7,9 +7,49 @@ import bebida from "../_assets/img/icons/bebida-de-coquetel.png"
 import logotipo from "../_assets/img/logo-logotipo/logotipo.png"
 import "../_assets/css/index.css"
 import "../_assets/css/menu.css"
-import Swal from "sweetalert2"
+import { useState } from "react"
+import reload from "../_assets/img/icons/refresh.png"
+
+
 
 function Index() {
+    const [iniciado, setIniciado] = useState(false);
+    const [divisiaoIniciada, setDivisaoIniciada] = useState(false)
+    const [dividido, setDividido] = useState(false)
+    const [divididoIg, setDivididoIg] = useState(false)
+    const [divididoCons, setDivididoCons] = useState(false)
+
+    function simular(){
+        setIniciado(true);
+    }
+
+    function abrirDivisao(){
+        setDivisaoIniciada(true);
+        setIniciado(false);
+    }
+
+    function dividirIgualmente(){
+        setDivididoIg(true);
+        setDividido(true);
+        setDivisaoIniciada(false)
+    }
+
+    function dividirCons(){
+        setDivididoCons(true);
+        setDividido(true);
+        setDivisaoIniciada(false)
+
+    }
+
+    function limpar(){
+        setDividido(false);
+        setDivididoCons(false);
+        setDivididoIg(false);
+        setIniciado(false);
+    }
+
+
+
     return (
         <div>
             <header>
@@ -137,32 +177,43 @@ function Index() {
                                 <div className="profile cor1">
                                     <img src={person} alt="" />
                                 </div>
+                                <div className={dividido ? "nome_valor_d" : "nome_valor" && iniciado ? "nome_valor" : "nome_valor_d" && divisiaoIniciada ? "nome_valor" : "nome_valor_d"}>Juliana <div className="dinheiro">R$70,00</div>
+                                </div>
+
+                                <div className={dividido ? "valorPagar" : "btn_d"}>Juliana irá pagar <p>{divididoIg ? "R$68,25" : "R$70,00"}</p></div>
                             </div>
                             <div className="mid">
                                 <div className="profile cor2">
                                     <img src={personWhite} alt="" />
                                 </div>
 
-                                <div className="btn" onClick={() => {
-                                    Swal.fire(
-                                        'Restaurante cadastrado!',
-                                        '',
-                                        'success',
-                                        {
-                                            function() {
-                                                window.location = 'http://wikipedia.com';
-                                            }
-                                        }
-                                    ).then((value) => {
-                                        window.location = "https://google.com"
-                                    })
-                                }}>Iniciar</div>
+                                    <div className={dividido ? "nome_valor_d" : "nome_valor vic" && iniciado ? "nome_valor vic" : "nome_valor_d" && divisiaoIniciada ? "nome_valor vic" : "nome_valor_d"}>Victor <div className="dinheiro">R$ 60,00</div></div>
+                                    <div className={dividido ? "valorPagar vict" : "btn_d"}>Victor irá pagar <p>{divididoIg ? "R$68,25" : "R$60,00"}</p></div>
+                                    <img onClick={limpar} className={dividido ? "reload" : "btn_d"} src={reload} alt="" />
+                                <div className={dividido ? "btn_d" : "btn" && iniciado ? "btn_d" : "btn" && divisiaoIniciada ? "btn_d" : "btn"} onClick={simular}>Iniciar</div>
+                                <div className={iniciado ? "main_one" : "btn_d"}>
+                                <div className="dindin">R$273,00</div>
+                                <div onClick={abrirDivisao} className={iniciado ? "btn_dividir" : "btn_d"}>Dividir a conta</div>
+                                </div>
+
+                                
+
+                               <div className={divisiaoIniciada ? "botoes" : "btn_d"}>
+                               <div onClick={dividirIgualmente} className="btn_dividir">Dividir igualmente</div>
+                                <p className="ou">ou</p>
+                                <div onClick={dividirCons} className="btn_consumo">Dividir por consumo</div>
+                               </div>
+
+                                <div className={dividido ? "nome_valor_d" : "nome_valor mar" && iniciado ? "nome_valor mar" : "nome_valor_d mar" && divisiaoIniciada ? "nome_valor mar" : "nome_valor_d"}>Maria <div className="dinheiro">R$ 33,00</div></div>
+                                <div className={dividido ? "valorPagar mari" : "btn_d"}>Maria irá pagar <p>{divididoIg ? "R$68,25" : "R$33,00"}</p></div>
 
                                 <div className="profile cor3">
                                     <img src={person} alt="" />
                                 </div>
                             </div>
                             <div className="bot">
+                                <div className={dividido ? "nome_valor_d" : "nome_valor gab" && iniciado ? "nome_valor gab" : "nome_valor_d gab" && divisiaoIniciada ? "nome_valor gab" : "nome_valor_d"}>Gabriel <div className="dinheiro">R$ 50,00</div></div>
+                                <div className={dividido ? "valorPagar gabr" : "btn_d"}>Gabriel irá pagar <p>{divididoIg ? "R$68,25" : "R$50,00"}</p></div>
                                 <div className="profile cor4">
                                     <img src={person} alt="" />
                                 </div>

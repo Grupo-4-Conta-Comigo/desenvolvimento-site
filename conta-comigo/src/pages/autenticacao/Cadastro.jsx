@@ -16,6 +16,8 @@ function Cadastro() {
     const [senhaIpt, setSenha] = useState('');
     const [senhaDoisIpt, setSenhaDois] = useState('');
 
+    const [carregando, setCarregando] = useState(false)
+
     const [cnpjErrado, setCnpjErrado] = useState(false);
     const [emailErrado, setEmailErrado] = useState(false);
     const [senhaErrada, setSenhaErrada] = useState(false);
@@ -54,7 +56,16 @@ function Cadastro() {
     };
 
 
+    function carregar(){
+        setCarregando(true);
+    }
+
+    function pararLoading(){
+        setCarregando(false);
+    }
+
     function cadastrar() {
+        carregar()
 
         console.log("NOME: " + nomeIpt);
         console.log("CNPJ: " + cnpjIpt);
@@ -63,6 +74,12 @@ function Cadastro() {
         console.log("SENHA DOIS: " + senhaDoisIpt);
 
 
+        if (senhaIpt !== senhaDoisIpt) {
+            setSenhaErrada(true);
+            setSenhaErradaIguais(true);
+            pararLoading()
+            return;
+        }
 
         api.post("/restaurantes/criar", {
             nome: nomeIpt,
@@ -72,6 +89,7 @@ function Cadastro() {
         })
             .then((response) => {
                 console.log("RESPONSE: ", response)
+                pararLoading()
                 Swal.fire(
                     'Restaurante cadastrado!',
                     '',
@@ -89,10 +107,7 @@ function Cadastro() {
                 setSenhaErradaIguais(false);
                 setSenhaErradaTamanho(false);
 
-                if (senhaIpt !== senhaDoisIpt) {
-                    setSenhaErrada(true);
-                    setSenhaErradaIguais(true);
-                }
+                pararLoading()
 
                 var i = 0;
                 while (i < 3) {
@@ -139,7 +154,8 @@ function Cadastro() {
                     <p style={senhaErradaTamanho ? erro : null} className={styles.erro}>A senha deve ter mais de 8 caracteres</p>
                     <button onClick={cadastrar}>Cadastrar</button>
                 </div>
-                <p onClick={irLogin}>Já possui conta?</p>
+                <span class={carregando ? "loader" : ""}></span>
+                <p className={carregando ? "disable" : ""} onClick={irLogin}>Já possui conta?</p>
                 <div onClick={irLogin} className={styles.btn}>Entrar</div>
             </div>
             <div className={styles.right_side}>

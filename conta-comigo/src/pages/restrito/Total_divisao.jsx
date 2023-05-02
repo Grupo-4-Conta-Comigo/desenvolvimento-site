@@ -11,7 +11,7 @@ function Total_divisao() {
 
         var infoAtv = 'infoAtv';
         return (
-            <div>
+            <div className="fBody">
                 <Lateral_menu />
                 <div className={styles.main}>
                     <div className={styles.container}>

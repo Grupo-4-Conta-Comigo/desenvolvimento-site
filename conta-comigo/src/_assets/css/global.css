@@ -6,12 +6,87 @@
     --paletaNum1: #2FE6A3;
     --paletaNum2: #FBBF66;
     --paletaNum3: #FF805D;
+
 }
 /**/
+
+.fBody{
+  display: flex;
+}
 
 .infoAtivo{
   color: red;
 }
+
+/* loading */
+
+.disable{
+  display: none;
+}
+
+.loader {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.loader:before {
+  animation: ball1 1s infinite;
+  background-color: var(--secundary-color);
+  box-shadow: 30px 0 0 var(--paletaNum3);
+  margin-bottom: 10px;
+}
+.loader:after {
+  animation: ball2 1s infinite;
+  background-color: var(--paletaNum3);
+  box-shadow: 30px 0 0 #fff;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg) scale(0.8) }
+  50% { transform: rotate(360deg) scale(1.2) }
+  100% { transform: rotate(720deg) scale(0.8) }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 var(--paletaNum1);
+  }
+  50% {
+    box-shadow: 0 0 0 var(--paletaNum1);
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 var(--paletaNum1);
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 var(--paletaNum2);
+  }
+  50% {
+    box-shadow: 0 0 0 var(--paletaNum2);
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 var(--paletaNum2);
+    margin-top: 0;
+  }
+}
+
 
 
 /* Padrões de estilização */
@@ -27,11 +102,11 @@ html{
   
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
   }
   
   *::-webkit-scrollbar-thumb {
-    background-color: blue;
+    background-color: var(--secundary-color);
     border-radius: 20px;
   }
   

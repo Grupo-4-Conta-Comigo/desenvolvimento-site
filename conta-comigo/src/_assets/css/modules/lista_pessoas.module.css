@@ -50,8 +50,9 @@
 }
 
 .pessoa .valor{
-    font-size: 11px;
-    color: #888888;
+    font-size: 14px;
+    color: var(--secundaryColor);
+    font-weight: bold;
 }
 
 .pessoa .icon{

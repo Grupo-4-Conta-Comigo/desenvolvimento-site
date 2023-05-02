@@ -1,0 +1,44 @@
+.main{
+    background-color: white;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    cursor: pointer;
+}
+
+
+.main {
+    background: white;
+  }
+  
+  .main::after {
+    animation: pulse 1000ms cubic-bezier(0.9, 0.7, 0.5, 0.9) infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 0.4;
+    }
+  }
+  
+  .main::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--paletaNum1);
+    z-index: -1;
+    border-radius: 100%;
+  }
+  

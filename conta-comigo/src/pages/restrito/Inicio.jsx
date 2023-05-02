@@ -1,9 +1,11 @@
 import Lateral_menu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/inicio.module.css"
 import Lista_pagamentos from "../../components/Lista_pagamentos";
-import inicioAtv from "../../_assets/img/icons/inicioAtv.png"
+import inicioAtv from "../../_assets/img/icons/inicioAtv.png";
+import Bot from "../../components/Bot";
 
 function irPedidos(){
+    sessionStorage.pagina = "pedidos";
     window.location.href = "http://localhost:3000/pedidos";
 }
 
@@ -12,14 +14,16 @@ function Inicio() {
 
         var infoAtv = 'infoAtv';
     return (
-        <div>
+        <div className="fBody">
             <Lateral_menu />
+            <Bot  />
             <div className={styles.main}>
+
                 <div className={styles.container}>
                     <div className={styles.container_head}>
                         <p>Olá, {sessionStorage.nome_user}</p>
                         <div className={styles.passagem}>
-                        <p className={styles.desc}>Temos 4 pedidos em andamento</p>
+                        <p className={styles.desc}>Temos {sessionStorage.qtdPedidos? sessionStorage.qtdPedidos : 0} {sessionStorage.qtdPedidos > 1 ? 'pedidos' : 'pedido'} em andamento</p>
                         <div className={styles.line}></div>
                         </div>
                         <button onClick={irPedidos}>Gerenciar pedidos</button>

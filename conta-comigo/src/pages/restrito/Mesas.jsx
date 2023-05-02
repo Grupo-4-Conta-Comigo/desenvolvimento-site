@@ -12,7 +12,7 @@ function Mesas() {
 
         var infoAtv = 'infoAtv';
         return (
-            <div>
+            <div className="fBody">
                 <Lateral_menu />
                 <div className={styles.main}>
                     <div className={styles.container}>
@@ -40,8 +40,8 @@ function Mesas() {
 
                         </div>
                         <div className={styles.buttons}>
-                            <button className={styles.button_one}>Apenas uma pessoa irá pagar</button>
-                            <button className={styles.button_two}>Dividir conta em conjunto</button>
+                            <button>Apenas uma pessoa irá pagar</button>
+                            <button>Dividir conta em conjunto</button>
                         </div>
                     </div>
                 </div>

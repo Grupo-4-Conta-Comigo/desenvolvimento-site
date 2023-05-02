@@ -6,16 +6,14 @@ import Cadastro from './pages/autenticacao/Cadastro';
 import Pedidos from './pages/restrito/Pedidos';
 import Inicio from './pages/restrito/Inicio';
 import Mesas from './pages/restrito/Mesas';
-import Add_clientes from './pages/restrito/Add_clientes';
-import Add_itens from './pages/restrito/Add_itens';
-import Pagamento_singular from './pages/restrito/Pagamento_singular';
-import Opcao_divisao from './pages/restrito/Opcao_divisao';
-import Total_divisao from './pages/restrito/Total_divisao';
+import Cardapio from './pages/restrito/Cardapio';
+import Perfil from "./pages/restrito/Perfil";
+import AddClientes from "./pages/restrito/Add_clientes";
+import AddItens from "./pages/restrito/Add_itens"
 import Divisao_personalizada from './pages/restrito/Divisao_personalizada';
-
-
-
-
+import Opcao_divisao from './pages/restrito/Opcao_divisao';
+import Pagamento_singular from './pages/restrito/Pagamento_singular';
+import Total_divisao from './pages/restrito/Total_divisao';
 
 
 
@@ -30,17 +28,14 @@ function App() {
         <Route path="/pedidos" element={<Pedidos/>}/>
         <Route path='/inicio' element={<Inicio/>}/>
         <Route path='/mesas' element={<Mesas/>}/>
-        <Route path='/add_clientes' element={<Add_clientes/>}/>
-        <Route path='/add_itens' element={<Add_itens/>}/>
-        <Route path='/pagamento_singular' element={<Pagamento_singular/>}/>
-        <Route path='/opcao_divisao' element={<Opcao_divisao/>} />
-        <Route path='/Total_divisao' element={<Total_divisao/>} />
-        <Route path='/Divisao_personalizada' element={<Divisao_personalizada/>} />
-
-
-
-
-
+        <Route path='/cardapio' element={<Cardapio/>}/>
+        <Route path='/perfil' element={<Perfil/>}/>
+        <Route path='/adicionarClientes/:idMesa' element={<AddClientes />}/>
+        <Route path='/adicionarItens/:idMesa/:apelido' element={<AddItens />}/>
+        <Route path='/divisaoPersonalizada' element={<Divisao_personalizada />}/>
+        <Route path='/opcaoDivisao' element={<Opcao_divisao />}/>
+        <Route path='/pagamentoSingular' element={<Pagamento_singular />}/>
+        <Route path='/totalDivisao' element={<Total_divisao />}/>
       </Routes>
       </BrowserRouter>
     </div>

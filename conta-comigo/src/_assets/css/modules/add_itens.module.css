@@ -1,5 +1,5 @@
 .main{
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -23,7 +23,6 @@
     width: 800px;
     padding: 70px 0px 50px 80px;
     margin-top: 50px;
-    margin-left: -70px;
     z-index: -2;
     height: 330px;
 

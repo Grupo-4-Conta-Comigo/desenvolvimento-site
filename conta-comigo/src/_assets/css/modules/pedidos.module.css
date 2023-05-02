@@ -1,5 +1,10 @@
 /* main */
 
+.msg{
+    font-size: 22px;
+    color: #5e5e5e;
+}
+
 .pedidos{
     height: 300px;
     display: flex;
@@ -9,10 +14,11 @@
     flex-wrap: wrap;
     overflow: scroll;
     padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 .main{
-    width: 80%;
+    width: 100%;
     padding: 50px 0px 0px 0px;
     display: flex;
     align-items: center;
@@ -42,7 +48,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 0px;
-    margin-left: -70px;
     padding: 70px 0px 50px 0px;
 }
 

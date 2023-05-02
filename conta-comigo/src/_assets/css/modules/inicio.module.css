@@ -1,10 +1,9 @@
 .main{
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     float: right;
-    /* filter: saturate(120%); */
 }
 
 .main .main_head{
@@ -25,11 +24,10 @@
 .container{
     background-color: white;
     border-radius: 16px;
-    width: 800px;
+    width: 770px;
     padding: 70px 0px 50px 80px;
     margin-top: 50px;
-    margin-left: -70px;
-    z-index: -2;
+    z-index: 0;
 }
 
 .container_head{
@@ -64,7 +62,6 @@
     background-color: var(--secundary-color);
     border-radius: 10px;
     margin-top: 30px;
-    z-index: 0;
     cursor: pointer;
 }
 
@@ -79,4 +76,26 @@
     width: 710px;
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 1150px) {
+    .main{
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .container{
+        background-color: white;
+        border-radius: 16px;
+        width: 400px;
+        margin-top: 150px;
+        z-index: -2;
+    }
+
+    .container .pagamentos{
+        flex-direction: column;
+        width: 400px;
+    }
 }

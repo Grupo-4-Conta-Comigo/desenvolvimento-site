@@ -1,5 +1,5 @@
 import Lateral_menu from "../../components/Lateral_menu"
-import Lista_itens from "../../components/Lista_itens"
+import Lista_itens_pessoa from "../../components/Lista_itens_pessoa"
 import styles from "../../_assets/css/modules/add_itens.module.css"
 import add from "../../_assets/img/icons/mais.png"
 import person from "../../_assets/img/icons/person.png"
@@ -16,7 +16,7 @@ function Add_itens() {
 
         var infoAtv = 'infoAtv';
         return (
-            <div>
+            <div className="fBody">
                 <Lateral_menu />
                 <div className={styles.main}>
 
@@ -52,10 +52,9 @@ function Add_itens() {
 
                                     </div>
 
-                                    <Lista_itens />
-                                    <Lista_itens />
-                                    <Lista_itens />
-
+                                    <Lista_itens_pessoa />
+                                    <Lista_itens_pessoa />
+                                    <Lista_itens_pessoa />
                                 </div>
                                 <div className={styles.listar}>
                                     <div className={styles.item}>
@@ -63,9 +62,9 @@ function Add_itens() {
                                         <p>Bebidas</p>
 
                                     </div>
-                                    <Lista_itens />
-                                    <Lista_itens />
-                                    <Lista_itens />
+                                    <Lista_itens_pessoa />
+                                    <Lista_itens_pessoa />
+                                    <Lista_itens_pessoa />
                                 </div>
                             </div>
                         </div>

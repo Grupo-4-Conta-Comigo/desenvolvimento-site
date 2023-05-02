@@ -1,7 +1,6 @@
 .bodyF{
     display: flex;
     height: 100vh;
-    position: fixed;
 }
 
 .menu_lateral{
@@ -138,10 +137,16 @@
 
 .sair{
     display: flex;
-    display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+    cursor: pointer;
+}
+
+.sairDois{
+    display: none;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -151,6 +156,16 @@
 }
 
 .sair img{
+    width: 18px;
+    margin-left: -10px;
+}
+
+.sairDois .sair_txt{
+    color: #616060;
+    margin-left: 10px;
+}
+
+.sairDois img{
     width: 18px;
     margin-left: -10px;
 }
@@ -171,38 +186,77 @@
     border-radius: 10px;
 }
 
-@media screen and (max-width: 1200px) {
-
-    .head img{
-        display: none;
-    }
-    
-
-    .suporte{
-        display: none;
-    }
+@media screen and (max-width: 1150px) {
 
     .menu{
         display: flex;
         justify-content: center;
-        margin-left: -30px;
+    }
+
+    .menu_lateral .head img{
+        margin-left: 30px;
     }
 
 
-    .menu .info, .infoAtv{
-        display: none;
-    }
-  
 
     .logomarca {
         display: flex;
     }
 
     .menu_lateral{
-        width: 100px;
+        height: 100px;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menus{
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+
+    .suporte{
+        display: none;
     }
     
-    .sair .sair_txt{
+    .menu .line{
         display: none;
+    }
+
+    .sair{
+        margin: 0;
+        margin-right: 30px;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    .menu_lateral{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu_lateral .head{
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sair{
+        display: none;
+    }
+
+    .menus{
+        display: none;
+    }
+
+    .sairDois{
+        display: flex;
+        margin-right: 30px;
     }
 }
