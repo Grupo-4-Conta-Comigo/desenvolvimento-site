@@ -1,0 +1,8 @@
+.result:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result{
+    margin-left: 15px;
+}

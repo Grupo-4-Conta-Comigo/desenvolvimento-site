@@ -5,6 +5,15 @@
     flex-direction: column;
 }
 
+.msg{
+    font-size: 20px;
+    color: #888888;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main .main_head{
     font-size: 16px;
     color: #888888;
@@ -59,12 +68,11 @@
 
 
 .pessoas{
-    padding: 0px 20px 20px 0px;
+    padding: 0px 20px 20px 5px;
     width: 710px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* background-color: red; */
     height: 240px;
     overflow: auto;
     margin-top: 30px;
@@ -98,6 +106,7 @@
     align-items: center;
     margin-top: -25px;
     margin-left: 450px;
+    cursor: pointer;
 
 }
 
@@ -108,7 +117,7 @@
 
 .container_right .valor{
     margin-left: 60px;
-    color: #888888;
+    color: var(--secundary-color);
 }
 
 .container_right .add_cliente{

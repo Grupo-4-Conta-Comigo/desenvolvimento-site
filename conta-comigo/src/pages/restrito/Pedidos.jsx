@@ -48,7 +48,7 @@ function Inicio() {
                     {/* <button onClick={getPedidos}>teste</button> */}
                     <div className={styles.principal}>
                         <div className={styles.titulo}>
-                            Temos <div className={styles.qtd}>{pedidos.length} {sessionStorage.qtdPedidos > 1 ? 'pedidos' : 'pedido'}</div> em andamento
+                            Temos <div className={styles.qtd}>{pedidos.length} {pedidos.length > 1 || pedidos.length === 0 ? 'pedidos' : 'pedido'}</div> em andamento
                         </div>
                         <div className={styles.pesquisa}>
                             <div className={styles.busca}>
@@ -57,13 +57,8 @@ function Inicio() {
                             </div>
                             <button onClick={
                                 () => {
-                                    const ipAPI = '//api.ipify.org?format=json'
 
-                                    const inputValue = fetch(ipAPI)
-                                        .then(response => response.json())
-                                        .then(data => data.ip)
-
-                                    const { value: ipAddress } = Swal.fire({
+                                    Swal.fire({
                                         title: 'Digite o número da mesa',
                                         input: 'number',
                                         inputLabel: '',

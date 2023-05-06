@@ -5,13 +5,15 @@ import seta from "../_assets/img/icons/setaDireita.png"
 function Lista_pedidos(props){
     function irMesa(){
         sessionStorage.pagina = "pedidos";
+        sessionStorage.setItem("pedidoAtual",props.pedido.id);
         window.location.href = "http://localhost:3000/adicionarClientes/" + props.pedido.mesa;
+
     }
     return(
             <div className={styles.pedido} onClick={irMesa}>
                 <div className={styles.number}>{props.pedido.mesa}</div>
                 <div className={styles.mesa}>Mesa {props.pedido.mesa}</div>
-                <div className={styles.pessoas}>0 pessoas</div>
+                <div className={styles.pessoas}>{props.pedido.comandas.length} pessoas</div>
                 <img src={seta} alt="" />
             </div>
     );

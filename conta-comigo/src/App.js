@@ -31,7 +31,7 @@ function App() {
         <Route path='/cardapio' element={<Cardapio/>}/>
         <Route path='/perfil' element={<Perfil/>}/>
         <Route path='/adicionarClientes/:idMesa' element={<AddClientes />}/>
-        <Route path='/adicionarItens/:idMesa/:apelido' element={<AddItens />}/>
+        <Route path='/adicionarItens' element={<AddItens />}/>
         <Route path='/divisaoPersonalizada' element={<Divisao_personalizada />}/>
         <Route path='/opcaoDivisao' element={<Opcao_divisao />}/>
         <Route path='/pagamentoSingular' element={<Pagamento_singular />}/>

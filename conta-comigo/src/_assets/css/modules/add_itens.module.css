@@ -5,95 +5,83 @@
     flex-direction: column;
     float: right;
 }
-.main .main_head{
-    font-size: 16px;
-    color: #888888;
-    font-weight: bold;
-    width: 100%;
-}
-.main_head p{
-    font-weight: normal;
-    font-size: 12px;
-    margin-top: 10px;
-    color: #888888;
-}
+
 .container{
     background-color: white;
     border-radius: 16px;
     width: 800px;
-    padding: 70px 0px 50px 80px;
+    /* padding: 70px 0px 50px 0px; */
+    padding: 0px 50px 50px 50px;
     margin-top: 50px;
-    z-index: -2;
-    height: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
-.container_head{
-    font-size: 25px;
-    font-weight: bold;
-    width: 100px;
-}
 
-.container_head .desc{
-    font-size: 22px;
-    font-weight: normal;
-    margin-top: 5px;
-    z-index:auto;
-}
-.container_head .passagem .line{
-    width: 82px;
-    height: 5px;
-    background-color: var(--paletaNum1);
-    position: absolute;
-    z-index: -1;
-    margin-top: 5px;
-    margin-left: 2px;
-}
-.pessoas{
-    padding: 20px 20px 20px 0px;
-    width: 710px;
+.container .containerHead{
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
-.buttons{
-    width: 520px;
+
+.containerHead .containerHead_left{
     display: flex;
-    justify-content: space-around;
-    margin-left: 210px;
 }
-.buttons button{
-    width: 220px;
-    height: 50px;
-    font-size: 13px;
+
+.person .circle{
+    background-color: var(--paletaNum2);
+    border-radius: 100%;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.person .circle img{
+    width: 27px;
+    height: 27px;
+}
+
+.nome{
+    font-size: 25px;
     font-weight: bold;
-    color: white;
-    border: none;
-    background-color: var(--secundary-color);
-    border-radius: 10px;
-    margin-top: 30px;
-    z-index: 0;
+    margin-left: 20px;
+}
+
+.editar img{
+    margin-left: 20px;
+}
+
+
+.containerHead .containerHead_right{
+    display: flex;
     cursor: pointer;
 }
-.container .container_right{
-    height: 30px;
-    display: flex;
-    width: 300px;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: -25px;
-    margin-left: 450px;
 
+ .wires{
+    display: flex;
+    width: 100%;
+    height: 48px;
+    justify-content: space-between;
 }
-.container_right .total{
-    color: var(--paletaNum1);
-    font-weight: bold;
+
+ .wire{
+    margin-top: -20px;
+    background-color: var(--secundary-color);
+    width: 15px;
+    height: 42px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
 }
-.container_right .valor{
-    margin-top: -10px;
-    margin-left: 60px;
-    color: #888888;
+
+.valor{
+    margin-right: 30px;
+    font-size: 20px;
 }
-.container_right .add_itens{
+
+.add_cliente{
     margin-right: 20px;
     width: 25px;
     height: 25px;
@@ -103,93 +91,218 @@
     border: none;
     background-color: var(--secundary-color);
     border-radius: 15px;
-    margin-top: -10px;
-    z-index: 0;
+    margin-top: 5px;
     cursor: pointer;
 }
-.container_right img {
+
+.add_cliente img {
     margin-top: 3px;
     width: 13px;
     height: 13px;
 }
- .wires{
+
+
+.selecionar{
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    width: 780px;
-    height: 48px;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 }
- .wire{
-    margin-top: -90px;
-    background-color: var(--secundary-color);
-    width: 15px;
-    height: 42px;
+
+.selecionar p{
+    margin-top: 10px;
+}
+
+.selecionar select{
+    border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
-    margin-right: 55px;
+    width: 150px;
+    padding: 0px 20px;
+    margin-top: 15px;
 }
- .icon{
-    width: 33px;
-    height: 33px;
+
+.container_table{
+    width: 600px;
+    padding: 0px 30px;
+    height: 225px;
+    overflow: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+
+table{
+    width: 100%;
+    margin-top: 40px;
+
+}
+
+table tr{
+    /* background-color: cadetblue; */
+    height: 50px;
+}
+
+table tr th{
+    text-align: left;
+}
+
+table input{
+    font-size: 18px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.ipt_enable{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+table tr td{
+    font-size: 18px;
+}
+
+.dados{
+    border-bottom: 3px solid black;
+}
+
+table tr .id{
+    color: var(--paletaNum3);
+    border-bottom: 5px solid var(--paletaNum3);
+    width: 10%;
+}
+
+table tr .nomeItem{
+    color: var(--paletaNum2);
+    border-bottom: 5px solid var(--paletaNum2);
+    width: 20%;
+}
+
+table tr .preco{
+    color: var(--paletaNum1);
+    border-bottom: 5px solid var(--paletaNum1);
+    width: 10%;
+}
+
+table tr .espaco{
+    width: 8%;
+}
+
+table tr .editarApagar{
+    width: 10%;
+    cursor: pointer;
+}
+
+table tr .deletar{
+    width: 3%;
+}
+
+table img{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.msg{
     font-size: 20px;
-    background-color: var(--paletaNum2);
+    color: #888888;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-weight: bold;
-    border-radius: 100%;
-    margin-left: 8px;
-    margin-top: -50px;
-}
-.icon img{
-    width: 20px;
-}
-.container_head p{
-    margin-top: -35px;
-    margin-left: 60px;
-}
-.itens{
     margin-top: 50px;
-    margin-left: 10px;
-    display: flex;
-    justify-content:space-between;
-    flex-direction: row;
-    margin-right: 100px;
-}
-.item{
-    color: var(--fontGray);
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.item img{
-    width: 30px;
-}
-.listar{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-.listar_itens{
-    margin-top: 15px;
-    display: flex;
-    justify-content:space-between;
-    flex-direction: row;
-}
-.listar_itens .valor{
-    color: var(--paletaNum1);
-    margin-right: 40px;
-}
-.listar_itens .nome{
-    color: var(--fontGray);
-}
- .line{
-    margin-top: 15px;
-    background-color: var(--fontGray);
-    width: 310px;
-    height: 0.5px;
 }
 
+.cadastrarItem{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0,60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastrarItem .popup{
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.popup .header_popup{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.popup .header_popup .line{
+    width: 9px;
+    height: 69px;
+    background-color: var(--secundary-color);
+    border-radius: 20px;
+}
+
+.popup .header_popup .titulo{
+    width: 310px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.search{
+    height: 46px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    margin-top: 20px;
+}
+
+.search input{
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.search img{
+    width: 26px;
+    height: 26px;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.btns button{
+    width: 48%;
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btns .cancelar{
+    border: 2px solid var(--secundary-color);
+    border-radius: 10px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.btns .adicionar{
+    background-color: var(--secundary-color);
+    color: white;
+    border-radius: 10px;
+}
+
+.resultado{
+    width: 300px;
+    background-color: white;
+    margin-top: 8px;
+    padding: 10px;
+    max-height: 76px;
+    overflow: hidden;
+}

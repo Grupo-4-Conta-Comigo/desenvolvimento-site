@@ -1,0 +1,112 @@
+.main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    border-radius: 16px;
+    width: 800px;
+    height: 550px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: -30px;
+}
+
+.container .up{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .up .card{
+    background-color: white;
+    width: 42%;
+    height: 170px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.container .mid .card{
+    background-color: white;
+    width: 95%;
+    height: 170px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.container .bot .card{
+    background-color: white;
+    width: 95%;
+    height: 170px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.card .card_main{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn{
+    height: 120px;
+}
+
+.btn img{
+    width: 30px;
+}
+
+.card .card_main .card_header .card_titulo{
+    font-size: 22px;
+    font-weight: bold;
+    width: 230px;
+}
+
+.card .card_main .card_dados{
+    width: 230px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.card .card_main .card_dados p{
+    margin-top: 10px;
+}
+
+.lineRed{
+    width: 7px;
+    height: 120px;
+    background-color: var(--paletaNum3);
+    border-radius: 10px;
+}
+
+.lineYellow{
+    width: 7px;
+    height: 120px;
+    background-color: var(--paletaNum2);
+    border-radius: 10px;
+}
+
+.lineGreen{
+    width: 7px;
+    height: 120px;
+    background-color: var(--paletaNum1);
+    border-radius: 10px;
+}
+
+.lineBlack{
+    width: 7px;
+    height: 120px;
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+}
