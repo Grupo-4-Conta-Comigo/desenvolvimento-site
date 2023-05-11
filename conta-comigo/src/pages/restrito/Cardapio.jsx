@@ -14,7 +14,7 @@ function Cardapio() {
     const [cadastroAberto, setCadastroAberto] = useState(false);
 
     const [nomeIpt, setNome] = useState();
-    const [categoriaIpt, setCategoria] = useState('Comida');
+    const [categoriaIpt, setCategoria] = useState('comida');
     const [precoIpt, setPreco] = useState();
 
     const changePreco = (event) => {

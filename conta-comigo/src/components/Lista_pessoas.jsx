@@ -12,7 +12,7 @@ function Lista_pessoas(props){
             <div className={styles.pessoa} onClick={irPessoa}>
                 <div className={styles.icon}> <img src={person} alt="" /></div>
                 <div className={styles.nome}>{props.cliente.nomeDono}</div>
-                <div className={styles.valor}> R${props.cliente.preco}</div>
+                <div className={styles.valor}> R${props.cliente.preco.toFixed(2)}</div>
                 <img src={seta} alt="" />
             </div>
     );
