@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "../../_assets/css/modules/login.module.css"
+import styles from "../../_assets/css/modules/core modules/login.module.css"
 import logomarca from "../../_assets/img/logo-logotipo/logomarca.png"
 import api from "../../config/api";
 

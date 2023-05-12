@@ -1,15 +1,18 @@
 import Menu from "../../components/Lateral_menu"
 import lupa from "../../_assets/img/icons/lupa.png"
 import add from "../../_assets/img/icons/mais.png"
-import Pedidos from "../../components/Lista_pedidos"
-import styles from "../../_assets/css/modules/pedidos.module.css"
+import Pedidos from "../../components/Listas/Lista_pedidos"
+import styles from "../../_assets/css/modules/core modules/pedidos.module.css"
 import { useEffect, useState } from "react"
 import api from "../../config/api"
 import Swal from "sweetalert2"
-import Bot from "../../components/Bot"
+import Bot from "../../components/Bot/Bot"
+import { useNavigate } from "react-router-dom"
 
 
 function Inicio() {
+
+    const navigate = useNavigate()
 
     const [pedidos, setPedidos] = useState([])
 
@@ -113,7 +116,7 @@ function Inicio() {
             </div>
         );
     } else {
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 }
 

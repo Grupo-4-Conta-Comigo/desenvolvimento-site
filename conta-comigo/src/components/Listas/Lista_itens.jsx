@@ -1,16 +1,16 @@
-import styles from "../_assets/css/modules/cardapio.module.css"
-import editar from "../_assets/img/icons/btnEditar.png"
-import apagar from "../_assets/img/icons/btnApagar.png"
+import styles from "../../_assets/css/modules/core modules/cardapio.module.css"
+import editar from "../../_assets/img/icons/btnEditar.png"
+import apagar from "../../_assets/img/icons/btnApagar.png"
 import Swal from "sweetalert2";
-import api from "../config/api";
+import api from "../../config/api";
 import { useState } from "react";
-import ok from "../_assets/img/icons/ok.png"
+import ok from "../../_assets/img/icons/ok.png"
 
 function Lista_itens(props) {
   const [editarAberto, setEditarAberto] = useState(false);
 
   const [nomeIpt, setNome] = useState(props.item.nome);
-  const [categoriaIpt, setCategoria] = useState('Comida');
+  const [categoriaIpt, setCategoria] = useState('comida');
   const [precoIpt, setPreco] = useState(props.item.preco);
 
   const changePreco = (event) => {
@@ -30,7 +30,7 @@ function Lista_itens(props) {
       <td className={styles.espaco}>{/* espaço */}</td>
       <td>
         <div className={styles.precos}>
-          R$ <input onChange={changePreco} className={editarAberto ? styles.ipt_enable : ""} type="number" defaultValue={props.item.preco} step="0.01" min="0.01" disabled={editarAberto ? false : true} />
+          R$ <input onChange={changePreco} className={editarAberto ? styles.ipt_enable : ""} type="number" defaultValue={props.item.preco.toFixed(2)} step="0.01" min="0.01" disabled={editarAberto ? false : true} />
         </div>
       </td>
       <td className={styles.espaco}>{/* espaço */}</td>

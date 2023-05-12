@@ -1,4 +1,4 @@
-import styles from "../_assets/css/modules/cardapio.module.css";
+import styles from "../_assets/css/modules/core modules/cardapio.module.css";
 import { useState } from "react";
 
 function EditarItem(){

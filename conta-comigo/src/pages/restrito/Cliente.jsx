@@ -1,6 +1,6 @@
 import LateralMenu from "../../components/Lateral_menu"
 // import Lista_itens_pessoa from "../../components/Lista_itens_pessoa"
-import styles from "../../_assets/css/modules/add_itens.module.css"
+import styles from "../../_assets/css/modules/core modules/add_itens.module.css"
 import add from "../../_assets/img/icons/mais.png"
 import person from "../../_assets/img/icons/person.png"
 // import comidas from "../../_assets/img/icons/comida.png"
@@ -11,7 +11,7 @@ import editar from "../../_assets/img/icons/btnEditar.png"
 import hamburguer from "../../_assets/img/icons/hamburguer.png"
 import ItensIndv from "../../components/ItensIndv"
 import lupa from "../../_assets/img/icons/lupa.png"
-import Lista_search from "../../components/Lista_search"
+import Lista_search from "../../components/Listas/Lista_search"
 
 
 // function irPedidos() {

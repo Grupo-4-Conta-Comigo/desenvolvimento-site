@@ -1,5 +1,5 @@
-import styles from "../_assets/css/modules/lista_pagamentos.module.css"
-import pagamento from "../_assets/img/pagamento.png"
+import styles from "../../_assets/css/modules/listas modules/lista_pagamentos.module.css"
+import pagamento from "../../_assets/img/pagamento.png"
 
 function Lista_pagamentos(){
     return(

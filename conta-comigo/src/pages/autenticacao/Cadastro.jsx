@@ -1,6 +1,6 @@
 import logotipo from "../../_assets/img/logo-logotipo/logotipo.png"
 import cmMobile from "../../_assets/img/cmMobile.png"
-import styles from "../../_assets/css/modules/cadastro.module.css"
+import styles from "../../_assets/css/modules/core modules/cadastro.module.css"
 import { useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";

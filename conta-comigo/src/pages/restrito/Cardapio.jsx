@@ -1,6 +1,6 @@
 import Menu from "../../components/Lateral_menu"
-import styles from "../../_assets/css/modules/cardapio.module.css";
-import Lista_itens from "../../components/Lista_itens";
+import styles from "../../_assets/css/modules/core modules/cardapio.module.css";
+import Lista_itens from "../../components/Listas/Lista_itens";
 import { useEffect, useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";
@@ -156,7 +156,7 @@ function Cardapio() {
                             {
                                 itens ? (
                                     itens.map((item) => {
-                                        console.log("TESTANDO: " + item.nome);
+                                        // console.log("TESTANDO: " + item.nome);
                                         return (
                                             <Lista_itens item={item} key={item.id} />
                                         )

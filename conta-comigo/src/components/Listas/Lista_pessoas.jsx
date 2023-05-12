@@ -1,12 +1,15 @@
-import styles from "../_assets/css/modules/lista_pessoas.module.css"
-import seta from "../_assets/img/icons/setaDireita.png"
-import person from "../_assets/img/icons/person.png"
+import styles from "../../_assets/css/modules/listas modules/lista_pessoas.module.css"
+import seta from "../../_assets/img/icons/setaDireita.png"
+import person from "../../_assets/img/icons/person.png"
+import { useNavigate } from "react-router-dom"
 function Lista_pessoas(props){
+
+    const navigate = useNavigate()
 
     function irPessoa(){
         sessionStorage.setItem("clienteAtual",props.cliente.id)
         sessionStorage.setItem("nomeClienteAtual",props.cliente.nomeDono)
-        window.location.href = "http://localhost:3000/adicionarItens";
+        navigate("/adicionarItens")
     }
     return(
             <div className={styles.pessoa} onClick={irPessoa}>

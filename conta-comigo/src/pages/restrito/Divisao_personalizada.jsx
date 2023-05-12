@@ -1,18 +1,18 @@
-import Lateral_menu from "../../components/Lateral_menu";
-import styles from "../../_assets/css/modules/divisao_pers.module.css"
+import LateralMenu from "../../components/Lateral_menu";
+import styles from "../../_assets/css/modules/divisao modules/divisao_pers.module.css"
 
 
-function irPedidos() {
-    window.location.href = "http://localhost:3000/pedidos";
-}
+// function irPedidos() {
+//     window.location.href = "http://localhost:3000/pedidos";
+// }
 
 function Divisao_personalizada() {
     if (sessionStorage.length > 0) {
 
-        var infoAtv = 'infoAtv';
+        // var infoAtv = 'infoAtv';
         return (
             <div className="fBody">
-                <Lateral_menu />
+                <LateralMenu />
                 <div className={styles.main}>
                     <div className={styles.container}>
                     <div className={styles.container_top}>

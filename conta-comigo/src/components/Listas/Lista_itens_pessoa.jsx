@@ -1,4 +1,4 @@
-import styles from "../_assets/css/modules/add_itens.module.css"
+import styles from "../../_assets/css/modules/core modules/add_itens.module.css"
 
 
 function Lista_itens_pessoa(props){

@@ -1,4 +1,4 @@
-import styles from "../_assets/css/modules/total_pessoas.module.css"
+import styles from "../_assets/css/modules/divisao modules/total_pessoas.module.css"
 import person from "../_assets/img/icons/person.png"
 function Lista_pessoas(props){
     return(

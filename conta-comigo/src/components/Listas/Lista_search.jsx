@@ -1,6 +1,6 @@
 import { useState } from "react";
-import styles from "../_assets/css/modules/resultados.module.css"
-import Associa_item from "./Associa_item";
+import styles from "../../_assets/css/modules/resultados.module.css"
+import Associa_item from "../Associa_item";
 
 function Lista_search(props) {
     const [selecionado, setSelecionado] = useState(false)

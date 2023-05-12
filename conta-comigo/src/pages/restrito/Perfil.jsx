@@ -1,6 +1,6 @@
 import Menu from "../../components/Lateral_menu"
-import Bot from "../../components/Bot";
-import styles from "../../_assets/css/modules/perfil.module.css"
+import Bot from "../../components/Bot/Bot";
+import styles from "../../_assets/css/modules/core modules/perfil.module.css"
 import editar from "../../_assets/img/icons/btnEditar.png"
 import cadeado from "../../_assets/img/icons/cadeado.png"
 

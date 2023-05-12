@@ -10,32 +10,35 @@ import interrogacao from "../_assets/img/icons/interrogation.png"
 import sair from "../_assets/img/icons/sair.png"
 import cardapio from "../_assets/img/icons/cardapio.png"
 import cardapioAtv from "../_assets/img/icons/cardapioAtv.png"
+import { useNavigate } from "react-router-dom"
 
 function Lateral_menu() {
 
+    const navigate = useNavigate();
+
     function logoff() {
         sessionStorage.clear();
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 
     function irInicio(){
         sessionStorage.pagina = 'inicio';
-        window.location.href = "http://localhost:3000/inicio";
+        navigate("/inicio")
     }
 
     function irPedido(){
         sessionStorage.pagina = 'pedidos';
-        window.location.href = "http://localhost:3000/pedidos";
+        navigate("/pedidos")
     }
 
     function irCardapio(){
         sessionStorage.pagina = 'cardapio';
-        window.location.href = "http://localhost:3000/cardapio";
+        navigate("/cardapio")
     }
 
     function irPerfil(){
         sessionStorage.pagina = 'perfil';
-        window.location.href = "http://localhost:3000/perfil";
+        navigate("/perfil")
     }
 
     return (
