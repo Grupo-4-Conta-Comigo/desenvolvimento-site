@@ -16,6 +16,7 @@ import Pagamento_singular from './pages/restrito/Pagamento_singular';
 import Total_divisao from './pages/restrito/Total_divisao';
 import NotFound from './pages/NotFound';
 import Funcionarios from './pages/restrito/Funcionarios';
+import Pagamento from './pages/restrito/Pagamento';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/pagamentoSingular' element={<Pagamento_singular />}/>
         <Route path='/totalDivisao' element={<Total_divisao />}/>
         <Route path='/funcionarios' element={<Funcionarios />}/>
+        <Route path='/pagamento' element={<Pagamento />}/>
         <Route path='*' element={<NotFound />}/>
       </Routes>
       </BrowserRouter>
