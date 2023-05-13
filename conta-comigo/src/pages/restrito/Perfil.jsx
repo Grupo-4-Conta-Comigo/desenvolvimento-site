@@ -3,6 +3,8 @@ import Bot from "../../components/Bot/Bot";
 import styles from "../../_assets/css/modules/core modules/perfil.module.css"
 import editar from "../../_assets/img/icons/btnEditar.png"
 import cadeado from "../../_assets/img/icons/cadeado.png"
+import add from "../../_assets/img/icons/mais.png"
+import seta from "../../_assets/img/icons/setaDireita.png"
 
 function Perfil() {
     return (
@@ -52,15 +54,57 @@ function Perfil() {
                                 <img src={cadeado} alt="" />
                             </div>
                             <div className={styles.leftSide}>
-                                <p>Níveis de acesso</p>
+                                <div className={styles.titulo}>Níveis de Acesso</div>
                                 <p>Você - Administrador</p>
                             </div>
-                            <div className={styles.rightSide}></div>
+                            <div className={styles.rightSide}>
+                                <div className={styles.add_func}>
+                                <div className={styles.valor}>Adicionar novo</div>
+                            <button className={styles.add_cliente}>
+                                <img src={add} alt="" />
+                            </button>
+                                </div>
+                           
+                            <div className={styles.listar}>Ver lista de acesso
+                            <img src={seta} alt="" />
+                            </div>
+                            
+                            </div>
                         </div>
                     </div>
                     <div className={styles.bot}>
-                    <div className={styles.card}>
-                            <div className={styles.lineGreen}></div>
+                    <div className={styles.lineGreen}></div>
+                <div className={styles.card}>
+                              
+                                <div className={styles.card_titulo}>Dados Transacionais</div>
+                                <p>Chaves PIX cadastradas </p>
+                               
+                        
+
+                                <div className={styles.select}>
+                                        <div>
+                                            <label for="f-option" className="l-radio">
+                                                <input type="radio" checked="checked"/>
+                                                <span>Celular</span>
+                                            </label>
+                                            <label for="s-option" className="l-radio">
+                                                <input type="radio"/>
+                                                <span>CPF/CNPJ</span>
+                                            </label>
+                                            <label for="t-option" className="l-radio">
+                                                <input type="radio"  />
+                                                <span>E-mail</span>
+                                            </label>
+                                            <label for="t-option" className="l-radio">
+                                                <input type="radio"  />
+                                                <span>Chave aleatória</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    {/* <div className={styles.valor}>Cadastrar chave</div> */}
+                                {/* <button className={styles.add_cliente}> */}
+                                    {/* <img src={add} alt="" /> */}
+                                {/* </button> */}
                         </div>
                     </div>
                 </div>

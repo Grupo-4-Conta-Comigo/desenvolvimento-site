@@ -1,0 +1,227 @@
+.fBody{
+    display: flex;
+    justify-content: center;
+}
+
+.msg{
+    font-size: 20px;
+    color: #888888;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valor{
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+.add_cliente{
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: var(--secundary-color);
+    border-radius: 15px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.add_cliente img {
+    margin-top: 3px;
+    width: 13px;
+    height: 13px;
+}
+
+.container{
+    background-color: white;
+    border-radius: 16px;
+    width: 900px;
+    height: 460px;
+    padding: 40px 60px;
+    margin-top: 50px;
+}
+
+.containerHead{
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerHead .titulo{
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.containerHead .cadastrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.main{
+    /* background-color: red; */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.filtro{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.filtro .radioGroup{
+    width: 300px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.radioGroup input{
+    width: 20px;
+    height: 20px;
+    background-color: var(--paletaNum1);
+}
+
+
+.apagarEditar{
+    color: #888888;
+}
+
+.dados{
+    height: 60px;
+}
+
+.cadastrarItem{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0,60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastrarItem .popup{
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.popup .header_popup{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+}
+
+.popup .header_popup .line{
+    width: 9px;
+    height: 69px;
+    background-color: var(--paletaNum2);
+    border-radius: 20px;
+}
+
+.popup .header_popup .titulo{
+    width: 310px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup .inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup .inputs input{
+    width: 300px;
+    height: 45px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 0px 20px;
+}
+
+select{
+    width: 150px;
+    height: 45px;
+    padding: 0px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: none;
+}
+
+.popup button{
+    width: 340px;
+    height: 45px;
+    background-color: var(--secundary-color);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.precos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.precos input{
+    width: 100px;
+    margin-left: 3px;
+    padding: 10;
+}
+
+.passagem .line{
+    width: 82px;
+    height: 5px;
+    background-color: var(--paletaNum1);
+    position: absolute;
+    z-index: -1;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.containerHead .titulo .line{
+    width: 322px;
+    height: 5px;
+    background-color: var(--paletaNum1);
+    margin-top: 5px;
+    margin-left: 2px;
+}
+.center{
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+
+}
+
+.funcionarios{
+  
+    padding: 0px 20px 20px 5px;
+    width: 710px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 300px;
+    overflow: auto;
+    margin-top:50px;
+}
