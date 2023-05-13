@@ -156,14 +156,7 @@
     padding: 0px 20px;
 }
 
-select{
-    width: 150px;
-    height: 45px;
-    padding: 0px 20px;
-    font-size: 18px;
-    margin-top: 20px;
-    border: none;
-}
+
 
 .popup button{
     width: 340px;
@@ -178,17 +171,6 @@ select{
     cursor: pointer;
 }
 
-.precos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.precos input{
-    width: 100px;
-    margin-left: 3px;
-    padding: 10;
-}
 
 .passagem .line{
     width: 82px;

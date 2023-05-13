@@ -43,7 +43,9 @@ function Divisao_personalizada() {
                                         <option value="valentim">Valentim</option>
                                     </select>
                                 </div>
-                        <input type="text" className="input_valor" placeholder="Digite o valor a pagar..."/>
+                    
+                                <input type="number" className="input_valor" placeholder="Digite o valor a pagar..."/>
+
                       
                         </div>
                         <div className={styles.buttons}>
