@@ -1,0 +1,201 @@
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    float: right;
+}
+
+.main .main_head {
+    font-size: 16px;
+    color: #888888;
+    font-weight: bold;
+    width: 100%;
+}
+
+.main_head p {
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 10px;
+    color: #888888;
+}
+
+
+.container {
+
+    background-color: white;
+    border-radius: 0px 0px 16px 16px;
+    width: 400px;
+    padding: 70px 0px 50px 80px;
+    margin-top: -5px;
+    z-index: -2;
+    height: 340px;
+}
+
+.container_head {
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -20px;
+
+
+}
+
+.container_main {
+ /* background-color: blueviolet; */
+    width: 320px;
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:10px ;
+    
+}
+.main .abas{
+    /* background-color: blue; */
+    margin-top: 70px;
+    width: 480px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+ 
+ 
+}
+ .main .abas .aba_comida{
+    background-color: white;
+    width: 160px;
+    height: 45px;
+    border-radius: 16px 16px 0px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+ }
+
+  .aba_comida img{
+    margin-top: 5px;
+    width: 	23px;
+    background-color: var(--paletaNum2);
+    border-radius: 5px;
+    padding:2px;
+ }
+ .aba_comida p{
+    /* margin-right: 10px; */
+    font-size: 16px;
+    font-weight: bold;
+ }
+ .main .abas .aba_bebida{
+    background-color: white;
+    width: 150px;
+    height: 45px;
+    border-radius: 16px 16px 0px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+ }
+ .aba_bebida img{
+    margin-top: 5px;
+    width: 	25px;
+ }
+ .aba_bebida p{
+
+    font-size: 16px;
+    color: #888888;
+ }
+ .main .abas .aba_outro{
+    background-color: white;
+    width: 160px;
+    height: 45px;
+    border-radius: 16px 16px 0px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+ }
+
+ .aba_outro p{
+  
+    font-size: 16px;
+    color: #888888;
+ }
+ .itens{
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    width: 300px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 15px;
+ }
+ .itens .qtd{
+    font-size: 16px;
+    color: #888888;
+ }
+ 
+ .itens .item{
+    font-size: 16px;
+    color: #888888;
+ }
+.itens .valor{
+    font-size: 16px;
+    color: var(	--paletaNum1);
+}
+.container_head p{
+    margin-top: 5px;
+    padding: 1px ;
+}
+.pessoa{
+    height: 35px;
+    display: flex;
+    width: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+   margin-right: 200px;
+
+}
+
+
+.pessoa img{
+ 
+    width: 17px;
+}
+
+.pessoa .icon{
+    margin-left: -40px;
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+    background-color: var(--paletaNum2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+}
+
+.pessoa .nome{
+    margin-left: -65px;
+    color: #888888;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.container_head .passagem .line {
+    width: 72px;
+    height: 3px;
+    background-color: var(--paletaNum2);
+    position: absolute;
+    z-index: -1;
+    margin-top: 5px;
+margin-left: -35px;
+}
+
