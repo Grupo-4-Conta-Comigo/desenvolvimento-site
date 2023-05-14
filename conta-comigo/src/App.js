@@ -18,6 +18,7 @@ import NotFound from './pages/NotFound';
 import Funcionarios from './pages/restrito/Funcionarios';
 import Pagamento from './pages/restrito/Pagamento';
 import Comanda from './pages/restrito/Comanda';
+import Cadastrar_pix from './pages/restrito/Cadastrar_pix';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Route path='/funcionarios' element={<Funcionarios />}/>
         <Route path='/pagamento' element={<Pagamento />}/>
         <Route path='/comanda' element={<Comanda />}/>
+        <Route path='/cadastrarPix' element={<Cadastrar_pix />}/>
         <Route path='*' element={<NotFound />}/>
       </Routes>
       </BrowserRouter>
