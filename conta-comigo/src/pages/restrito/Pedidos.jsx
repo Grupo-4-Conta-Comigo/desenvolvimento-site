@@ -16,6 +16,12 @@ function Inicio() {
 
     const [pedidos, setPedidos] = useState([])
 
+    const [numero, setNumero] = useState("")
+
+    const changeNumero = (event) => {
+        setNumero(event.target.value);
+    };
+
     function getPedidos() {
         api.get("/pedidos/todos/" + sessionStorage.userId)
             .then((response) => {
@@ -57,7 +63,7 @@ function Inicio() {
                         </div>
                         <div className={styles.pesquisa}>
                             <div className={styles.busca}>
-                                <input type="text" placeholder="Buscar pedido..." />
+                                <input type="number" placeholder="Buscar pedido..." onChange={changeNumero}/>
                                 <img src={lupa} alt="" />
                             </div>
                             <button onClick={
@@ -105,9 +111,11 @@ function Inicio() {
                             {
                                 pedidos ? (
                                     pedidos.map((pedido) => {
-                                        return (
-                                            <Pedidos pedido={pedido} key={pedido.id} />
-                                        )
+                                        if((pedido.mesa).toString().includes(numero)){
+                                            return (
+                                                <Pedidos pedido={pedido} key={pedido.id} />
+                                            )
+                                        }
                                     })
                                 ) : <div className={styles.msg}>Não há pedidos em andamento</div>
 

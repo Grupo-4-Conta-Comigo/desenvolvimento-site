@@ -13,10 +13,12 @@ function Cardapio() {
 
     const [itens, setItens] = useState([])
 
+    const [tipo, setTipo] = useState("comida")
+    const [ctg, setCtg] = useState("")
+
     const [cadastroAberto, setCadastroAberto] = useState(false);
 
     const [nomeIpt, setNome] = useState();
-    const [categoriaIpt, setCategoria] = useState('comida');
     const [precoIpt, setPreco] = useState();
 
     const changePreco = (event) => {
@@ -25,6 +27,10 @@ function Cardapio() {
 
     const changeNome = (event) => {
         setNome(event.target.value);
+    };
+
+    const changeCategoria = (event) => {
+        setCtg(event.target.value);
     };
 
     function cadastrarItem() {
@@ -40,7 +46,7 @@ function Cardapio() {
 
                 api.post("/produtos/criar/" + sessionStorage.userId, {
                     nome: nomeIpt,
-                    categoria: categoriaIpt,
+                    categoria: tipo,
                     preco: precoIpt
                 })
                     .then((response) => {
@@ -106,7 +112,7 @@ function Cardapio() {
                     </div>
 
                     <div className={styles.inputs}>
-                        <select name="format" id="format">
+                        <select name="tipo" id="format" onChange={texto => setTipo(texto.target.value)}>
                             <option selected disabled>Categoria</option>
                             <option value="comida">Comida</option>
                             <option value="bebida">Bebida</option>
@@ -117,6 +123,7 @@ function Cardapio() {
 
                         <input type="number" placeholder="Preço" step="0.01" min="0.01" onChange={changePreco} />
                     </div>
+
 
                     <button onClick={cadastrarItem}>Cadastrar</button>
                 </div>
@@ -138,9 +145,9 @@ function Cardapio() {
 
                     <div className={styles.filtro}>
                         <div className={itens ? styles.radioGroup : "btn_d"}>
-                            <div><input type="radio" value="Male" name="gender" color="red" /> Comida</div>
-                            <div><input type="radio" value="Male" name="gender" /> Bebida</div>
-                            <div><input type="radio" value="Male" name="gender" /> Outro</div>
+                            <div><input type="radio" value="comida" name="gender" color="red" onChange={changeCategoria} /> Comida</div>
+                            <div><input type="radio" value="bebida" name="gender" onChange={changeCategoria} /> Bebida</div>
+                            <div><input type="radio" value="outro" name="gender" onChange={changeCategoria} /> Outro</div>
                         </div>
                     </div>
 
@@ -163,9 +170,11 @@ function Cardapio() {
                                 itens ? (
                                     itens.map((item) => {
                                         // console.log("TESTANDO: " + item.nome);
-                                        return (
-                                            <Lista_itens item={item} key={item.id} />
-                                        )
+                                        if(item.categoria.includes(ctg)){
+                                            return (
+                                                <Lista_itens item={item} key={item.id} />
+                                            )
+                                        }
                                     })
                                 ) : <div className={styles.msg}>Não há itens cadastrados</div>
 
