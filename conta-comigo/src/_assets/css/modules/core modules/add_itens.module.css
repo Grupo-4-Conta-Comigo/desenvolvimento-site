@@ -234,6 +234,7 @@ table img{
     display: flex;
     justify-content: space-between;
     width: 350px;
+    margin-top: 40px;
 }
 
 .popup .header_popup .line{
@@ -248,6 +249,7 @@ table img{
     font-size: 28px;
     font-weight: bold;
 }
+
 
 .search{
     height: 46px;

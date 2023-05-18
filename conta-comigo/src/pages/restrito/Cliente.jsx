@@ -80,6 +80,10 @@ function Add_itens() {
 
                 <div className={cadastroAberto ? styles.cadastrarItem : "btn_d"}>
                 <div className={styles.popup}>
+                <div className="close" onClick={()=>{setCadastroAberto(false)}}>
+                <img src={voltar} alt="" />
+                <p>voltar</p>
+                </div>
                     <div className={styles.header_popup}>
                         <div className={styles.line}></div>
                         <div className={styles.titulo}>Adicione um item a comanda</div>

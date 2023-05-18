@@ -186,6 +186,7 @@ table tr .editarApagar{
     display: flex;
     justify-content: space-between;
     width: 350px;
+    margin-top: 40px;
 }
 
 .popup .header_popup .line{

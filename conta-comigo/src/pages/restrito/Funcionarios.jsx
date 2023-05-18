@@ -7,6 +7,8 @@ import Swal from "sweetalert2";
 import add from "../../_assets/img/icons/mais.png"
 import Lista_funcionarios from "../../components/Listas/Lista_funcionarios";
 import { useNavigate } from "react-router-dom";
+import voltar from "../../_assets/img/icons/setaVoltar.png"
+
 
 
 function Funcionarios() {
@@ -84,6 +86,10 @@ function Funcionarios() {
             <Menu />
             <div className={popup? styles.cadastrarItem : "btn_d"}>
                 <div className={styles.popup}>
+                <div className="close" onClick={()=>{setPopup(false)}}>
+                <img src={voltar} alt="" />
+                <p>voltar</p>
+                </div>
                     <div className={styles.header_popup}>
                         <div className={styles.line}></div>
                         <div className={styles.titulo}>Cadastrar novo funcionário</div>

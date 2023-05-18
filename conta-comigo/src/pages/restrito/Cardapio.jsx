@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";
 import add from "../../_assets/img/icons/mais.png"
+import voltar from "../../_assets/img/icons/setaVoltar.png"
+
 
 
 function Cardapio() {
@@ -94,6 +96,10 @@ function Cardapio() {
             <Menu />
             <div className={cadastroAberto ? styles.cadastrarItem : "btn_d"}>
                 <div className={styles.popup}>
+                <div className="close" onClick={()=>{setCadastroAberto(false)}}>
+                <img src={voltar} alt="" />
+                <p>voltar</p>
+                </div>
                     <div className={styles.header_popup}>
                         <div className={styles.line}></div>
                         <div className={styles.titulo}>Cadastrar novo item ao cardápio</div>
