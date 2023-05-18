@@ -130,14 +130,6 @@ function Add_itens() {
 
                     <div className={styles.container}>
 
-                        <div className={styles.wires}>
-                            <div className={styles.wire}></div>
-                            <div className={styles.wire}></div>
-                            <div className={styles.wire}></div>
-                            <div className={styles.wire}></div>
-                            <div className={styles.wire}></div>
-                        </div>
-
                         <div className={styles.containerHead}>
                             <div className={styles.containerHead_left}>
                                 <div className={styles.person}>

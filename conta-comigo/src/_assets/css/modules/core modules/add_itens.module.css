@@ -9,9 +9,9 @@
 .container{
     background-color: white;
     border-radius: 16px;
-    width: 800px;
+    width: 720px;
     /* padding: 70px 0px 50px 0px; */
-    padding: 0px 50px 50px 50px;
+    padding: 70px 80px 50px 80px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -57,6 +57,8 @@
 
 .containerHead .containerHead_right{
     display: flex;
+    justify-content: center;
+    align-content: center;
     cursor: pointer;
 }
 
@@ -78,7 +80,7 @@
 
 .valor{
     margin-right: 30px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .add_cliente{
@@ -91,7 +93,6 @@
     border: none;
     background-color: var(--secundary-color);
     border-radius: 15px;
-    margin-top: 5px;
     cursor: pointer;
 }
 
