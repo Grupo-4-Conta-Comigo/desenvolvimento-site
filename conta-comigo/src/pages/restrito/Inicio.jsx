@@ -3,14 +3,11 @@ import styles from "../../_assets/css/modules/core modules/inicio.module.css"
 import ListaPagamentos from "../../components/Listas/Lista_pagamentos";
 import Bot from "../../components/Bot/Bot";
 import { useNavigate } from "react-router-dom";
-import pling from "../../_assets/sound/pling.mp3"
+
 
 
 function Inicio() {
     const navigate = useNavigate();
-    const audio = new Audio()
-    audio.src = pling
-
     function irPedidos(){
         sessionStorage.pagina = "pedidos";
         // window.location.href = "http://localhost:3000/pedidos";
@@ -21,7 +18,7 @@ function Inicio() {
     return (
         <div className="fBody">
             <LateralMenu />
-            <div onClick={()=>{audio.play()}} className="botSuporte">
+            <div className="botSuporte">
             <Bot  />
             </div>
             <div className={styles.main}>

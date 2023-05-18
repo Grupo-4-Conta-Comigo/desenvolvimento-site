@@ -23,7 +23,7 @@ function Lista_itens(props) {
 
   return (
     <tr className={styles.dados}>
-      <td>{props.item.id}</td>
+      <td className={styles.idItem}>{props.item.id}</td>
       <td className={styles.espaco}>{/* espaço */}</td>
       <td>
         <input onChange={changeNome} className={editarAberto ? styles.ipt_enable : ""} type="text" defaultValue={props.item.nome} disabled={editarAberto ? false : true} /></td>
