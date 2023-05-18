@@ -15,7 +15,7 @@ function Perfil() {
     return (
         <div className="fBody">
             <Menu />
-            <div className="bot">
+            <div className="botSuporte">
             <Bot />
             </div>
             <div className={styles.main}>

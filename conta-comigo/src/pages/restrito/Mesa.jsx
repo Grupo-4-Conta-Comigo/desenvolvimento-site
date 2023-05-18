@@ -63,7 +63,7 @@ function Add_clientes(props) {
 
         return (
             <div className="fBody">
-                <div className="bot">
+                <div className="botSuporte">
                 <Bot />
                 </div>
                 <LateralMenu />
