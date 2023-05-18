@@ -11,10 +11,13 @@ import sair from "../_assets/img/icons/sair.png"
 import cardapio from "../_assets/img/icons/cardapio.png"
 import cardapioAtv from "../_assets/img/icons/cardapioAtv.png"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import close from "../_assets/img/icons/cancel.png"
 
 function Lateral_menu() {
 
     const navigate = useNavigate();
+    const [menuAberto, setMenuAberto] = useState(false)
 
     function logoff() {
         sessionStorage.clear();
@@ -43,9 +46,18 @@ function Lateral_menu() {
 
     return (
         <div className={styles.bodyF}>
+            <div className={menuAberto? styles.listaPaginas : "btn_d"}>
+                <p onClick={irInicio}>Início</p>
+                <p onClick={irPedido}>Pedidos</p>
+                <p onClick={irCardapio}>Cardápio</p>
+                <p onClick={irPerfil}>Perfil</p>
+            </div>
             <div className={styles.menu_lateral}>
                 <div className={styles.head}>
-                    <div className={styles.lines}>
+                    <div className={menuAberto? styles.fechar : "btn_d"}>
+                    <img className={menuAberto? "" : "btn_d"} onClick={()=>{setMenuAberto(false)}} src={close} alt="" />
+                    </div>
+                    <div className={menuAberto? "btn_d" : styles.lines} onClick={()=>{setMenuAberto(true)}}>
                         <div className={styles.line}></div>
                         <div className={styles.line}></div>
                         <div className={styles.line}></div>

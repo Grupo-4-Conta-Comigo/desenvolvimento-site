@@ -3,6 +3,25 @@
     height: 100vh;
 }
 
+.listaPaginas{
+    background-color: white;
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    padding-bottom: 30px;
+    animation: go-back 0.5s alternate;
+    z-index: -1;
+}
+
+.listaPaginas p{
+    color: #616060;
+    font-size: 19px;
+    margin-top: 30px;
+}
+
 
 
 .lines{
@@ -35,6 +54,11 @@
 
 .head img{
     width: 150px;
+}
+
+.fechar img{
+    height: 30px;
+    width: 30px;
 }
 
 .menus{
@@ -204,6 +228,8 @@
     border-radius: 10px;
 }
 
+
+
 @media screen and (max-width: 1150px) {
 
     .bodyF{
@@ -291,3 +317,13 @@
         margin-right: 30px;
     }
 }
+
+
+@keyframes go-back {
+    from {
+      transform: translateY(-100px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }

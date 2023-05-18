@@ -75,7 +75,7 @@ function Pagamento_singular() {
                         </div>
                         <div className={styles.buttons}>
                             <button onClick={()=>{navigate("/mesas")}} className={styles.button_one}>Voltar</button>
-                            <button className={styles.button_two}>Pagar</button>
+                            <button className={styles.button_two} onClick={()=>{navigate("/pagamento")}}>Pagar</button>
                         </div>
                     </div>
                 </div>
