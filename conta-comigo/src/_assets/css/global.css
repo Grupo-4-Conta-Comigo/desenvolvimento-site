@@ -10,8 +10,41 @@
 }
 /**/
 
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.botSuporte{
+  z-index: 1;
+  position: fixed;
+  bottom: 90px;
+  right: 90px;
+}
+
+.voltar{
+  width: 880px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.voltar p{
+  margin-left: 10px;
+}
+
 .fBody{
   display: flex;
+}
+
+@media screen and (max-width: 1150px){
+  .fBody{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .infoAtivo{

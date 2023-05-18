@@ -52,3 +52,18 @@
     font-size: 11px;
     color: #888888;
 }
+
+
+
+@media screen and (max-width: 900px) {
+    .pedido{
+        width: 265px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .pedido{
+        width: 300px;
+    }
+}

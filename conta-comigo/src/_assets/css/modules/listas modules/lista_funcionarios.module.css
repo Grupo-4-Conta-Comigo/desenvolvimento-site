@@ -3,7 +3,7 @@
     height: 75px;
     display: flex;
     background-color: white;
-    width: 330px;
+    width: 320px;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
@@ -36,12 +36,11 @@
     align-items: center;
     color: white;
     font-weight: bold;
-    border-radius: 100%;
-
 }
 
 .funcionario .nome{
     color: #888888;
+    width: 150px;
     font-size: 15px;
     font-weight: 600;
 }
@@ -60,4 +59,14 @@
 
 .funcionario .icon img{
     width: 30px;
+}
+
+.editar img{
+    width: 26px;
+    height: 26px;
+}
+
+.apagar img{
+    width: 26px;
+    height: 26px;
 }

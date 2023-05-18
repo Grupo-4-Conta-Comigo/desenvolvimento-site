@@ -45,6 +45,11 @@ function Lateral_menu() {
         <div className={styles.bodyF}>
             <div className={styles.menu_lateral}>
                 <div className={styles.head}>
+                    <div className={styles.lines}>
+                        <div className={styles.line}></div>
+                        <div className={styles.line}></div>
+                        <div className={styles.line}></div>
+                    </div>
                     <img src={logotipo} alt="" />
                     <div className={styles.sairDois} onClick={logoff}>
                     <img src={sair} alt="" />
@@ -78,7 +83,7 @@ function Lateral_menu() {
                         <div className={sessionStorage.pagina === "pedidos" ? styles.infoAtv : styles.info}>Pedidos</div>
                     </div>
 
-                    <div className={styles.menu} onClick={irCardapio}>
+                    <div className={sessionStorage.cargo == "admin"? styles.menu : "btn_d"} onClick={irCardapio}>
                         <div className={styles.line}>
                             <div className={sessionStorage.pagina === "cardapio" ? styles.verticalAtv : styles.vertical}>
 
@@ -90,7 +95,7 @@ function Lateral_menu() {
                         <div className={sessionStorage.pagina === "cardapio" ? styles.infoAtv : styles.info}>Cardápio</div>
                     </div>
 
-                    <div className={styles.menu} onClick={irPerfil}>
+                    <div className={sessionStorage.cargo == "admin"? styles.menu : "btn_d"} onClick={irPerfil}>
                         <div className={styles.line}>
                             <div className={sessionStorage.pagina === "perfil" ? styles.verticalAtv : styles.vertical}>
 

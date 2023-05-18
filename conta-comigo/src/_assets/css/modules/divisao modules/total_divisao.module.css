@@ -28,7 +28,7 @@
     width: 400px;
     padding: 70px 0px 50px 80px;
     margin-top: 50px;
-    z-index: -2;
+    z-index: 0;
     height: 340px;
 }
 

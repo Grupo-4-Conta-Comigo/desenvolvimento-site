@@ -3,12 +3,14 @@ import styles from "../../_assets/css/modules/core modules/mesas.module.css"
 import ListaPessoas from "../../components/Listas/Lista_pessoas_fechada";
 import api from "../../config/api";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 
 // function irPedidos() {
 //     window.location.href = "http://localhost:3000/pedidos";
 // }
+
 
 function Mesas() {
 
@@ -16,6 +18,8 @@ function Mesas() {
     const [pedido, setPedido] = useState([])
 
     const { state } = useLocation()
+
+    const navigate = useNavigate()
 
 
 
@@ -59,9 +63,13 @@ function Mesas() {
             <div className="fBody">
                 <LateralMenu />
                 <div className={styles.main}>
+                <div onClick={()=>{navigate("/pedidos")}} className={"voltar"}>
+                        <img src={voltar} alt="" />
+                         <p>voltar</p>
+                    </div>
                     <div className={styles.container}>
                         <div className={styles.container_head}>
-                            <p>Mesa {state}</p>
+                            <p>Mesa {pedido.mesa}</p>
                             <div className={styles.passagem}>
                             <div className={styles.line}></div>
                           
@@ -89,8 +97,8 @@ function Mesas() {
 
                         </div>
                         <div className={styles.buttons}>
-                            <button className={styles.btnSingular}>Apenas uma pessoa irá pagar</button>
-                            <button>Dividir conta em conjunto</button>
+                            <button onClick={()=>{navigate("/pagamentoSingular")}} className={styles.btnSingular}>Apenas uma pessoa irá pagar</button>
+                            <button onClick={()=>{navigate("/opcaoDivisao")}}>Dividir conta em conjunto</button>
                         </div>
                     </div>
                 </div>
@@ -99,7 +107,8 @@ function Mesas() {
     }
 
     else {
-        window.location.href = "http://localhost:3000/login";
+        sessionStorage.clear()
+        navigate("/login")
     }
 }
 

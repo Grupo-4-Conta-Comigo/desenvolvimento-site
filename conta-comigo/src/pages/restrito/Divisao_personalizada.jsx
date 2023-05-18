@@ -1,5 +1,8 @@
 import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/divisao modules/divisao_pers.module.css"
+import voltar from "../../_assets/img/icons/setaVoltar.png"
+import Card from "../../components/Card";
+
 
 
 // function irPedidos() {
@@ -14,43 +17,35 @@ function Divisao_personalizada() {
             <div className="fBody">
                 <LateralMenu />
                 <div className={styles.main}>
-                    <div className={styles.container}>
-                    <div className={styles.container_top}>
-                            <p>Divisão Personalizada</p>
+                <div className={"voltar"}>
+                        <img src={voltar} alt="" />
+                         <p>voltar</p>
+                    </div>
+                <div className={styles.container}>
+                        <div className={styles.container_head}>
+                            <p>Divisão personalizada</p>
                             <div className={styles.passagem}>
-                                <div className={styles.line}></div>
-
-
+                            <div className={styles.line}></div>
                             </div>
 
                         </div>
-                        <div className={styles.container_head}>
-                            
-                            <p>Total:</p>
-                        
-                            <div className={styles.total}>R$215,90</div>
-                          
+                        <div className={styles.container_right}>
+                            <div className={styles.valor}>Valor total: </div>
+                            <div className={styles.total}>R$150,00</div>
                         </div>
-                     
                         <div className={styles.container_main}>
-                            <div className={styles.select}>
-                                    <select name="format" id="format">
-                                        <option selected disabled>Larissa</option>
-                                        <option value="damasceno">Damasceno</option>
-                                        <option value="rafael">Rafael</option>
-                                        <option value="lucas">Lucas</option>
-                                        <option value="pinheiro">Pinehiro</option>
-                                        <option value="valentim">Valentim</option>
-                                    </select>
-                                </div>
-                    
-                                <input type="number" className="input_valor" placeholder="Digite o valor a pagar..."/>
 
-                      
+                            <div className={styles.cards}>
+                                <Card />
+                                <Card />
+                                <Card />
+                                <Card />
+                            </div>
+
                         </div>
                         <div className={styles.buttons}>
-                            <button className={styles.button_one}>Voltar</button>
-                            <button className={styles.button_two}>Próximo</button>
+                            <button className={styles.btnSingular}>Voltar</button>
+                            <button >Pagar</button>
                         </div>
                     </div>
                 </div>

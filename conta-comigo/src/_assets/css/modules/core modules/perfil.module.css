@@ -79,19 +79,19 @@
 }
 
 .card .card_main .card_header .card_titulo{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     width: 230px;
 }
 
 .card .card_main .card_dados{
     width: 230px;
-    font-size: 16px;
     margin-top: 10px;
 }
 
 .card .card_main .card_dados p{
     margin-top: 10px;
+    font-size: 16px;
 }
 
 .lineRed{
@@ -152,6 +152,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    cursor: pointer;
     
 }
 
@@ -189,7 +190,7 @@
     font-size: 16px;
     margin-left: 23px;
     margin-top: 10px;   
-
+    cursor: pointer;
    
 }
 .rightSide .listar img{
@@ -223,46 +224,4 @@
 
 .select span {
     padding: 20px;
-}
-
-.chave{
-    margin-left: 230px;
-    margin-right: 30px;
-    font-size: 16px;
-}
-
-.add_pix{
-    width: 25px;
-    height: 25px;
-    font-size: 13px;
-    font-weight: bold;
-    color: white;
-    border: none;
-    background-color: var(--secundary-color);
-    border-radius: 15px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
-.add_pix img {
-    margin-top: 3px;
-    width: 13px;
-    height: 13px;
-}
-.containerHead{
-    display: flex;
-    justify-content: space-between;
-    
-}
-.containerHead .titulo{
-    font-size: 27px;
-    font-weight: bold;
-}
-
-.containerHead .cadastrar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    cursor: pointer;
 }

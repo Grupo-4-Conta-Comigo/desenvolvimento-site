@@ -43,7 +43,9 @@ function Inicio() {
     if (sessionStorage.length > 0) {
         return (
             <div className="fBody">
+                <div className="botSuporte">
                 <Bot />
+                </div>
                 <Menu />
 
                 <div className={styles.main}>

@@ -46,13 +46,18 @@ function Login() {
             .then((response) => {
                 setErro("");
                 console.log("RESPONSE: ", response)
-                sessionStorage.setItem("userId", response.data.userId);
+                sessionStorage.setItem("cargo", response.data.cargo);
                 sessionStorage.setItem("nome_user", response.data.nome);
                 sessionStorage.setItem("email_user", response.data.email);
-                sessionStorage.setItem("cnpj_user", response.data.cnpj);
                 sessionStorage.setItem("senha_user", response.data.senha);
                 sessionStorage.setItem("token",response.data.token);
                 sessionStorage.setItem("pagina", "inicio")
+                if(sessionStorage.cargo == 'admin'){
+                    sessionStorage.setItem("userId", response.data.userId);
+                    sessionStorage.setItem("cnpj_user", response.data.cnpj);
+                }else{
+                    sessionStorage.setItem("userId", response.data.restauranteId)
+                }
                 pararLoading()
                 window.location.href = "http://localhost:3000/inicio";
 

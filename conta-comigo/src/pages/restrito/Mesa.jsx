@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
 import api from "../../config/api";
 import Bot from "../../components/Bot/Bot"
+import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 // function irPedidos() {
 //     window.location.href = "http://localhost:3000/pedidos";
@@ -62,9 +63,15 @@ function Add_clientes(props) {
 
         return (
             <div className="fBody">
+                <div className="bot">
                 <Bot />
+                </div>
                 <LateralMenu />
                 <div className={styles.main}>
+                    <div onClick={()=>{navigate("/pedidos")}} className={"voltar"}>
+                        <img src={voltar} alt="" />
+                         <p>voltar</p>
+                    </div>
                     <div className={styles.container}>
                         <div className={styles.container_head}>
                             <p>Mesa {state}</p>

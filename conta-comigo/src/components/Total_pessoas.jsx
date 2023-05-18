@@ -4,8 +4,8 @@ function Lista_pessoas(props){
     return(
             <div className={styles.pessoa}>
                 <div className={styles.icon}> <img src={person} alt="" /></div>
-                <div className={styles.nome}>Larissa</div>
-                <div className={styles.valor}> R$100,00</div>
+                <div className={styles.nome}>{props.cliente.nomeDono}</div>
+                <div className={styles.valor}>R${props.cliente.preco.toFixed(2)}</div>
               
             </div>
     );
