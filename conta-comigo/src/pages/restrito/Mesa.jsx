@@ -81,8 +81,7 @@ function Add_clientes(props) {
 
                             </div>
 
-                        </div>
-                        <div className={styles.container_right} onClick={() => {
+                            <div className={styles.container_right} onClick={() => {
                             Swal.fire({
                                 title: 'Digite o apelido do cliente',
                                 input: 'text',
@@ -109,6 +108,7 @@ function Add_clientes(props) {
                             <button className={styles.add_cliente}>
                                 <img src={add} alt="" />
                             </button>
+                        </div>
                         </div>
                         <div className={styles.container_main}>
 
