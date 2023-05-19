@@ -89,7 +89,7 @@ function Perfil() {
                         
 
                                 <div className={styles.select}>
-                                        <div>
+                                        <div className={styles.grupo}>
                                             <label for="f-option" className="l-radio">
                                                 <input type="radio" checked="checked"/>
                                                 <span>Celular</span>
