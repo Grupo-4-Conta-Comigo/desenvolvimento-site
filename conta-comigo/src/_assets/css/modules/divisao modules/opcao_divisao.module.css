@@ -148,3 +148,167 @@
     font-size: 22px;
 
 }
+
+
+
+
+@media screen and (max-width: 1150px) {
+
+    .main {
+        margin-top: 50px;
+    }
+
+    .container {
+        margin-top: 150px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+    .buttons {
+        width: 300;
+        float: right;
+        margin-top: 60px;
+    }
+
+    .buttons button {
+        width: 150px;
+        height: 46px;
+
+    }
+
+
+
+    .container {
+        width: 400px;
+        height: 480px;
+        margin-top: 120px;
+
+    }
+
+
+    .container .container_right {
+        margin-top: 30px;
+        width: 240px;
+        margin-left: 110px;
+    }
+
+    .container_right .total {
+        font-size: 20px;
+
+    }
+
+    .center {
+
+        margin-top: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .container_head {
+        font-size: 25px;
+        font-weight: bold;
+        width: 300px;
+        margin-left: 96px;
+
+    }
+
+    .container_head .desc {
+        font-size: 22px;
+        font-weight: normal;
+        margin-top: 5px;
+        z-index: auto;
+    }
+
+    .container_head .passagem .line {
+        width: 196px;
+        height: 5px;
+        background-color: var(--paletaNum1);
+        position: absolute;
+        z-index: -1;
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .buttons {
+        width: 150;
+        float: right;
+        margin-top: 0px;
+        margin-top: 30px;
+    }
+
+    .buttons button {
+        width: 153px;
+        height: 46px;
+
+
+    }
+
+    .container {
+        width: 284px;
+        height: 440px;
+        margin-top: 90px;
+
+    }
+
+    .container .container_right {
+        margin-top: 30px;
+        width: 240px;
+        margin-left: 55px;
+    }
+
+    .container_right .total {
+        font-size: 18px;
+
+    }
+
+
+    .container_head {
+        font-size: 25px;
+        font-weight: bold;
+        width: 250px;
+        margin-left: 40px;
+        /* background-color: brown; */
+
+    }
+
+    .container_head .desc {
+        font-size: 22px;
+        font-weight: normal;
+        margin-top: 5px;
+        z-index: auto;
+    }
+
+    .container_head .passagem .line {
+        width: 196px;
+        height: 5px;
+        background-color: var(--paletaNum1);
+        position: absolute;
+        z-index: -1;
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+
+    .center {
+        /* background-color: blue; */
+        width: 300px;
+        margin-top: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+
+}
