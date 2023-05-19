@@ -216,3 +216,129 @@ select{
     overflow: auto;
     margin-top:50px;
 }
+
+
+@media screen and (max-width: 1150px) {
+
+    .main {
+        margin-top: 50px;
+    }
+
+    .container {
+        margin-top: 150px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+
+
+
+    .container {
+        width: 430px;
+        height: 560px;
+        margin-top: 120px;
+
+    }
+
+  
+    .funcionarios{
+
+       margin-left: 40px;
+        margin-top:50px;
+    }
+    .containerHead{
+        font-size: 22px;
+        font-weight: bold;
+        width: 350px;
+        margin-left: 90px;  
+        
+    }
+    .containerHead .titulo{
+        height: 50px;
+        font-size: 19px;
+        width: 400;
+
+    }
+    
+
+    
+    .containerHead .titulo .line{
+        width: 230px;
+        height: 5px;
+        background-color: var(--paletaNum1);
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+    .containerHead .cadastrar{
+        margin-top: 70px;
+        margin-right: 400px;
+        margin-left: -227px;
+        font-size: 16px;
+        cursor: pointer;
+        
+    }
+    .valor{
+        font-size: 16px;
+        width: 180px;
+        
+    }
+ 
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+    .container {
+        width: 320px;
+        height: 560px;
+        margin-top: 120px;
+
+    }
+
+  
+    .funcionarios{
+
+       margin-left: 15px;
+        margin-top:50px;
+    }
+    .containerHead{
+        font-size: 22px;
+        font-weight: bold;
+        width: 350px;
+        margin-left: 50px;  
+        
+    }
+    .containerHead .titulo{
+        height: 50px;
+        font-size: 19px;
+        width: 400;
+
+    }
+    
+
+    
+    .containerHead .titulo .line{
+        width: 230px;
+        height: 5px;
+        background-color: var(--paletaNum1);
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+    .containerHead .cadastrar{
+        margin-top: 70px;
+        margin-right: 400px;
+        margin-left: -227px;
+        font-size: 16px;
+        cursor: pointer;
+        
+    }
+    .valor{
+        font-size: 16px;
+        width: 180px;
+        
+    }
+
+}
+
