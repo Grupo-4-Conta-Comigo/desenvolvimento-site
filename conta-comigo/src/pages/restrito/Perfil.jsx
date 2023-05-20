@@ -16,7 +16,7 @@ function Perfil() {
         <div className="fBody">
             <Menu />
             <div className="botSuporte">
-            <Bot />
+                <Bot />
             </div>
             <div className={styles.main}>
                 <div className={styles.container}>
@@ -25,8 +25,8 @@ function Perfil() {
                             <div className={styles.lineRed}></div>
                             <div className={styles.card_main}>
                                 <div className={styles.card_header}>
-                                <div className={styles.card_titulo}>Detalhes restaurante</div>
-                                <div className={styles.card_editar}></div>
+                                    <div className={styles.card_titulo}>Detalhes restaurante</div>
+                                    <div className={styles.card_editar}></div>
                                 </div>
                                 <div className={styles.card_dados}>
                                     <p><b>Nome: </b>Fogão e lenha</p>
@@ -34,15 +34,15 @@ function Perfil() {
                                 </div>
                             </div>
                             <div className={styles.btn}>
-                            <img src={editar} alt="" />
+                                <img src={editar} alt="" />
                             </div>
                         </div>
                         <div className={styles.card}>
                             <div className={styles.lineYellow}></div>
                             <div className={styles.card_main}>
                                 <div className={styles.card_header}>
-                                <div className={styles.card_titulo}>Credenciais</div>
-                                <div className={styles.card_editar}></div>
+                                    <div className={styles.card_titulo}>Credenciais</div>
+                                    <div className={styles.card_editar}></div>
                                 </div>
                                 <div className={styles.card_dados}>
                                     <p><b>Email: </b>fogaolenha@gmail.com</p>
@@ -50,12 +50,12 @@ function Perfil() {
                                 </div>
                             </div>
                             <div className={styles.btn}>
-                            <img src={editar} alt="" />
+                                <img src={editar} alt="" />
                             </div>
                         </div>
                     </div>
                     <div className={styles.mid}>
-                    <div className={styles.card}>
+                        <div className={styles.card}>
                             <div className={styles.lineBlack}></div>
                             <div className={styles.cadeado}>
                                 <img src={cadeado} alt="" />
@@ -64,54 +64,65 @@ function Perfil() {
                                 <div className={styles.titulo}>Níveis de Acesso</div>
                                 <p>Você - Administrador</p>
                             </div>
-                            <div onClick={()=>{navigate("/funcionarios")}} className={styles.rightSide}>
+                            <div onClick={() => { navigate("/funcionarios") }} className={styles.rightSide}>
                                 <div className={styles.add_func}>
-                                <div className={styles.valor}>Adicionar novo</div>
-                            <button className={styles.add_cliente}>
-                                <img src={add} alt="" />
-                            </button>
+                                    <div className={styles.valor}>Adicionar novo</div>
+                                    <button className={styles.add_cliente}>
+                                        <img src={add} alt="" />
+                                    </button>
                                 </div>
-                           
-                            <div className={styles.listar}>Ver lista de acesso
-                            <img src={seta} alt="" />
-                            </div>
-                            
+
+                                <div className={styles.listar}>Ver lista de acesso
+                                    <img src={seta} alt="" />
+                                </div>
+
                             </div>
                         </div>
                     </div>
                     <div className={styles.bot}>
-                    <div className={styles.lineGreen}></div>
-                <div className={styles.card}>
-                              
-                                <div className={styles.card_titulo}>Dados Transacionais</div>
-                                <p>Chaves PIX cadastradas </p>
-                               
-                        
+                        <div className={styles.lineGreen}></div>
+                        <div className={styles.card}>
+                            <div className={styles.containerHead}>
 
-                                <div className={styles.select}>
-                                        <div className={styles.grupo}>
-                                            <label for="f-option" className="l-radio">
-                                                <input type="radio" checked="checked"/>
-                                                <span>Celular</span>
-                                            </label>
-                                            <label for="s-option" className="l-radio">
-                                                <input type="radio"/>
-                                                <span>CPF/CNPJ</span>
-                                            </label>
-                                            <label for="t-option" className="l-radio">
-                                                <input type="radio"  />
-                                                <span>E-mail</span>
-                                            </label>
-                                            <label for="t-option" className="l-radio">
-                                                <input type="radio"  />
-                                                <span>Chave aleatória</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    {/* <div className={styles.valor}>Cadastrar chave</div> */}
-                                {/* <button className={styles.add_cliente}> */}
-                                    {/* <img src={add} alt="" /> */}
-                                {/* </button> */}
+
+                                <div className={styles.card_titulo}>Dados Transacionais</div>
+                                <div className={styles.cadastrar}>
+
+                                    <div className={styles.chave}>Adicionar chave PIX</div>
+                                    <button className={styles.add_pix}>
+                                        <img src={add} alt="" />
+                                    </button>
+                                </div>
+
+                            </div>
+                            <p>Chaves PIX cadastradas </p>
+
+
+
+                            <div className={styles.select}>
+                                <div className={styles.grupo}>
+                                    <label for="f-option" className="l-radio">
+                                        <input type="radio" checked="checked" />
+                                        <span>Celular</span>
+                                    </label>
+                                    <label for="s-option" className="l-radio">
+                                        <input type="radio" />
+                                        <span>CPF/CNPJ</span>
+                                    </label>
+                                    <label for="t-option" className="l-radio">
+                                        <input type="radio" />
+                                        <span>E-mail</span>
+                                    </label>
+                                    <label for="t-option" className="l-radio">
+                                        <input type="radio" />
+                                        <span>Chave aleatória</span>
+                                    </label>
+                                </div>
+                            </div>
+                            {/* <div className={styles.valor}>Cadastrar chave</div> */}
+                            {/* <button className={styles.add_cliente}> */}
+                            {/* <img src={add} alt="" /> */}
+                            {/* </button> */}
                         </div>
                     </div>
                 </div>
