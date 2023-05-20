@@ -9,7 +9,7 @@ function Cadastrar_pix() {
 
         // var infoAtv = 'infoAtv';
         return (
-            <div className="fBody">
+            <div className="fBody">          
                 <LateralMenu />
                 <div className={styles.main}>
                     <div className={styles.container}>
@@ -47,9 +47,7 @@ function Cadastrar_pix() {
                             <button className={styles.button_one}>Voltar</button>
                             <button className={styles.button_two}>Próximo</button>
                         </div>
-                        <div className={styles.container_right}>
-                        <img src={cll_qr} alt="" />
-                    </div>
+                      
                     </div>
 
                    
