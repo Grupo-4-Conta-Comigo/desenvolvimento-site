@@ -1,11 +1,11 @@
-.main{
+.main {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.msg{
+.msg {
     font-size: 20px;
     color: #888888;
     width: 100%;
@@ -14,14 +14,14 @@
     align-items: center;
 }
 
-.main .main_head{
+.main .main_head {
     font-size: 16px;
     color: #888888;
     font-weight: bold;
     width: 100%;
 }
 
-.main_head p{
+.main_head p {
     font-weight: normal;
     font-size: 12px;
     margin-top: 10px;
@@ -29,7 +29,7 @@
 }
 
 
-.container{
+.container {
     background-color: white;
     border-radius: 16px;
     width: 700px;
@@ -39,22 +39,22 @@
     z-index: 0;
 }
 
-.container_head{
+.container_head {
     font-size: 25px;
     font-weight: bold;
     width: 300px;
-    
-    
+
+
 }
 
-.container_head .desc{
+.container_head .desc {
     font-size: 22px;
     font-weight: normal;
     margin-top: 5px;
-    z-index:auto;
+    z-index: auto;
 }
 
-.container_head .passagem .line{
+.container_head .passagem .line {
     width: 255px;
     height: 5px;
     background-color: var(--paletaNum1);
@@ -64,7 +64,7 @@
     margin-left: 2px;
 }
 
-.container .container_right{
+.container .container_right {
     height: 30px;
     display: flex;
     align-items: center;
@@ -72,18 +72,18 @@
     margin-left: 400px;
 }
 
-.container_right .total{
+.container_right .total {
     color: var(--paletaNum1);
     font-weight: bold;
     font-size: 30px;
     margin-left: 20px;
 }
 
-.container_right .valor{
+.container_right .valor {
     color: var(--secundary-color);
 }
 
-.cards{
+.cards {
     width: 630px;
     height: 290px;
     display: flex;
@@ -94,23 +94,23 @@
     padding: 0px 20px 20px 0px;
 }
 
-.card{
+/* .card{
     width: 280px;
     height: 220px;
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
     margin-top: 20px;
     margin-left: 10px;
-}
+} */
 
-.card_header{
+.card_header {
     width: 100%;
     height: 50px;
     display: flex;
     justify-content: space-between;
 }
 
-.card_header .icon{
+.card_header .icon {
     width: 70px;
     height: 100%;
     display: flex;
@@ -118,27 +118,27 @@
     align-items: center;
 }
 
-.card_header .nome, .preco{
+.card_header .nome,
+.preco {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.card_header .nome{
+.card_header .nome {
     width: 100px;
     font-size: 16px;
     font-weight: bold;
 }
 
-.card_header .preco{
+.card_header .preco {
     width: 100px;
     font-size: 20px;
 }
 
-.card_main{
-}
+.card_main {}
 
-.card_titulo{
+.card_titulo {
     width: 100%;
     height: 50px;
     display: flex;
@@ -146,17 +146,17 @@
     align-items: center;
 }
 
-.card_titulo p{
+.card_titulo p {
     font-weight: bold;
     margin-right: 10px;
 }
 
-.card_titulo .btn img{
+.card_titulo .btn img {
     width: 10px;
     height: 10px;
 }
 
-.card_titulo .btn{
+.card_titulo .btn {
     width: 20px;
     height: 20px;
     background-color: var(--secundary-color);
@@ -167,39 +167,185 @@
     margin-top: 3px;
 }
 
-.card_pessoas{
+.card_pessoas {
     width: 100%;
     max-height: 100px;
     overflow: auto;
 }
 
-.card_pessoa{
+.card_pessoa {
     display: flex;
     margin-top: 10px;
 }
 
-.card_pessoa .nomePessoa{
+.card_pessoa .nomePessoa {
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card_pessoa .precoPessoa{
+.card_pessoa .precoPessoa {
     color: var(--paletaNum1);
     font-size: 16px;
     width: 30%;
     font-weight: bold;
 }
 
-.card_pessoa .editar{
+.card_pessoa .editar {
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card_pessoa .editar img{
+.card_pessoa .editar img {
     width: 19px;
     height: 19px;
 }
+
+.buttons {
+    width: 400px;
+    float: right;
+    margin-top: -30px;
+}
+
+
+.buttons button {
+    width: 150px;
+    height: 45px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.buttons .btnSingular {
+    width: 150px;
+    height:45px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--secundary-color);
+    border: none;
+    background-color: white;
+    border: 2px solid var(--secundary-color);
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.container_main {
+    /* background-color: #8B53FF;
+height: 300px;
+display: flex;
+justify-content: center;
+margin-left: 50px; */
+}
+
+
+.wrapper {
+
+    margin-top: 30px;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    margin-left: -50px;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+
+.wrapper i:active {
+    transform: translateY(-50%) scale(0.85);
+}
+
+.wrapper i:first-child {
+    left: -22px;
+}
+
+.wrapper i:last-child {
+    right: -22px;
+}
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 2) - 9px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: 280px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+}
+
+
+
+
+

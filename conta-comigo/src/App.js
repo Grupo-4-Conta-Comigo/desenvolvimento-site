@@ -23,6 +23,7 @@ import Comanda_Finalizada from './pages/restrito/Comanda_finalizada';
 import PagamentoCliente from './pages/restrito/Pagamento_cliente';
 
 
+
 function App() {
   return (
     <div>
@@ -48,6 +49,8 @@ function App() {
         <Route path='/cadastrarPix' element={<Cadastrar_pix />}/>
         <Route path='/comandaFinalizada' element={<Comanda_Finalizada/>}/>
         <Route path='/pagamentoCliente' element={<PagamentoCliente/>}/>
+        
+
 
         <Route path='*' element={<NotFound />}/>
       </Routes>

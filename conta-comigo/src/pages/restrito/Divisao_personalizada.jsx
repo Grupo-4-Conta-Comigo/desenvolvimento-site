@@ -9,12 +9,18 @@ import Card from "../../components/Card";
 //     window.location.href = "http://localhost:3000/pedidos";
 // }
 
+
 function Divisao_personalizada() {
+    
+    
     if (sessionStorage.length > 0) {
 
         // var infoAtv = 'infoAtv';
         return (
+       
             <div className="fBody">
+            <link rel="stylesheet"href="../../_assets/css/modules/divisao_pers.module.css"></link>
+                <script src="../../_assets/js/carrossel.js"></script>
                 <LateralMenu />
                 <div className={styles.main}>
                 <div className={"voltar"}>
@@ -35,14 +41,39 @@ function Divisao_personalizada() {
                         </div>
                         <div className={styles.container_main}>
 
-                            <div className={styles.cards}>
+                        <div class="wrapper" className={styles.wrapper}>
+                        <i id="left" className="fa-solid fa-angle-left"></i>
+                        <ul   className={styles.carousel}>
+                                <li  className={styles.card}>
+                              <Card/>
+                                </li>
+                                <li  className={styles.card}>
+                              <Card/>
+                                   
+                                </li>
+                                <li className={styles.card}>
+                              <Card/>
+                                    
+                                </li>
+                                <li  className={styles.card}>
+                              <Card/>
+                                
+                                </li>
+                              
+                            </ul>
+                            <i id="right" className="fa-solid fa-angle-right"></i>
+                        </div>	
+
+
+                            {/* <div className={styles.cards}>
                                 <Card />
                                 <Card />
                                 <Card />
                                 <Card />
-                            </div>
+                            </div> */}
 
                         </div>
+
                         <div className={styles.buttons}>
                             <button className={styles.btnSingular}>Voltar</button>
                             <button >Pagar</button>
