@@ -87,7 +87,11 @@ function Opcao_divisao() {
                                     title: 'Oops...',
                                     text: 'Selecione uma opção'
                                         })
-                                }else{
+                                }
+                                else if(opcao == "personalizada"){
+                                    navigate("/divisaoPersonalizada")
+                                }
+                                else{
                                     navigate("/totalDivisao", {state : opcao})
                                 }
                             }

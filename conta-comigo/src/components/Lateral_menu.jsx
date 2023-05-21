@@ -13,6 +13,7 @@ import cardapioAtv from "../_assets/img/icons/cardapioAtv.png"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import close from "../_assets/img/icons/cancel.png"
+import Suporte from "../pages/restrito/Suporte"
 
 function Lateral_menu() {
 
@@ -132,7 +133,7 @@ function Lateral_menu() {
                         </div>
                         <div className={styles.sup_main}>Clique no botão abaixo</div>
                         <div className={styles.btn}>
-                            <button>Suporte</button>
+                            <button onClick={()=>{navigate("/suporte")}}>Suporte</button>
                         </div>
                     </div>
                 </div>

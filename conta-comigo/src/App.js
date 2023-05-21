@@ -21,6 +21,7 @@ import Comanda from './pages/restrito/Comanda';
 import Cadastrar_pix from './pages/restrito/Cadastrar_pix';
 import Comanda_Finalizada from './pages/restrito/Comanda_finalizada';
 import PagamentoCliente from './pages/restrito/Pagamento_cliente';
+import Suporte from './pages/restrito/Suporte';
 
 
 
@@ -49,6 +50,7 @@ function App() {
         <Route path='/cadastrarPix' element={<Cadastrar_pix />}/>
         <Route path='/comandaFinalizada' element={<Comanda_Finalizada/>}/>
         <Route path='/pagamentoClientes' element={<PagamentoCliente/>}/>
+        <Route path='/suporte' element={<Suporte/>}/>
         
 
 

@@ -1,0 +1,35 @@
+.main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    background-color: white;
+    border-radius: 16px;
+    width: 600px;
+    padding: 70px 0px 50px 80px;
+    margin-top: 20px;
+    height: 400px;
+    z-index: 0;
+}
+
+.container_head{
+    font-size: 25px;
+    font-weight: bold;
+    width: 400px;
+}
+
+.line{
+    width: 320px;
+    height: 4px;
+    background-color: var(--paletaNum1);
+}
+
+iframe{
+    width: 600px;
+    height: 350px;
+    margin-left: -30px;
+    margin-top: 20px;
+}

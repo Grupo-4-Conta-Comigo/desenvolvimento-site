@@ -22,8 +22,37 @@
 
 .botHeader{
   width: 100%;
-  height: 50px;
+  height: 60px;
   background-color: var(--secundary-color);
+  display: flex;
+}
+
+.botHeader .voltar{
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botHeader .iconBot{
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botHeader .nome{
+  width: 150px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mensagemBot .headerMsgBot{
+  height: 40px;
+  background-color: red;
 }
 
 
