@@ -48,7 +48,7 @@ function App() {
         <Route path='/comanda' element={<Comanda />}/>
         <Route path='/cadastrarPix' element={<Cadastrar_pix />}/>
         <Route path='/comandaFinalizada' element={<Comanda_Finalizada/>}/>
-        <Route path='/pagamentoCliente' element={<PagamentoCliente/>}/>
+        <Route path='/pagamentoClientes' element={<PagamentoCliente/>}/>
         
 
 

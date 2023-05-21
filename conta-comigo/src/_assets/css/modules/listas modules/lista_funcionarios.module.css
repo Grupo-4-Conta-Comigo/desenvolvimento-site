@@ -71,6 +71,78 @@
     height: 26px;
 }
 
+.cadastrarItem{
+    position: absolute;
+    background-color: rgb(0, 0, 0,60%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -411px;
+    margin-top: -187px;
+}
+
+.cadastrarItem .popup{
+    background-color: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.popup .header_popup{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-top: 40px;
+}
+
+.popup .header_popup .line{
+    width: 9px;
+    height: 69px;
+    background-color: var(--paletaNum2);
+    border-radius: 20px;
+}
+
+.popup .header_popup .titulo{
+    width: 310px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup .inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup .inputs input{
+    width: 300px;
+    height: 45px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 0px 20px;
+}
+
+.popup button{
+    width: 340px;
+    height: 45px;
+    background-color: var(--secundary-color);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 600px) {
     .editar img{
         margin-top: 10px;

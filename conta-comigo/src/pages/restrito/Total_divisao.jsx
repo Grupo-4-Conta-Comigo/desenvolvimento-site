@@ -3,7 +3,7 @@ import styles from "../../_assets/css/modules/divisao modules/total_divisao.modu
 import TotalPessoas from "../../components/Total_pessoas";
 import { useState, useEffect } from "react";
 import api from "../../config/api";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // function irPedidos() {
 //     window.location.href = "http://localhost:3000/pedidos";
@@ -13,6 +13,7 @@ function Total_divisao() {
 
     const [clientes, setClientes] = useState([])
     const [pedido, setPedido] = useState([])
+    const { state } = useLocation();
     const navigate = useNavigate()
 
     function getClientes() {
@@ -40,12 +41,20 @@ function Total_divisao() {
                     console.error(err)
                 }
             })
+
+
     }
 
     useEffect(() => {
         getClientes()
         getPedido()
     }, []);
+
+
+    function dividirIgualmente(preco){
+        const valor = preco / clientes.length;
+        console.log(valor)
+    }
 
     if (sessionStorage.length > 0) {
 
@@ -67,7 +76,7 @@ function Total_divisao() {
                                 {
                                         clientes.map((cliente) => {
                                             return (
-                                                <TotalPessoas cliente={cliente} key={cliente.id} />
+                                                <TotalPessoas cliente={cliente} key={cliente.id} valor={pedido.preco} opcao={state} qtd={clientes.length} />
                                             )
                                         })
                                 }
@@ -76,7 +85,9 @@ function Total_divisao() {
                         </div>
                         <div className={styles.buttons}>
                             <button onClick={()=>{navigate("/opcaoDivisao")}} className={styles.button_one}>Voltar</button>
-                            <button className={styles.button_two}>Pagar</button>
+                            <button className={styles.button_two} onClick={
+                                ()=>{navigate("/pagamentoClientes", {state : {valor: pedido.preco / clientes.length, opcao: state}})}
+                            }>Próximo</button>
                         </div>
                     </div>
                 </div>

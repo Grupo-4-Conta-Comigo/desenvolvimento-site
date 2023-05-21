@@ -3,12 +3,54 @@ import styles from "../../_assets/css/modules/divisao modules/pagamento_cliente.
 import TotalPessoas from "../../components/Total_pessoas";
 import { useState, useEffect } from "react";
 import api from "../../config/api";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Lista_pagamento_cliente from "../../components/Listas/Lista_pagamento_cliente";
+import Swal from "sweetalert2";
 
 
 
 function Pagamento_cliente() {
+
+    const [clientes, setClientes] = useState([])
+    const [pedido, setPedido] = useState([])
+    const { state } = useLocation();
+    const navigate = useNavigate()
+
+    console.log("aaa "+ state)
+    function getClientes() {
+        api.get("comandas/todas/" + sessionStorage.pedidoAtual)
+            .then((response) => {
+                setClientes(response.data)
+            }).catch((err) => {
+                if (err.response.status === 404) {
+                    console.log("Este endpoint não existe")
+                } else {
+                    console.error(err)
+                }
+            })
+
+    }
+
+    function getPedido() {
+        api.get("pedidos/" + sessionStorage.pedidoAtual)
+            .then((response) => {
+                setPedido(response.data)
+            }).catch((err) => {
+                if (err.response.status === 404) {
+                    console.log("Este endpoint não existe")
+                } else {
+                    console.error(err)
+                }
+            })
+
+
+    }
+
+    useEffect(() => {
+        getClientes()
+        getPedido()
+    }, []);
+
     if (sessionStorage.length > 0) {
         return (
             <div className="fBody">
@@ -28,14 +70,26 @@ function Pagamento_cliente() {
                         <div className={styles.container_main}>
 
 
-                        <Lista_pagamento_cliente/>
-                        <Lista_pagamento_cliente/>
-                        <Lista_pagamento_cliente/>
+                        {
+                                        clientes.map((cliente) => {
+                                            return (
+                                                <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente"? state.valor : cliente.preco} />
+                                            )
+                                        })
+                                }
 
                         </div>
                         <div className={styles.buttons}>
                             <button  className={styles.button_one}>Voltar</button>
-                            <button className={styles.button_two}>Próximo</button>
+                            <button className={styles.button_two} onClick={
+                                ()=>{
+                                    Swal.fire({
+                                        icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Ainda temos clientes que não pagaram'
+                                        })
+                                }
+                            }>Concluído</button>
                         </div>
                     </div>
                 </div>

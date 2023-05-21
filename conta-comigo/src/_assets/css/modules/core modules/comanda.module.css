@@ -1,712 +1,110 @@
 .main {
     width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    float: right;
 }
 
-.main .main_head {
-    font-size: 16px;
-    color: #888888;
-    font-weight: bold;
-    width: 100%;
-}
-
-.main_head p {
-    font-weight: normal;
-    font-size: 12px;
-    margin-top: 10px;
-    color: #888888;
-}
-
-
-.container {
-
-    background-color: white;
-    border-radius: 0px 0px 16px 16px;
+.container{
     width: 400px;
-    padding: 70px 0px 50px 80px;
-    margin-top: -5px;
-    z-index: -2;
-    height: 340px;
+    padding: 0px 60px;
+    height: 500px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
 }
 
-.container_head {
-    margin-left: 40px;
-    font-size: 18px;
-    font-weight: bold;
-    width: 250px;
+.header{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin-top: -20px;
-
-
+    padding: 30px 0px;
 }
 
-.container_main {
-    /* background-color: blueviolet; */
-    width: 320px;
-    height: 230px;
+.comanda{
+    width: 100%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    padding: 10px;
-
+    justify-content: center;
+    align-items: center;
 }
 
-.main .abas {
-    /* background-color: blue; */
-    margin-top: 70px;
-    width: 480px;
-    height: 50px;
+.header img{
+    width: 160px;
+}
+
+.comandaHeader{
+    width: 100%;
+    border-top: 2px solid var(--secundary-color);
+    border-bottom: 2px solid var(--secundary-color);
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
-
-
+    padding: 20px 0px;
 }
 
-.main .abas .aba_comida {
-    background-color: white;
-    width: 160px;
-    height: 45px;
-    border-radius: 16px 16px 0px 0px;
+.comandaHeader .titulo{
+    width: 50%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
 }
 
-.aba_comida img {
-    margin-top: 5px;
-    width: 23px;
-    background-color: var(--paletaNum2);
-    border-radius: 5px;
-    padding: 2px;
+.comandaHeader .titulo b{
+    font-size: 25px;
 }
 
-.aba_comida p {
-    /* margin-right: 10px; */
-    font-size: 16px;
-    font-weight: bold;
+.comandaHeader .titulo .line{
+    width: 140px;
+    height: 4px;
+    background-color: var(--secundary-color);
 }
 
-.main .abas .aba_bebida {
-    background-color: white;
-    width: 150px;
-    height: 45px;
-    border-radius: 16px 16px 0px 0px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-}
-
-.aba_bebida img {
-    margin-top: 5px;
-    width: 25px;
-}
-
-.aba_bebida p {
-
-    font-size: 16px;
-    color: #888888;
-}
-
-.main .abas .aba_outro {
-    background-color: white;
-    width: 160px;
-    height: 45px;
-    border-radius: 16px 16px 0px 0px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-}
-
-.aba_outro p {
-
-    font-size: 16px;
-    color: #888888;
-}
-
-.itens {
-    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
-    width: 300px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 15px;
-}
-
-.itens .qtd {
-    font-size: 16px;
-    color: #888888;
-}
-
-.itens .item {
-    font-size: 16px;
-    color: #888888;
-}
-
-.itens .valor {
-    font-size: 16px;
-    color: var(--paletaNum1);
-}
-
-.container_head p {
-    margin-top: 5px;
-    padding: 1px;
-}
-
-.pessoa {
-    height: 35px;
-    display: flex;
-    width: 200px;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 20px;
-    margin-right: 200px;
-
-
-}
-
-
-.pessoa img {
-
-    width: 17px;
-}
-
-.pessoa .icon {
-    margin-left: -40px;
-    width: 33px;
-    height: 33px;
+.comandaHeader .titulo p{
     font-size: 20px;
-    background-color: var(--paletaNum2);
+}
+
+.comandaHeader .preco{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    font-size: 25px;
+}
+
+.listaItens{
+    font-size: 18px;
+    margin-top: 20px;
+    height: 150px;
+    overflow: auto;
+}
+
+.listaItens .item{
+    display: flex;
+    margin-top: 20px;
+}
+
+.pontos{
+    margin-left: 10px;
+}
+
+.valor{
+    margin-left: 10px;
+}
+
+.teste button{
+    background-color: var(--secundary-color);
+    padding: 15px 25px;
     color: white;
-    font-weight: bold;
-    border-radius: 100%;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 40px;
 }
 
-.pessoa .nome {
-    margin-left: -65px;
-    color: #888888;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.container_head .passagem .line {
-    width: 72px;
-    height: 3px;
-    background-color: var(--paletaNum2);
-    position: absolute;
-    z-index: -1;
-    margin-top: 5px;
-    margin-left: -35px;
-}
-
-
-@media screen and (max-width: 1150px) {
-
-    .main {
-        margin-top: 50px;
-    }
-
-    .container {
-        margin-top: 150px;
-    }
-
-    
-    .container {
-
-        border-radius: 0px 0px 16px 16px;
-        width: 330;
-        padding: 70px 0px 50px 80px;
-        margin-top: -10px;
-        z-index: -2;
-        height: 320px;
-    }
-
-    .container_head {
-
-        margin-left: 40px;
-        font-size: 18px;
-        font-weight: bold;
-        width: 250px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: -20px;
-
-
-    }
-
-    .container_main {
-
-        margin-left: 6px;
-        width: 300px;
-        height: 230px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 10px;
-
-    }
-
-    .main .abas {
-
-        margin-top: 200;
-        width: 480px;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-
-
-    }
-
-    .main .abas .aba_comida {
-        background-color: white;
-        width: 160px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_comida img {
-        margin-top: 5px;
-        width: 23px;
-        background-color: var(--paletaNum2);
-        border-radius: 5px;
-        padding: 2px;
-    }
-
-    .aba_comida p {
-        /* margin-right: 10px; */
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .main .abas .aba_bebida {
-        background-color: white;
-        width: 150px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_bebida img {
-        margin-top: 5px;
-        width: 25px;
-    }
-
-    .aba_bebida p {
-
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .main .abas .aba_outro {
-        background-color: white;
-        width: 160px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_outro p {
-
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens {
-        box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
-        width: 300px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-top: 15px;
-    }
-
-    .itens .qtd {
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens .item {
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens .valor {
-        font-size: 16px;
-        color: var(--paletaNum1);
-    }
-
-    .container_head p {
-        margin-top: 5px;
-        padding: 1px;
-    }
-
-    
-.pessoa {
-    height: 35px;
+.btn{
+    width: 100%;
     display: flex;
-    width: 200px;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 20px;
-    margin-right: 180px;
-    /* background-color: blue; */
-
+    justify-content: center;
 }
-
-}
-
-@media screen and (max-width: 900px) {
-
-
-
-
-    .container {
-
-        border-radius: 0px 0px 16px 16px;
-        width: 330;
-        padding: 70px 0px 50px 80px;
-        margin-top: -10px;
-        z-index: -2;
-        height: 320px;
-    }
-
-    .container_head {
-
-        margin-left: 40px;
-        font-size: 18px;
-        font-weight: bold;
-        width: 250px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: -20px;
-
-
-    }
-
-    .container_main {
-
-        margin-left: 6px;
-        width: 300px;
-        height: 230px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 10px;
-
-    }
-
-    .main .abas {
-
-        margin-top: 200;
-        width: 480px;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-
-
-    }
-
-    .main .abas .aba_comida {
-        background-color: white;
-        width: 160px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_comida img {
-        margin-top: 5px;
-        width: 23px;
-        background-color: var(--paletaNum2);
-        border-radius: 5px;
-        padding: 2px;
-    }
-
-    .aba_comida p {
-        /* margin-right: 10px; */
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .main .abas .aba_bebida {
-        background-color: white;
-        width: 150px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_bebida img {
-        margin-top: 5px;
-        width: 25px;
-    }
-
-    .aba_bebida p {
-
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .main .abas .aba_outro {
-        background-color: white;
-        width: 160px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_outro p {
-
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens {
-        box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
-        width: 300px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-top: 15px;
-    }
-
-    .itens .qtd {
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens .item {
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens .valor {
-        font-size: 16px;
-        color: var(--paletaNum1);
-    }
-
-    .container_head p {
-        margin-top: 5px;
-        padding: 1px;
-    }
-
-    
-.pessoa {
-    height: 35px;
-    display: flex;
-    width: 200px;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 20px;
-    margin-right: 180px;
-    /* background-color: blue; */
-
-}
-
-
-
-}
-
-@media screen and (max-width: 600px) {
-
-
-
-    .container {
-
-        border-radius: 0px 0px 16px 16px;
-        width: 230;
-        padding: 60px 0px 40px 70px;
-        margin-top: -10px;
-        z-index: -2;
-        height: 300px;
-    }
-
-    .container_head {
-
-        margin-left: 40px;
-        font-size: 18px;
-        font-weight: bold;
-        width: 250px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-top: -20px;
-
-
-    }
-
-    .container_main {
-
-        margin-left: 6px;
-        width: 300px;
-        height: 230px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 10px;
-
-    }
-
-    .main .abas {
-
-        margin-top: 200;
-        width: 470px;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-
-
-    }
-
-    .main .abas .aba_comida {
-        background-color: white;
-        width: 160px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_comida img {
-        margin-top: 5px;
-        width: 23px;
-        background-color: var(--paletaNum2);
-        border-radius: 5px;
-        padding: 2px;
-    }
-
-    .aba_comida p {
-        /* margin-right: 10px; */
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .main .abas .aba_bebida {
-        background-color: white;
-        width: 150px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_bebida img {
-        margin-top: 5px;
-        width: 25px;
-    }
-
-    .aba_bebida p {
-
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .main .abas .aba_outro {
-        background-color: white;
-        width: 160px;
-        height: 45px;
-        border-radius: 16px 16px 0px 0px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    .aba_outro p {
-
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens {
-        box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
-        width: 300px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        margin-top: 15px;
-    }
-
-    .itens .qtd {
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens .item {
-        font-size: 16px;
-        color: #888888;
-    }
-
-    .itens .valor {
-        font-size: 16px;
-        color: var(--paletaNum1);
-    }
-
-    .container_head p {
-        margin-top: 5px;
-        padding: 1px;
-    }
-
-    
-.pessoa {
-    height: 35px;
-    display: flex;
-    width: 200px;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 20px;
-    margin-right: 180px;
-    /* background-color: blue; */
-
-}
-
-
-
-} 

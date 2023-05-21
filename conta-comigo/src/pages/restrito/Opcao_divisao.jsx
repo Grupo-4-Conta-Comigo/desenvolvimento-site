@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import api from "../../config/api";
 import { useNavigate } from "react-router-dom";
 import voltar from "../../_assets/img/icons/setaVoltar.png"
+import Swal from "sweetalert2";
 
 
 
@@ -13,6 +14,7 @@ import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 function Opcao_divisao() {
     const [pedido, setPedido] = useState([])
+    const [opcao, setOpcao] = useState()
     const navigate = useNavigate()
 
     function getPedido() {
@@ -61,15 +63,15 @@ function Opcao_divisao() {
                                 <div className={styles.select}>
                                     <div>
                                         <label for="f-option" className="l-radio">
-                                            <input type="radio" checked="checked"/>
+                                            <input name="teste" value="igualmente" type="radio" onChange={texto => setOpcao(texto.target.value)} />
                                             <span>Igualmente</span>
                                         </label>
                                         <label for="s-option" className="l-radio">
-                                            <input type="radio"/>
+                                            <input name="teste" value="consumo" type="radio" onChange={texto => setOpcao(texto.target.value)}/>
                                             <span>Por consumo</span>
                                         </label>
                                         <label for="t-option" className="l-radio">
-                                            <input type="radio"  />
+                                            <input name="teste" value="personalizada" type="radio" onChange={texto => setOpcao(texto.target.value)}/>
                                             <span>Personalizada</span>
                                         </label>
                                     </div>
@@ -78,7 +80,18 @@ function Opcao_divisao() {
                         </div>
                         <div className={styles.buttons}>
                             <button onClick={()=>{navigate("/mesas")}} className={styles.button_one}>Voltar</button>
-                            <button onClick={()=>{navigate("/totalDivisao")}} className={styles.button_two}>Próximo</button>
+                            <button onClick={()=>{               
+                                if(opcao == undefined){
+                                    Swal.fire({
+                                        icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Selecione uma opção'
+                                        })
+                                }else{
+                                    navigate("/totalDivisao", {state : opcao})
+                                }
+                            }
+                        } className={styles.button_two}>Próximo</button>
                         </div>
                     </div>
                 </div>

@@ -24,6 +24,7 @@ function Funcionarios() {
     function getGarcons() {
         api.get("/restaurantes/garcons/todos/" + sessionStorage.userId)
             .then((response) => {
+                console.log(response.data)
                 setGarcom(response.data)
             }).catch((err) => {
                 if (err.response.status === 404) {
@@ -68,10 +69,11 @@ function Funcionarios() {
                     .then((response) => {
                         console.log("RESPONSE: ", response)
                         Swal.fire(
-                            'Item cadastrado!',
+                            'Garçom cadastrado!',
                             '',
                             'success'
                         ).then((value) => {
+                            console.log(response)
                             getGarcons();
                             setPopup(false)
                         })
