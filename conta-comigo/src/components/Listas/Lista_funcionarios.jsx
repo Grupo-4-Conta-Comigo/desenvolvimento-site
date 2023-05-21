@@ -38,8 +38,7 @@ function atualizar() {
               nome: nomeIpt,
               email: emailIpt,
               cargo: "garcom",
-              senha: senhaIpt,
-              restauranteId: sessionStorage.userId
+              senha: senhaIpt
           })
               .then((response) => {
                   console.log("RESPONSE: ", response)
@@ -76,7 +75,7 @@ function atualizar() {
             <input type="text" defaultValue={props.garcom.nome} placeholder="Nome:" onChange={changeNome}/>
 
             <input type="email" defaultValue={props.garcom.email} placeholder="E-mail" onChange={changeEmail}/>
-            <input type="text" defaultValue={props.garcom.senha} placeholder="Senha" onChange={changeSenha}/>
+            <input type="password" defaultValue="12345678" placeholder="Senha" onChange={changeSenha}/>
           </div>
 
           <button onClick={atualizar}>Atualizar</button>
