@@ -6,11 +6,14 @@ import cadeado from "../../_assets/img/icons/cadeado.png"
 import add from "../../_assets/img/icons/mais.png"
 import seta from "../../_assets/img/icons/setaDireita.png"
 import { useNavigate } from "react-router-dom";
+import voltar from "../../_assets/img/icons/setaVoltar.png"
+import { useEffect, useState } from "react";
+
 
 function Perfil() {
     const navigate = useNavigate()
 
-
+    const [popup, setPopup] = useState(false)
 
     return (
         <div className="fBody">
@@ -26,16 +29,39 @@ function Perfil() {
                             <div className={styles.card_main}>
                                 <div className={styles.card_header}>
                                     <div className={styles.card_titulo}>Detalhes restaurante</div>
-                                    <div className={styles.card_editar}></div>
+                                    {/* <div className={styles.card_editar}>
+                                    <div className={styles.btn}>
+                                <img src={editar} alt="" />
+                            </div>
+                                    <div className={styles.popup}>
+                <div className="close">
+                <img src={voltar} alt="" />
+                <p>voltar</p>
+                </div>
+                    <div className={styles.header_popup}>
+                        <div className={styles.line}></div>
+                        <div className={styles.titulo}>Editar detalhes do restaurante</div>
+                    </div>
+
+                    <div className={styles.inputs}>
+                       
+                        <input type="text" placeholder="Nome:"/>
+
+                        <input type="email" placeholder="CNPJ:" />
+                  
+                    </div>
+
+                    <button>Editar</button>
+                </div>
+            </div>
+                                     */}
                                 </div>
                                 <div className={styles.card_dados}>
                                     <p><b>Nome: </b>Fogão e lenha</p>
                                     <p><b>CNPJ: </b>49.261.002/0001-23</p>
                                 </div>
                             </div>
-                            <div className={styles.btn}>
-                                <img src={editar} alt="" />
-                            </div>
+
                         </div>
                         <div className={styles.card}>
                             <div className={styles.lineYellow}></div>
@@ -50,7 +76,39 @@ function Perfil() {
                                 </div>
                             </div>
                             <div className={styles.btn}>
-                                <img src={editar} alt="" />
+
+                                {/* <div className={styles.card_editar}>
+                                    <div className={styles.btn}>
+                                        <img src={editar} alt="" />
+                                    </div>
+                                    <div className={styles.popup}>
+                                        <div className="close">
+                                            <img src={voltar} alt="" />
+                                            <p>voltar</p>
+                                        </div>
+                                        <div className={styles.header_popup}>
+                                            <div className={styles.line}></div>
+                                            <div className={styles.titulo}>Editar Credenciais </div>
+                                        </div>
+
+                                        <div className={styles.inputs}>
+
+                                            <input type="text" placeholder="E-mail:" />
+
+                                            <input type="email" placeholder="Senha atual:" />
+
+                                            <input type="email" placeholder="Nova senha:" />
+
+                                            <input type="email" placeholder="Confirmar senha:" />
+
+
+
+                                        </div>
+
+                                        <button>Editar</button>
+                                    </div>
+                                </div> */}
+
                             </div>
                         </div>
                     </div>
