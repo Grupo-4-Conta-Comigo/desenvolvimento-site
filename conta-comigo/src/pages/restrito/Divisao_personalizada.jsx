@@ -105,36 +105,7 @@ function Divisao_personalizada() {
                                             item ? (
                                                 item.map((item) => {
                                                     return (
-                                                        <div className={styles.cardzin}>
-                                                            <div className={styles.card_header}>
-                                                                <div className={styles.icon}>
-                                                                    <img src={food} alt="" />
-                                                                </div>
-                                                                <div className={styles.nome}>{item.produto.nome}</div>
-                                                                <div className={styles.preco}>R${item.produto.preco.toFixed(2)}</div>
-                                                            </div>
-                                                            <div className={styles.card_main}>
-                                                                <div className={styles.card_titulo}>
-                                                                    <p>Pagantes</p>
-                                                                    {/* <select name="" id="">
-                                                                        <option value="">-- pagantes --</option>
-                                                                        {clientes.map((cliente) => {
-                                                                            return (
-                                                                                <ListaPessoasOption cliente={cliente} key={cliente.id} />
-                                                                            )
-                                                                        })}
-                                                                    </select> */}
-                                                                    <div className={styles.btn}>
-                                                                        <img src={mais} alt="" />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div className={styles.card_pessoas}>
-                                                                <ListaCardPessoas nome={item.nomeDono} preco={item.produto.preco}/>
-                                                            </div>
-
-                                                        </div>
+                                                        <Card item={item}/>
                                                     )
                                                 })) : ""
                                         }
