@@ -55,7 +55,7 @@ function Divisao_personalizada() {
       if (itemId === item.id) {
         item.pagantes.push({
           nome: nomePagante,
-          valor: valor,
+          valorAPagar: valor,
         });
       }
     }
@@ -90,6 +90,7 @@ function Divisao_personalizada() {
       Swal.fire("Valores inválidos!", "", "warning");
       return;
     }
+    console.log("aqui");
     api
       .post("calculos/calculo-personalizado", corpoCalculo)
       .then((response) => console.log(response))

@@ -19,7 +19,7 @@ function Card(props) {
   function onPrecoChange(cliente, valor) {
     setPagantes(new Map(pagantes.set(cliente, valor)));
     setIsValido(isTotalValido());
-    props.onValorChange(item.id, cliente, valor, isValido);
+    props.onValorChange(item.id, cliente, valor, isTotalValido());
   }
 
   function isTotalValido() {
