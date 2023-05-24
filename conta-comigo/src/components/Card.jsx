@@ -3,17 +3,30 @@ import styles from "../_assets/css/modules/divisao modules/divisao_pers.module.c
 import food from "../_assets/img/icons/hamburguer.png";
 import mais from "../_assets/img/icons/mais.png";
 import ListaCardPessoas from "./Listas/Lista_Card_Pessoas";
-import Swal from "sweetalert2";
 import api from "../config/api";
 import ListaPessoasOption from "./Listas/Lista_Pessoas_Option";
 
 function Card(props) {
   const [clientes, setClientes] = useState([]);
+  const [isValido, setIsValido] = useState(true);
   const item = props.item;
+  const valorTotal = item.produto.preco.toFixed(2);
   const [pagantes, setPagantes] = useState(
     new Map([[item.nomeDono, item.produto.preco]])
   );
   const [clienteAtual, setClienteAtual] = useState("");
+
+  function onPrecoChange(cliente, valor) {
+    setPagantes(new Map(pagantes.set(cliente, valor)));
+    setIsValido(isTotalValido());
+    props.onValorChange(item.id, cliente, valor, isValido);
+  }
+
+  function isTotalValido() {
+    let valorNosItens = Number(0);
+    pagantes.forEach((value, key, map) => (valorNosItens += Number(value)));
+    return (valorNosItens * 100).toFixed(0) === (valorTotal * 100).toFixed(0);
+  }
 
   function getClientes() {
     api
@@ -30,12 +43,13 @@ function Card(props) {
       });
   }
 
-  function addCliente(cliente, preco) {
+  function addCliente(cliente, valor) {
     if (pagantes.has(cliente) || cliente == "") {
       return;
     }
-    setPagantes(new Map(pagantes.set(cliente, preco)));
+    setPagantes(new Map(pagantes.set(cliente, valor)));
     console.log(pagantes);
+    props.onAddPagante(item.id, cliente, valor);
   }
 
   useEffect(() => {
@@ -52,15 +66,15 @@ function Card(props) {
           <div className={styles.nome}>{item.produto.nome}</div>
           <div className={styles.preco}>R${item.produto.preco.toFixed(2)}</div>
         </div>
+        <span>Válido: {isValido ? "Sim" : "Não"}</span>
         <div className={styles.card_main}>
           <div className={styles.card_titulo}>
-            {/* <p>Pagantes</p> */}
             <select
               name=""
               id=""
               onChange={(texto) => setClienteAtual(texto.target.value)}
             >
-              <option value="">-- pagantes --</option>
+              <option value="">-- Pagantes --</option>
               {clientes.map((cliente) => {
                 return (
                   <ListaPessoasOption cliente={cliente} key={cliente.id} />
@@ -70,7 +84,7 @@ function Card(props) {
             <div
               className={styles.btn}
               onClick={() => {
-                  addCliente(clienteAtual, 0);
+                addCliente(clienteAtual, 0);
               }}
             >
               <img src={mais} alt="" />
@@ -79,9 +93,17 @@ function Card(props) {
         </div>
 
         <div className={styles.card_pessoas}>
-          {Array.from(pagantes).map(([nomePagante, valorAPagar], i) => (
-            <ListaCardPessoas key={i} nome={nomePagante} preco={valorAPagar} />
-          ))}
+          {Array.from(pagantes).map(([nomePagante, valorAPagar], i) => {
+            addCliente(nomePagante, valorAPagar);
+            return (
+              <ListaCardPessoas
+                key={i}
+                nome={nomePagante}
+                preco={valorAPagar}
+                onChange={onPrecoChange}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
