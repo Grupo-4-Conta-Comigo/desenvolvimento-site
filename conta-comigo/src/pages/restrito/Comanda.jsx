@@ -5,6 +5,8 @@ import api from "../../config/api";
 import { useState, useEffect } from "react";
 import logotipo from "../../_assets/img/logo-logotipo/logotipo.png"
 import Comanda_PDF from "../../components/Comanda_PDF";
+import voltar from "../../_assets/img/icons/setaVoltar.png"
+
 
 function Comanda() {
 
@@ -36,7 +38,12 @@ function Comanda() {
         return (
             <div className="fBody">
                 <LateralMenu />
+                
                 <div className={styles.main}>
+                <div onClick={()=>{window.history.back()}} className={"voltar"}>
+                        <img src={voltar} alt="" />
+                         <p>voltar</p>
+                    </div>
                     <div className={styles.container}>
                         <div className={styles.header}>
                             <img src={logotipo} alt="" />

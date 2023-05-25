@@ -127,7 +127,7 @@ function Add_itens() {
 
                 <div className={styles.main}>
 
-                <div onClick={()=>{navigate("/pedidos")}} className={"voltar"}>
+                <div onClick={()=>{window.history.back()}} className={"voltar"}>
                         <img src={voltar} alt="" />
                          <p>voltar</p>
                     </div>

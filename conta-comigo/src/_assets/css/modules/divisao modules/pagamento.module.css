@@ -89,7 +89,7 @@
 }
 
 .line .lineVisible{
-    width: 100px;
+    width: 220px;
     height: 4px;
     background-color: var(--paletaNum1);
     border-radius: 10px;

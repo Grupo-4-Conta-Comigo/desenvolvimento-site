@@ -3,6 +3,7 @@ import styles from "../../_assets/css/modules/divisao modules/total_divisao.modu
 import TotalPessoas from "../../components/Total_pessoas";
 import { useState, useEffect } from "react";
 import api from "../../config/api";
+import voltar from "../../_assets/img/icons/setaVoltar.png";
 import { useLocation, useNavigate } from "react-router-dom";
 
 // function irPedidos() {
@@ -17,16 +18,20 @@ function Total_divisao() {
     const navigate = useNavigate()
 
     function getClientes() {
+       if(state.personaliz){
+        setClientes(state.resposta);
+       }else{
         api.get("comandas/todas/" + sessionStorage.pedidoAtual)
-            .then((response) => {
-                setClientes(response.data)
-            }).catch((err) => {
-                if (err.response.status === 404) {
-                    console.log("Este endpoint não existe")
-                } else {
-                    console.error(err)
-                }
-            })
+        .then((response) => {
+            setClientes(response.data)
+        }).catch((err) => {
+            if (err.response.status === 404) {
+                console.log("Este endpoint não existe")
+            } else {
+                console.error(err)
+            }
+        })
+       }
 
     }
 
@@ -63,6 +68,10 @@ function Total_divisao() {
             <div className="fBody">
                 <LateralMenu />
                 <div className={styles.main}>
+                <div className={"voltar"} onClick={()=>{window.history.back()}}>
+            <img src={voltar} alt="" />
+            <p>voltar</p>
+          </div>
                     <div className={styles.container}>
                         <div className={styles.container_head}>
                             <p>Total:</p>
@@ -76,7 +85,7 @@ function Total_divisao() {
                                 {
                                         clientes.map((cliente) => {
                                             return (
-                                                <TotalPessoas cliente={cliente} key={cliente.id} valor={pedido.preco} opcao={state} qtd={clientes.length} />
+                                                <TotalPessoas cliente={cliente} key={cliente.id} valor={pedido.preco} opcao={state} qtd={clientes.length} personalizada = {state}/>
                                             )
                                         })
                                 }
@@ -84,9 +93,12 @@ function Total_divisao() {
 
                         </div>
                         <div className={styles.buttons}>
-                            <button onClick={()=>{navigate("/opcaoDivisao")}} className={styles.button_one}>Voltar</button>
+                            <button onClick={()=>{window.history.back()}} className={styles.button_one}>Voltar</button>
                             <button className={styles.button_two} onClick={
-                                ()=>{navigate("/pagamentoClientes", {state : {valor: pedido.preco / clientes.length, opcao: state}})}
+                                ()=>{
+                                    // state.personaliz ? navigate("/pagamentoClientes", {state : {valor: }})
+                                    navigate("/pagamentoClientes", {state : {valor: pedido.preco / clientes.length, opcao: state, personaliz: state.personaliz, resposta: state.resposta}})
+                                }
                             }>Próximo</button>
                         </div>
                     </div>

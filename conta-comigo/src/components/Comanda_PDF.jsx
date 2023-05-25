@@ -66,7 +66,7 @@ function Comanda_PDF(props) {
         {/* <button>Baixar PDF</button> */}
 
         <div className={styles.btn}>
-        <Pdf targetRef={ref} filename="Conversor.pdf" options={options} >
+        <Pdf targetRef={ref} filename="Comanda.pdf" options={options} >
                 {({ toPdf }) =>
                     <button
                         onClick={toPdf}>

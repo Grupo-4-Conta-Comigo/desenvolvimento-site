@@ -9,11 +9,11 @@ function Lista_pagamento_cliente(props){
     return(
             <div className={styles.pessoa} onClick={
                 ()=>{
-                    navigate("/pagamento", {state: {nome : props.cliente.nomeDono, valor : props.preco}})
+                    navigate("/pagamento", {state: {nome : props.personaliz? props.cliente.nome : props.cliente.nomeDono, valor : props.preco}})
                 }
             }>
                 <div className={styles.icon}> <img src={person} alt="" /></div>
-                <div className={styles.nome}>{props.cliente.nomeDono}</div>
+                <div className={styles.nome}>{props.personaliz? props.cliente.nome : props.cliente.nomeDono}</div>
                 <div className={styles.valor}> Pagar</div>
                 <img src={seta} alt="" />
             </div>

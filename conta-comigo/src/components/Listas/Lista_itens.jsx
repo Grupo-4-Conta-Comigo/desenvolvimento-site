@@ -37,17 +37,19 @@ function Lista_itens(props) {
       <td className={styles.editarApagar}>
         {editarAberto ? <img src={ok} alt="" onClick={
           ()=>{
-            api.put("/produtos/editar/" + props.item.id, {
-              nome: nomeIpt,
-              categoria: categoriaIpt,
-              preco: precoIpt
-            })
-              .then((response) => {
-                console.log("RESPONSE: ", response)
-                setEditarAberto(false);
-              }).catch((err) => {
-                console.log(err.response.data.errors[0].defaultMessage)
-              })
+            // api.put("/produtos/editar/" + props.item.id, {
+            //   nome: nomeIpt,
+            //   categoria: categoriaIpt,
+            //   preco: precoIpt
+            // })
+            //   .then((response) => {
+            //     console.log("RESPONSE: ", response)
+            //     setEditarAberto(false);
+            //   }).catch((err) => {
+            //     console.log(err.response.data.errors[0].defaultMessage)
+            //   })
+
+            console.log(nomeIpt,categoriaIpt,precoIpt)
           }
         } /> :
           <img src={editar} alt="" onClick={() => { setEditarAberto(true) }} />}

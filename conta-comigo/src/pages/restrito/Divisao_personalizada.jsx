@@ -98,7 +98,7 @@ function Divisao_personalizada() {
     api
       .post("calculos/calculo-personalizado", corpoCalculo)
       .then((response) => {
-        navigate("/totalDivisao", { state: response.data })
+        navigate("/totalDivisao", { state: {resposta : response.data, personaliz : true} })
       })
       .catch((err) => {
         if (err.response.status === 404) {
@@ -125,7 +125,7 @@ function Divisao_personalizada() {
         <script src="../../_assets/js/carrossel.js"></script>
         <LateralMenu />
         <div className={styles.main}>
-          <div className={"voltar"}>
+          <div className={"voltar"} onClick={()=>{window.history.back()}}>
             <img src={voltar} alt="" />
             <p>voltar</p>
           </div>
@@ -169,7 +169,7 @@ function Divisao_personalizada() {
             </div>
 
             <div className={styles.buttons}>
-              <button className={styles.btnSingular}>Voltar</button>
+              <button className={styles.btnSingular} onClick={()=>{window.history.back()}}>Voltar</button>
               <button onClick={calc}>Pagar</button>
             </div>
           </div>

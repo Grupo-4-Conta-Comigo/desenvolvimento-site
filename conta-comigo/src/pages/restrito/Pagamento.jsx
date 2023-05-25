@@ -26,7 +26,7 @@ function Pagamento() {
                             <div className={styles.valor}>R${Number(state.valor).toFixed(2)}</div>
                         </div>
                         <div className={styles.areaPix}>
-                            <div className={styles.titulo}>Pagamento</div>
+                            <div className={styles.titulo}>Aguardando pagamento...</div>
                             <div className={styles.line}>
                                 <div className={styles.lineVisible}></div>
                             </div>
@@ -45,7 +45,7 @@ function Pagamento() {
                             </div>
 
                             <div className={styles.aponte}>
-                                Aponte a câmera
+                               Pagamento concluído
                             </div>
 
                    {/* <span class="loader"></span>  */}

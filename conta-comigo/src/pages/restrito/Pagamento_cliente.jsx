@@ -6,6 +6,8 @@ import api from "../../config/api";
 import { useLocation, useNavigate } from "react-router-dom";
 import Lista_pagamento_cliente from "../../components/Listas/Lista_pagamento_cliente";
 import Swal from "sweetalert2";
+import voltar from "../../_assets/img/icons/setaVoltar.png";
+
 
 
 
@@ -16,19 +18,22 @@ function Pagamento_cliente() {
     const { state } = useLocation();
     const navigate = useNavigate()
 
-    console.log("aaa "+ state)
+    console.log("aaa " + state)
     function getClientes() {
-        api.get("comandas/todas/" + sessionStorage.pedidoAtual)
-            .then((response) => {
-                setClientes(response.data)
-            }).catch((err) => {
-                if (err.response.status === 404) {
-                    console.log("Este endpoint não existe")
-                } else {
-                    console.error(err)
-                }
-            })
-
+        if (state.personaliz) {
+            setClientes(state.resposta);
+        } else {
+            api.get("comandas/todas/" + sessionStorage.pedidoAtual)
+                .then((response) => {
+                    setClientes(response.data)
+                }).catch((err) => {
+                    if (err.response.status === 404) {
+                        console.log("Este endpoint não existe")
+                    } else {
+                        console.error(err)
+                    }
+                })
+        }
     }
 
     function getPedido() {
@@ -56,6 +61,10 @@ function Pagamento_cliente() {
             <div className="fBody">
                 <LateralMenu />
                 <div className={styles.main}>
+                <div className={"voltar"} onClick={()=>{window.history.back()}}>
+            <img src={voltar} alt="" />
+            <p>voltar</p>
+          </div>
                     <div className={styles.container}>
                         <div className={styles.container_head}>
                             <p>Pagamento</p>
@@ -64,30 +73,30 @@ function Pagamento_cliente() {
 
 
                             </div>
-                          
+
                         </div>
-                     
+
                         <div className={styles.container_main}>
 
 
-                        {
-                                        clientes.map((cliente) => {
-                                            return (
-                                                <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente"? state.valor : cliente.preco} />
-                                            )
-                                        })
-                                }
+                            {
+                                clientes.map((cliente) => {
+                                    return (
+                                        <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} />
+                                    )
+                                })
+                            }
 
                         </div>
                         <div className={styles.buttons}>
-                            <button  className={styles.button_one}>Voltar</button>
+                            <button className={styles.button_one} onClick={()=>{window.history.back()}}>Voltar</button>
                             <button className={styles.button_two} onClick={
-                                ()=>{
+                                () => {
                                     Swal.fire({
                                         icon: 'error',
-                                    title: 'Oops...',
-                                    text: 'Ainda temos clientes que não pagaram'
-                                        })
+                                        title: 'Oops...',
+                                        text: 'Ainda temos clientes que não pagaram'
+                                    })
                                 }
                             }>Concluído</button>
                         </div>

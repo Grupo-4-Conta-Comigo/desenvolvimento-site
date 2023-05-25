@@ -21,6 +21,15 @@ function Lista_pessoas(props){
               
             </div>
     );
+    }else{
+        return(
+            <div className={styles.pessoa}>
+                <div className={styles.icon}> <img src={person} alt="" /></div>
+                <div className={styles.nome}>{props.cliente.nome}</div>
+                <div className={styles.valor}>R${props.cliente.valorAPagar.toFixed(2)}</div>
+              
+            </div>
+    );
     }
 }
 
