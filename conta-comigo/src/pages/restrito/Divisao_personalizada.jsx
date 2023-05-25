@@ -140,7 +140,7 @@ function Divisao_personalizada() {
               <div className={styles.valor}>Valor total: </div>
               <div className={styles.total}>
                 R$
-                {getValotTotal(itens)}
+                {getValotTotal(itens).toFixed(2)}
               </div>
             </div>
             <div className={styles.container_main}>

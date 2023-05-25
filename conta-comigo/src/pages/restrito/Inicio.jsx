@@ -3,16 +3,37 @@ import styles from "../../_assets/css/modules/core modules/inicio.module.css"
 import ListaPagamentos from "../../components/Listas/Lista_pagamentos";
 import Bot from "../../components/Bot/Bot";
 import { useNavigate } from "react-router-dom";
+import api from "../../config/api";
+import { useState, useEffect} from "react";
 
 
 
 function Inicio() {
     const navigate = useNavigate();
+    const [qtdPedidos, setQtdPedidos] = useState();
     function irPedidos(){
         sessionStorage.pagina = "pedidos";
         // window.location.href = "http://localhost:3000/pedidos";
         navigate("/pedidos");
     }
+
+    function contarPedidos(){
+        api.get("/pedidos/count/" + sessionStorage.userId)
+        .then((response) => {
+            console.log("qtd: "+ response.data)
+            setQtdPedidos(response.data)
+        }).catch((err) => {
+            if (err.response.status === 404) {
+                console.log("Este endpoint não existe")
+            } else {
+                console.error(err)
+            }
+        })
+    }
+
+    useEffect(() => {
+        contarPedidos()
+      }, []);
 
     if(sessionStorage.length > 0){
     return (
@@ -27,7 +48,7 @@ function Inicio() {
                     <div className={styles.container_head}>
                         <p>Olá, {sessionStorage.nome_user}</p>
                         <div className={styles.passagem}>
-                        <p className={styles.desc}>Temos {sessionStorage.qtdPedidos? sessionStorage.qtdPedidos : 0} pedidos em andamento</p>
+                        <p className={styles.desc}>Temos {qtdPedidos} pedidos em andamento</p>
                         <div className={styles.line}></div>
                         </div>
                         <button onClick={irPedidos}>Gerenciar pedidos</button>
