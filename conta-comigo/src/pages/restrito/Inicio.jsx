@@ -18,9 +18,9 @@ function Inicio() {
     return (
         <div className="fBody">
             <LateralMenu />
-            <div className="botSuporte">
+            {/* <div className="botSuporte">
             <Bot  />
-            </div>
+            </div> */}
             <div className={styles.main}>
 
                 <div className={styles.container}>

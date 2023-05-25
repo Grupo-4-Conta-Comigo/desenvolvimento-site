@@ -63,9 +63,9 @@ function Add_clientes(props) {
 
         return (
             <div className="fBody">
-                <div className="botSuporte">
+                {/* <div className="botSuporte">
                 <Bot />
-                </div>
+                </div> */}
                 <LateralMenu />
                 <div className={styles.main}>
                     <div onClick={()=>{navigate("/pedidos")}} className={"voltar"}>

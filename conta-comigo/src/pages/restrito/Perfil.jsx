@@ -18,9 +18,9 @@ function Perfil() {
     return (
         <div className="fBody">
             <Menu />
-            <div className="botSuporte">
+            {/* <div className="botSuporte">
                 <Bot />
-            </div>
+            </div> */}
             <div className={styles.main}>
                 <div className={styles.container}>
                     <div className={styles.up}>
