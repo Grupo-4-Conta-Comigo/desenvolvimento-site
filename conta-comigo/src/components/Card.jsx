@@ -64,13 +64,14 @@ function Card(props) {
             <img src={food} alt="" />
           </div>
           <div className={styles.nome}>{item.produto.nome}</div>
-          <div className={styles.preco}>R${item.produto.preco.toFixed(2)}</div>
+          <div className={isValido ? styles.preco : styles.precoErro}>R${item.produto.preco.toFixed(2)}</div>
         </div>
-        <span>Válido: {isValido ? "Sim" : "Não"}</span>
+        {/* <span>Válido: {isValido ? "Sim" : "Não"}</span> */}
         <div className={styles.card_main}>
           <div className={styles.card_titulo}>
             <select
               name=""
+              className={styles.select}
               id=""
               onChange={(texto) => setClienteAtual(texto.target.value)}
             >
