@@ -9,10 +9,14 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import { useEffect, useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Divisao_personalizada() {
   const [itens, setItens] = useState([]);
   const [corpoCalculo, setCorpoCalculo] = useState({});
+  const [total, setTotal] = useState();
+
+  const navigate = useNavigate();
 
   function getValotTotal(itens) {
     return itens
@@ -93,7 +97,9 @@ function Divisao_personalizada() {
     console.log("aqui");
     api
       .post("calculos/calculo-personalizado", corpoCalculo)
-      .then((response) => console.log(response))
+      .then((response) => {
+        navigate("/totalDivisao", { state: response.data })
+      })
       .catch((err) => {
         if (err.response.status === 404) {
           console.log("Este endpoint não existe");
@@ -101,6 +107,8 @@ function Divisao_personalizada() {
           console.error(err);
         }
       });
+
+
   }
 
   useEffect(() => {
@@ -145,15 +153,15 @@ function Divisao_personalizada() {
                   >
                     {itens
                       ? itens.map((item, i) => {
-                          return (
-                            <Card
-                              key={i}
-                              item={item}
-                              onAddPagante={onAddPagante}
-                              onValorChange={onValorChange}
-                            />
-                          );
-                        })
+                        return (
+                          <Card
+                            key={i}
+                            item={item}
+                            onAddPagante={onAddPagante}
+                            onValorChange={onValorChange}
+                          />
+                        );
+                      })
                       : ""}
                   </ReactCardCarousel>
                 </div>
