@@ -77,12 +77,10 @@ function Login() {
                     </div>
                     <p className={styles.login}>Login</p>
 
-                    <form action="">
                         <input type="text" placeholder="Email" onChange={changeUsuario} />
                         <input type="password" placeholder="Senha" onChange={changeSenha} />
                         <p className={styles.ativo}>{erro}</p>
                         <button onClick={logar}>Entrar</button>
-                    </form>
 
                     <span class={carregando ? "loader" : ""}></span>
                     <p className={carregando ? "disable" : styles.fpsw}>Esqueceu a senha?</p>

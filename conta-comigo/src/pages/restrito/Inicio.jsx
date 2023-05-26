@@ -13,7 +13,6 @@ function Inicio() {
     const [qtdPedidos, setQtdPedidos] = useState();
     function irPedidos(){
         sessionStorage.pagina = "pedidos";
-        // window.location.href = "http://localhost:3000/pedidos";
         navigate("/pedidos");
     }
 

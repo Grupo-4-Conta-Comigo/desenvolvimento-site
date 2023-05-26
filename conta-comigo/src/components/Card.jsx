@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "../_assets/css/modules/divisao modules/divisao_pers.module.css";
 import food from "../_assets/img/icons/hamburguer.png";
+import drink from "../_assets/img/icons/wine.png";
 import mais from "../_assets/img/icons/mais.png";
 import ListaCardPessoas from "./Listas/Lista_Card_Pessoas";
 import api from "../config/api";
@@ -60,8 +61,10 @@ function Card(props) {
     <div>
       <div className={styles.cardzin}>
         <div className={styles.card_header}>
-          <div className={styles.icon}>
-            <img src={food} alt="" />
+          <div className={styles.icon} onClick={()=>{
+            console.log(item.produto.categoria)
+          }}>
+            <img src={item.produto.categoria == "comida" ? food : drink} alt="" />
           </div>
           <div className={styles.nome}>{item.produto.nome}</div>
           <div className={isValido ? styles.preco : styles.precoErro}>R${item.produto.preco.toFixed(2)}</div>
