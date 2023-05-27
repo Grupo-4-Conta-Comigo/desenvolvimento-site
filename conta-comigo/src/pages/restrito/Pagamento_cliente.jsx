@@ -19,7 +19,6 @@ function Pagamento_cliente() {
     const navigate = useNavigate()
     const [pagamentoConcluido, setPagamentoConcluido] = useState(true)
 
-    console.log("mesa" + state.mesa)
 
     function getClientes() {
         if (state.personaliz) {
@@ -83,9 +82,9 @@ function Pagamento_cliente() {
 
                             {
                                 clientes.map((cliente) => {
-                                    if(cliente.status == "ativo"){
-                                        setPagamentoConcluido(false)
-                                    }
+                                    // if(cliente.status === "ativo"){
+                                    //     setPagamentoConcluido(false)
+                                    // }
                                     return (
                                         <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} />
                                     )
