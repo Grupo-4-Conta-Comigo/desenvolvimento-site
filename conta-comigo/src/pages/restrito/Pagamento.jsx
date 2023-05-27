@@ -13,6 +13,7 @@ function Pagamento(props) {
   const [carregando, setCarregando] = useState(false)
   const navigate = useNavigate()
 
+  console.log(state.singular)
 
   function carregar() {
     setCarregando(true);
@@ -122,12 +123,37 @@ function Pagamento(props) {
                     })
                       .then((response) => {
                         console.log("RESPONSE: ", response)
+
                         // getPedidos();
 
                       }).catch((err) => {
                         console.log(err.response.data.errors[0].defaultMessage)
                       })
-                    window.history.back()
+                    if(state.singular){
+                      api.put("/pedidos/editar/"+ sessionStorage.pedidoAtual, {
+                        status : "finalizado", //AQUI TEM QUE MUDAR
+                        mesa : state.mesa
+                    })
+                        .then((response) => {
+                            console.log("RESPONSE: ", response)
+                            Swal.fire(
+                                'Mesa finalizada!',
+                                '',
+                                'success'
+                            ).then(()=>{
+                                navigate("/pedidos")
+                            })
+                            
+                            // getPedidos();
+                            
+                        }).catch((err) => {
+                            console.log(err.response.data.errors[0].defaultMessage)
+
+
+                        })
+                    }else{
+                      window.history.back()
+                    }
                   }
                 })
 

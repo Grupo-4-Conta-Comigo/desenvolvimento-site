@@ -135,7 +135,7 @@ function Inicio() {
                             {
                                 pedidos ? (
                                     pedidos.map((pedido) => {
-                                        if((pedido.mesa).toString().includes(numero) && pedido.status == "ativo"){
+                                        if((pedido.mesa).toString().includes(numero) && (pedido.status == "ativo" || pedido.status == "fechado")){
                                             return (
                                                 <Pedidos pedido={pedido} key={pedido.id} />
                                             )

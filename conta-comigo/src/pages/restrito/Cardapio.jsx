@@ -57,6 +57,8 @@ function Cardapio() {
                             'success'
                         ).then((value) => {
                             getItens();
+                            setNome("")
+                            setPreco("")
                             setCadastroAberto(false)
                         })
                     }).catch((err) => {
@@ -119,9 +121,9 @@ function Cardapio() {
                             <option value="outro">Outro</option>
                         </select>
 
-                        <input type="text" placeholder="Nome do item:" onChange={changeNome} />
+                        <input type="text" placeholder="Nome do item:" onChange={changeNome} defaultValue={nomeIpt} />
 
-                        <input type="number" placeholder="Preço" step="0.01" min="0.01" onChange={changePreco} />
+                        <input type="number" placeholder="Preço" step="0.01" min="0.01" onChange={changePreco} defaultValue={precoIpt}/>
                     </div>
 
 

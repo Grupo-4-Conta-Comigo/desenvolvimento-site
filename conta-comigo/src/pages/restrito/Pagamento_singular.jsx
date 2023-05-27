@@ -45,7 +45,7 @@ function Pagamento_singular() {
             .then((response) => {
                 setComanda(response.data)
                 console.log(response.data)
-                navigate("/pagamento", {state: {nome : response.data.nomeDono, valor : pedido.preco, idComanda : response.data.id}})
+                navigate("/pagamento", {state: {nome : response.data.nomeDono, valor : pedido.preco, idComanda : response.data.id, singular : true, mesa : state.mesa}})
             }).catch((err) => {
                 if (err.response.status === 404) {
                     console.log("Este endpoint não existe")

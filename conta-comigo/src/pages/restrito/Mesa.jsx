@@ -128,7 +128,7 @@ function Add_clientes(props) {
                                 <button className={clientes ? "" : "btn_d"} onClick={() => {
                                     pedido.preco > 0 ?
                                         api.put("/pedidos/editar/" + sessionStorage.pedidoAtual, {
-                                            status: "finalizado",
+                                            status: "fechado",
                                             mesa: state
                                         })
                                             .then((response) => {
