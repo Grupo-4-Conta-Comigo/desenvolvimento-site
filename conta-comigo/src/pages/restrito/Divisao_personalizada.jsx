@@ -19,7 +19,6 @@ function Divisao_personalizada() {
 
 
   const navigate = useNavigate();
-  console.log(state.mesa)
 
   function getValotTotal(itens) {
     return itens
@@ -32,11 +31,8 @@ function Divisao_personalizada() {
       .get("itens-comanda/todos/pedido/" + sessionStorage.pedidoAtual)
       .then((response) => {
         setItens(response.data);
-        console.log("EU CREIO EM NOME DE UNIVERSO")
-        console.log(response.data)
         corpoCalculo.itens = [];
         for (const item of response.data) {
-          console.log("ai bucetinha" + item.id)
           corpoCalculo.itens.push({
             id: item.id,
             nome: item.produto.nome,
@@ -49,7 +45,6 @@ function Divisao_personalizada() {
           });
         }
         corpoCalculo.valorTotal = getValotTotal(response.data);
-        console.log(corpoCalculo);
       })
       .catch((err) => {
         if (err.response.status === 404) {
@@ -70,7 +65,6 @@ function Divisao_personalizada() {
         });
       }
     }
-    console.log(corpoCalculo);
   }
 
   function onValorChange(itemId, nomePagante, valor, isValid) {
@@ -84,7 +78,6 @@ function Divisao_personalizada() {
         item.isValid = isValid;
       }
     }
-    console.log(corpoCalculo);
   }
 
   function areAllCardsValid() {
@@ -101,13 +94,11 @@ function Divisao_personalizada() {
       Swal.fire("Valores inválidos!", "", "warning");
       return;
     }
-    console.log("aqui desgraça" + corpoCalculo);
     api
       .post("calculos/calculo-personalizado", corpoCalculo)
       .then((response) => {
         console.log(response)
         navigate("/totalDivisao", { state: {resposta : response.data, personaliz : true, mesa : state.mesa} })
-        // console.log("AQUI FIIIIIIII" + corpoCalculo)
       })
       .catch((err) => {
         if (err.response.status === 404) {
@@ -162,8 +153,6 @@ function Divisao_personalizada() {
                   >
                     {itens
                       ? itens.map((item, i) => {
-                        console.log("TESTE TESTE")
-                        console.log(item)
                         return (
                           <Card
                             key={i}

@@ -20,7 +20,7 @@ function Inicio() {
     }
 
     function contarPedidos(){
-        api.get("/pedidos/count/" + sessionStorage.userId)
+        api.get("/pedidos/count/" + sessionStorage.userId, {params: {ativos: true}})
         .then((response) => {
             console.log("qtd: "+ response.data)
             setQtdPedidos(response.data)

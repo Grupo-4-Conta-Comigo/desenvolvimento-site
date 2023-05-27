@@ -16,14 +16,9 @@ import Swal from "sweetalert2";
 function Pagamento_singular() {
     const [pedido, setPedido] = useState([])
     const [clientes, setClientes] = useState([])
-    const [comanda, setComanda] = useState([])
     const [pagante, setPagante] = useState()
     const { state } = useLocation()
     const navigate = useNavigate()
-
-    console.log("amo que amo " + state.mesa)
-
-
 
     function getClientes() {
         api.get("comandas/todas/" + sessionStorage.pedidoAtual)
@@ -43,7 +38,7 @@ function Pagamento_singular() {
     function getComanda(comanda) {
         api.get("comandas/" + comanda)
             .then((response) => {
-                setComanda(response.data)
+                // setComanda(response.data)
                 console.log(response.data)
                 navigate("/pagamento", {state: {nome : response.data.nomeDono, valor : pedido.preco, idComanda : response.data.id, singular : true, mesa : state.mesa}})
             }).catch((err) => {
@@ -121,7 +116,7 @@ function Pagamento_singular() {
                         <div className={styles.buttons}>
                             <button onClick={() => { navigate("/mesas") }} className={styles.button_one}>Voltar</button>
                             <button className={styles.button_two} onClick={() => { 
-                                if(pagante == undefined){
+                                if(pagante === undefined){
                                     Swal.fire({
                                         icon: 'error',
                                     title: 'Oops...',

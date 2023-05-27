@@ -52,7 +52,7 @@ function Login() {
                 sessionStorage.setItem("senha_user", response.data.senha);
                 sessionStorage.setItem("token", response.data.token);
                 sessionStorage.setItem("pagina", "inicio")
-                if (sessionStorage.cargo == 'admin') {
+                if (sessionStorage.cargo === 'admin') {
                     sessionStorage.setItem("userId", response.data.userId);
                     sessionStorage.setItem("cnpj_user", response.data.cnpj);
                 } else {
@@ -82,7 +82,7 @@ function Login() {
                         <p className={styles.ativo}>{erro}</p>
                         <button onClick={logar}>Entrar</button>
 
-                    <span class={carregando ? "loader" : ""}></span>
+                    <span className={carregando ? "loader" : ""}></span>
                     <p className={carregando ? "disable" : styles.fpsw}>Esqueceu a senha?</p>
                     <p className={carregando ? "disable" : styles.novaConta} onClick={goCadastro}>Não possui conta?</p>
                     <div className={styles.btn} onClick={goCadastro}>Cadastre-se</div>

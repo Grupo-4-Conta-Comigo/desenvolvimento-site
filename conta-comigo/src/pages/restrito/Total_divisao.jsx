@@ -17,10 +17,6 @@ function Total_divisao() {
     const { state } = useLocation();
     const navigate = useNavigate()
 
-    console.log(state.resposta)
-    console.log(state.mesa)
-
-
     function getClientes() {
        if(state.personaliz){
         setClientes(state.resposta);
@@ -59,11 +55,6 @@ function Total_divisao() {
         getPedido()
     }, []);
 
-
-    function dividirIgualmente(preco){
-        const valor = preco / clientes.length;
-        console.log(valor)
-    }
 
     if (sessionStorage.length > 0) {
 

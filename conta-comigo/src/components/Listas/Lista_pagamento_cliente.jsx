@@ -6,8 +6,6 @@ function Lista_pagamento_cliente(props){
 
     const navigate = useNavigate()
 
-    console.log(props.personaliz)
-
     return(
             <div className={styles.pessoa} onClick={
                 ()=>{

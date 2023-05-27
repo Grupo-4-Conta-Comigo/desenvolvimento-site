@@ -12,7 +12,6 @@ import hamburguer from "../../_assets/img/icons/hamburguer.png"
 import ItensIndv from "../../components/ItensIndv"
 import lupa from "../../_assets/img/icons/lupa.png"
 import Lista_search from "../../components/Listas/Lista_search"
-import { useNavigate } from "react-router-dom"
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 
@@ -26,8 +25,6 @@ function Add_itens() {
     const [produtos, setProdutos] = useState([])
     const [cadastroAberto, setCadastroAberto] = useState(false)
     const [produto, setProduto] = useState();
-
-    const navigate = useNavigate()
 
     const changeProduto = (event) => {
         setProduto(event.target.value);
@@ -56,9 +53,6 @@ function Add_itens() {
     function getProdutos(produtoProcurando) {
         api.get("/produtos/todos/" + sessionStorage.userId)
             .then((response) => {
-                console.log("RESPONSE: ", response)
-                console.log("PEDIDOS: ", response.data)
-                console.log("PRODUTO PROCURAAAAA "+ produtoProcurando)
                 setProdutos(response.data)
             }).catch((err) => {
                 if (err.response.status === 404) {

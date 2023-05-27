@@ -133,7 +133,7 @@ function Cadastro() {
 
     return (
         <div className={styles.bodyF}>
-            {console.log(cnpjErrado)}
+            {/* {console.log(cnpjErrado)} */}
             <div className={styles.left_side}>
                 <div className={styles.head}>
                     <img src={logotipo} alt="" />
@@ -154,7 +154,7 @@ function Cadastro() {
                     <p style={senhaErradaTamanho ? erro : null} className={styles.erro}>A senha deve ter mais de 8 caracteres</p>
                     <button onClick={cadastrar}>Cadastrar</button>
                 </div>
-                <span class={carregando ? "loader" : ""}></span>
+                <span className={carregando ? "loader" : ""}></span>
                 
                 <p className={carregando ? "disable" : ""} onClick={irLogin}>Já possui conta?</p>
                 <div onClick={irLogin} className={styles.btn}>Entrar</div>

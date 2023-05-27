@@ -2,7 +2,7 @@ import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/core modules/cadastrar_pix.module.css"
 import pasta from "../../_assets/img/icons/pasta.png"
 import voltar from "../../_assets/img/icons/setaVoltar.png"
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
 import api from "../../config/api";
 import { useState } from "react";
@@ -27,12 +27,12 @@ function Cadastrar_pix() {
         setClienteSecret(event.target.value);
     };
 
-    function cadastrarChave(){
+    function cadastrarChave() {
         console.log(chavepix, clienteid, clienteSecret)
-        api.put("/detalhes-pagamento/criar/"+ sessionStorage.userId, {
-            chavePix : chavepix,
-            clientId : clienteid,
-            clientSecret : clienteSecret
+        api.put("/detalhes-pagamento/criar/" + sessionStorage.userId, {
+            chavePix: chavepix,
+            clientId: clienteid,
+            clientSecret: clienteSecret
         })
             .then((response) => {
                 console.log("RESPONSE: ", response)
@@ -44,13 +44,13 @@ function Cadastrar_pix() {
                     navigate("/perfil")
                 })
                 // getPedidos();
-                
+
             }).catch((err) => {
                 console.log("TINHA QUE ENTRAR AQUI")
                 console.log(err.response.data.errors[0].defaultMessage)
 
 
-                
+
             })
     }
     if (sessionStorage.length > 0) {
@@ -79,10 +79,10 @@ function Cadastrar_pix() {
                         <div className={styles.container_main}>
 
 
-                            <input type="text" className={styles.input_valor} placeholder="Digite a chave PIX:" onChange={changeChave}/>
-                            <input type="text" className={styles.input_valor} placeholder="Client ID:" onChange={changeId}/>
-                            <input type="text" className={styles.input_valor} placeholder="Client Secret:" onChange={changeSecret}/>
-                         
+                            <input type="text" className={styles.input_valor} placeholder="Digite a chave PIX:" onChange={changeChave} />
+                            <input type="text" className={styles.input_valor} placeholder="Client ID:" onChange={changeId} />
+                            <input type="text" className={styles.input_valor} placeholder="Client Secret:" onChange={changeSecret} />
+
 
                             {/* <div className={styles.file}>
 
@@ -95,40 +95,38 @@ function Cadastrar_pix() {
 
                             </div> */}
 
-                            <div className={styles.arquivo} onClick={async ()=>{
+                            <div className={styles.arquivo} onClick={async () => {
                                 const { value: file } = await Swal.fire({
                                     title: 'Select image',
                                     input: 'file',
                                     inputAttributes: {
-                                      'accept': '*',
-                                      'aria-label': 'Adicione o certificado'
+                                        'accept': '*',
+                                        'aria-label': 'Adicione o certificado'
                                     }
-                                  })
+                                })
 
-                                  if (file) {
-                                    // const reader = new FileReader()
+                                if (file) {
+                                    // const reader = new FileReader(file)
                                     // reader.onload = (e) => {
-                                    //   Swal.fire({
-                                    //     title: 'Certificado adicionado'
-                                    //   })
+                                    //     Swal.fire({
+                                    //         title: 'Certificado adicionado'
+                                    //     })
                                     // }
-                                    // reader.readAsDataURL(file)
-                                    // console.log(reader.readAsDataURL(file))
-                                    // const form = new FormData();
-                                    // form.append('certificado', file);
-                                    // api.put("/detalhes-pagamento/certificados/criar/"+ sessionStorage.userId, form, {
-                                    //     headers: {
-                                    //       'Content-Type': 'multipart/form-data'
-                                    //     })
-                                    //     .then((response) => {
-                                    //         console.log("RESPONSE: ", response)
-                                    //         // getPedidos();
+                                    api.put("/detalhes-pagamento/certificados/criar/"+ sessionStorage.userId, {params : {certificado : file}})
+                                        .then((response) => {
+                                            console.log("RESPONSE: ", response)
+                                            Swal.fire(
+                                                'Documento adicionado!',
+                                                '',
+                                                'success'
+                                            )
+                                            // getPedidos();
                                             
-                                    //     }).catch((err) => {
-                                    //         console.log("TINHA QUE ENTRAR AQUI")
-                                    //         console.log(err.response.data.errors[0].defaultMessage)                                          
-                                    //     })
-                                  }
+                                        }).catch((err) => {
+                                            console.log("TINHA QUE ENTRAR AQUI")
+                                            console.log(err.response.data.errors[0].defaultMessage)                                                        
+                                        })
+                                }
                             }}>
                                 <p>Adicionar certificado</p>
                                 <img src={pasta} alt="" />

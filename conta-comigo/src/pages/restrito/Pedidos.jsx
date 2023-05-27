@@ -44,7 +44,7 @@ function Inicio() {
     }
 
     function contarPedidos() {
-        api.get("/pedidos/count/" + sessionStorage.userId)
+        api.get("/pedidos/count/" + sessionStorage.userId, {params: {ativos: true}})
             .then((response) => {
                 console.log("QTD: ", response.data)
                 setQtd(response.data)
@@ -124,6 +124,7 @@ function Inicio() {
                                                     .then((response) => {
                                                         console.log("RESPONSE: ", response)
                                                         getPedidos();
+                                                        contarPedidos()
                                                         
                                                     }).catch((err) => {
                                                         console.log("TINHA QUE ENTRAR AQUI")

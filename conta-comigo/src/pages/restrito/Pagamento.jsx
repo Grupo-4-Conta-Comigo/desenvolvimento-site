@@ -13,8 +13,8 @@ function Pagamento(props) {
   const [carregando, setCarregando] = useState(false)
   const navigate = useNavigate()
 
-  console.log(state.singular)
-  console.log(state.idComanda)
+  // console.log(state.singular)
+  // console.log(state.idComanda)
 
   function carregar() {
     setCarregando(true);
@@ -35,7 +35,7 @@ function Pagamento(props) {
         valor: state.valor.toFixed(2),
       })
       .then((response) => {
-        console.log("RESPONSE: ", response);
+        // console.log("RESPONSE: ", response);
         api
           .put(
             "/pagamentos/qr-code",
@@ -53,13 +53,11 @@ function Pagamento(props) {
             pararLoading()
           })
           .catch((err) => {
-            console.log("TINHA QUE ENTRAR AQUI");
             console.log(err.response.data.errors[0].defaultMessage);
             pararLoading()
           });
       })
       .catch((err) => {
-        console.log("TINHA QUE ENTRAR AQUI");
         console.log(err.response.data.errors[0].defaultMessage);
       });
   }
@@ -118,7 +116,6 @@ function Pagamento(props) {
                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                   },
                   didClose: (toast) => {
-                    console.log("eita")
                     api.put("/comandas/editar/" + state.idComanda, {
                       status: "finalizado",
                       nomeDono: state.nome

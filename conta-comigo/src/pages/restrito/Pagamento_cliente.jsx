@@ -19,9 +19,6 @@ function Pagamento_cliente() {
     const navigate = useNavigate()
     const [pagamentoConcluido, setPagamentoConcluido] = useState(true)
 
-    console.log(state.resposta)
-    console.log(state.mesa)
-    console.log(state.personaliz)
 
     function getClientes() {
         if (state.personaliz) {
@@ -88,7 +85,6 @@ function Pagamento_cliente() {
                                     // if(cliente.status === "ativo"){
                                     //     setPagamentoConcluido(false)
                                     // }
-                                    console.log(cliente)
                                     return (
                                         <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} idComanda={cliente.idComanda}/>
                                     )
