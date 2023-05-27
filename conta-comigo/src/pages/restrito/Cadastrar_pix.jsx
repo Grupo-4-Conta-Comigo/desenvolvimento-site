@@ -106,14 +106,21 @@ function Cadastrar_pix() {
                                 })
 
                                 if (file) {
-                                    // const reader = new FileReader(file)
-                                    // reader.onload = (e) => {
-                                    //     Swal.fire({
-                                    //         title: 'Certificado adicionado'
-                                    //     })
-                                    // }
-                                    api.put("/detalhes-pagamento/certificados/criar/"+ sessionStorage.userId, {params : {certificado : file}})
-                                        .then((response) => {
+                                    let data = new FormData()
+                                    data.append('certificado',file)
+                                    let config = {
+                                        method: 'put',
+                                        maxBodyLength: Infinity,
+                                        url: '/detalhes-pagamento/certificados/criar/'+ sessionStorage.userId,
+                                        headers: { 
+                                          'Authorization': 'Bearer ' + sessionStorage.token
+                                        },
+                                        data : data
+                                      };
+                                    console.log(data)
+
+                                    api.request(config)
+                                    .then((response) => {
                                             console.log("RESPONSE: ", response)
                                             Swal.fire(
                                                 'Documento adicionado!',
@@ -124,7 +131,7 @@ function Cadastrar_pix() {
                                             
                                         }).catch((err) => {
                                             console.log("TINHA QUE ENTRAR AQUI")
-                                            console.log(err.response.data.errors[0].defaultMessage)                                                        
+                                            console.log(err)                                                        
                                         })
                                 }
                             }}>
