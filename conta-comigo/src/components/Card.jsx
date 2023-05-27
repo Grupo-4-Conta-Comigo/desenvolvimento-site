@@ -50,8 +50,8 @@ function Card(props) {
       return;
     }
     setPagantes(new Map(pagantes.set(cliente, valor)));
-    console.log(pagantes);
-    props.onAddPagante(item.id, cliente, valor);
+    console.log(clienteAtual);
+    props.onAddPagante(item.id, cliente, valor, clienteAtual);
   }
 
   function getComanda(comanda) {

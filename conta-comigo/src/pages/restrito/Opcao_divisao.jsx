@@ -85,7 +85,7 @@ function Opcao_divisao() {
                                         })
                                 }
                                 else if(opcao == "personalizada"){
-                                    navigate("/divisaoPersonalizada")
+                                    navigate("/divisaoPersonalizada", {state : {mesa : state.mesa}})
                                 }
                                 else{
                                     navigate("/totalDivisao", {state : {opcao : opcao, mesa : state.mesa}})

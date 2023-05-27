@@ -14,6 +14,7 @@ function Pagamento(props) {
   const navigate = useNavigate()
 
   console.log(state.singular)
+  console.log(state.idComanda)
 
   function carregar() {
     setCarregando(true);

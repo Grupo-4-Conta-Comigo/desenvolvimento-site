@@ -9,14 +9,17 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import { useEffect, useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Divisao_personalizada() {
   const [itens, setItens] = useState([]);
   const [corpoCalculo, setCorpoCalculo] = useState({});
   const [total, setTotal] = useState();
+  const { state } = useLocation();
+
 
   const navigate = useNavigate();
+  console.log(state.mesa)
 
   function getValotTotal(itens) {
     return itens
@@ -41,7 +44,7 @@ function Divisao_personalizada() {
             donoOriginal: item.nomeDono,
             isValid: true,
             pagantes: [
-              { nome: item.nomeDono, valorAPagar: item.produto.preco },
+              { idComanda: item.idComanda, nome: item.nomeDono, valorAPagar: item.produto.preco },
             ],
           });
         }
@@ -57,13 +60,13 @@ function Divisao_personalizada() {
       });
   }
 
-  function onAddPagante(itemId, idComandaPagante, nomePagante, valor) {
+  function onAddPagante(itemId, nomePagante, valor, idComanda) {
     for (const item of corpoCalculo.itens) {
       if (itemId === item.id) {
         item.pagantes.push({
-          idComanda: idComandaPagante,
           nome: nomePagante,
           valorAPagar: valor,
+          idComanda : idComanda,
         });
       }
     }
@@ -103,7 +106,7 @@ function Divisao_personalizada() {
       .post("calculos/calculo-personalizado", corpoCalculo)
       .then((response) => {
         console.log(response)
-        navigate("/totalDivisao", { state: {resposta : response.data, personaliz : true} })
+        navigate("/totalDivisao", { state: {resposta : response.data, personaliz : true, mesa : state.mesa} })
         // console.log("AQUI FIIIIIIII" + corpoCalculo)
       })
       .catch((err) => {
