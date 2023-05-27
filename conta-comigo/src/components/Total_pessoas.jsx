@@ -1,7 +1,7 @@
 import styles from "../_assets/css/modules/divisao modules/total_pessoas.module.css"
 import person from "../_assets/img/icons/person.png"
 function Lista_pessoas(props){
-    console.log(props.opcao)
+    // console.log("ai meuuuu"+props.personalizada.id)
     if(props.opcao == "igualmente"){
         const valor = props.valor / props.qtd
         return(

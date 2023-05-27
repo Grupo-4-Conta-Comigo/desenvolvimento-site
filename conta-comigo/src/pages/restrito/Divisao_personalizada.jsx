@@ -29,8 +29,11 @@ function Divisao_personalizada() {
       .get("itens-comanda/todos/pedido/" + sessionStorage.pedidoAtual)
       .then((response) => {
         setItens(response.data);
+        console.log("EU CREIO EM NOME DE UNIVERSO")
+        console.log(response.data)
         corpoCalculo.itens = [];
         for (const item of response.data) {
+          console.log("ai bucetinha" + item.id)
           corpoCalculo.itens.push({
             id: item.id,
             nome: item.produto.nome,
@@ -54,10 +57,11 @@ function Divisao_personalizada() {
       });
   }
 
-  function onAddPagante(itemId, nomePagante, valor) {
+  function onAddPagante(itemId, idComandaPagante, nomePagante, valor) {
     for (const item of corpoCalculo.itens) {
       if (itemId === item.id) {
         item.pagantes.push({
+          idComanda: idComandaPagante,
           nome: nomePagante,
           valorAPagar: valor,
         });
@@ -94,10 +98,11 @@ function Divisao_personalizada() {
       Swal.fire("Valores inválidos!", "", "warning");
       return;
     }
-    console.log("aqui");
+    console.log("aqui desgraça" + corpoCalculo);
     api
       .post("calculos/calculo-personalizado", corpoCalculo)
       .then((response) => {
+        console.log(response)
         navigate("/totalDivisao", { state: {resposta : response.data, personaliz : true} })
         // console.log("AQUI FIIIIIIII" + corpoCalculo)
       })
@@ -154,6 +159,8 @@ function Divisao_personalizada() {
                   >
                     {itens
                       ? itens.map((item, i) => {
+                        console.log("TESTE TESTE")
+                        console.log(item)
                         return (
                           <Card
                             key={i}

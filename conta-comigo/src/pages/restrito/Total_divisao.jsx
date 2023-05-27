@@ -17,6 +17,8 @@ function Total_divisao() {
     const { state } = useLocation();
     const navigate = useNavigate()
 
+    console.log("oque amor" +state.resposta.nomeDono)
+
 
     function getClientes() {
        if(state.personaliz){

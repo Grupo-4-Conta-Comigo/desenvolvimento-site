@@ -18,6 +18,8 @@ function Inicio() {
 
     const [numero, setNumero] = useState("")
 
+    const [qtd, setQtd] = useState("")
+
     const [chaveCadastrada, setChaveCadastrada] = useState()
 
 
@@ -31,6 +33,21 @@ function Inicio() {
                 console.log("RESPONSE: ", response)
                 console.log("PEDIDOS: ", response.data)
                 setPedidos(response.data)
+            }).catch((err) => {
+                if (err.response.status === 404) {
+                    console.log("Este endpoint não existe")
+                } else {
+                    console.error(err)
+                }
+            })
+
+    }
+
+    function contarPedidos() {
+        api.get("/pedidos/count/" + sessionStorage.userId)
+            .then((response) => {
+                console.log("QTD: ", response.data)
+                setQtd(response.data)
             }).catch((err) => {
                 if (err.response.status === 404) {
                     console.log("Este endpoint não existe")
@@ -57,6 +74,7 @@ function Inicio() {
     useEffect(() => {
         getPedidos()
         getChaveCadastrada()
+        contarPedidos()
       }, []);
 
 
@@ -75,7 +93,7 @@ function Inicio() {
                     {/* <button onClick={getPedidos}>teste</button> */}
                     <div className={styles.principal}>
                         <div className={styles.titulo}>
-                            Temos <div className={styles.qtd}>{pedidos.length} {pedidos.length > 1 || pedidos.length === 0 ? 'pedidos' : 'pedido'}</div> em andamento
+                            Temos <div className={styles.qtd}>{qtd} {pedidos.length > 1 || pedidos.length === 0 ? 'pedidos' : 'pedido'}</div> em andamento
                         </div>
                         <div className={styles.pesquisa}>
                             <div className={styles.busca}>
