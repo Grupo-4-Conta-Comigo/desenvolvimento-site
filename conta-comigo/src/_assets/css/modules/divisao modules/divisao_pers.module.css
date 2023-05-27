@@ -264,15 +264,6 @@
     margin-right: 30px;
 }
 
-.container_main {
-    /* background-color: #8B53FF;
-height: 300px;
-display: flex;
-justify-content: center;
-margin-left: 50px; */
-}
-
-
 .wrapper {
 
     margin-top: 30px;
@@ -368,7 +359,20 @@ margin-left: 50px; */
 @media screen and (max-width: 900px) {
     .wrapper .carousel {
         grid-auto-columns: calc((100% / 2) - 9px);
+        
+        margin-top: 150%;
     }
+
+    .container {
+        background-color: white;
+        border-radius: 16px;
+        width: 500px;
+        padding: 70px 0px 50px 80px;
+        margin-top: 20px;
+        height: 400px;
+        z-index: 0;
+    }
+    
 }
 
 @media screen and (max-width: 600px) {

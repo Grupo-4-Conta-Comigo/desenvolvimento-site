@@ -22,7 +22,7 @@ function Perfil() {
                 <Bot />
             </div> */}
             <div className={styles.main}>
-                
+
                 <div className={styles.container}>
                     <div className={styles.up}>
                         <div className={styles.card}>
@@ -30,31 +30,31 @@ function Perfil() {
                             <div className={styles.card_main}>
                                 <div className={styles.card_header}>
                                     <div className={styles.card_titulo}>Detalhes restaurante</div>
-                                    {/* <div className={styles.card_editar}>
-                                    <div className={styles.btn}>
-                                <img src={editar} alt="" />
+                                            {/* <div className={styles.card_editar}>
+                                            <div className={styles.btn}>
+                                        <img src={editar} alt="" />
+                                    </div>
+                                            <div className={styles.popup}>
+                        <div className="close">
+                        <img src={voltar} alt="" />
+                        <p>voltar</p>
+                        </div>
+                            <div className={styles.header_popup}>
+                                <div className={styles.line}></div>
+                                <div className={styles.titulo}>Editar detalhes do restaurante</div>
                             </div>
-                                    <div className={styles.popup}>
-                <div className="close">
-                <img src={voltar} alt="" />
-                <p>voltar</p>
-                </div>
-                    <div className={styles.header_popup}>
-                        <div className={styles.line}></div>
-                        <div className={styles.titulo}>Editar detalhes do restaurante</div>
+
+                            <div className={styles.inputs}>
+                            
+                                <input type="text" placeholder="Nome:"/>
+
+                                <input type="email" placeholder="CNPJ:" />
+                        
+                            </div>
+
+                            <button>Editar</button>
+                        </div>
                     </div>
-
-                    <div className={styles.inputs}>
-                       
-                        <input type="text" placeholder="Nome:"/>
-
-                        <input type="email" placeholder="CNPJ:" />
-                  
-                    </div>
-
-                    <button>Editar</button>
-                </div>
-            </div>
                                      */}
                                 </div>
                                 <div className={styles.card_dados}>
@@ -141,7 +141,7 @@ function Perfil() {
                     <div className={styles.bot}>
                         <div className={styles.lineGreen}></div>
                         <div className={styles.card}>
-                            <div   onClick={() => { navigate("/cadastrarPix") }}className={styles.containerHead}>
+                            <div onClick={() => { navigate("/cadastrarPix") }} className={styles.containerHead}>
 
 
                                 <div className={styles.card_titulo}>Dados Transacionais</div>
@@ -154,12 +154,12 @@ function Perfil() {
                                 </div>
 
                             </div>
-                             <p>Cadastre aqui sua chave PIX para receber pagamentos</p>
+                            <p>Cadastre aqui sua chave PIX para receber pagamentos</p>
 
 
 
-              
-                          
+
+
                         </div>
                     </div>
                 </div>
