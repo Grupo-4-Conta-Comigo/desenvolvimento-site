@@ -6,14 +6,14 @@ function Lista_pagamento_cliente(props){
 
     const navigate = useNavigate()
 
-    console.log(props.cliente)
+    console.log(props.personaliz)
 
     return(
             <div className={styles.pessoa} onClick={
                 ()=>{
                     // sessionStorage.setItem('clienteAtual', props.cliente.id);
                     if(props.cliente.status != "finalizado"){
-                        navigate("/pagamento", {state: {nome : props.personaliz? props.cliente.nome : props.cliente.nomeDono, valor : props.preco, idComanda : props.cliente.idComanda}})
+                        navigate("/pagamento", {state: {nome : props.personaliz? props.cliente.nome : props.cliente.nomeDono, valor : props.preco, idComanda : props.personaliz? props.cliente.idComanda : props.cliente.id}})
                     }
                 }
             }>

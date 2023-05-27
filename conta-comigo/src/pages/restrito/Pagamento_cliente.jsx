@@ -21,6 +21,7 @@ function Pagamento_cliente() {
 
     console.log(state.resposta)
     console.log(state.mesa)
+    console.log(state.personaliz)
 
     function getClientes() {
         if (state.personaliz) {

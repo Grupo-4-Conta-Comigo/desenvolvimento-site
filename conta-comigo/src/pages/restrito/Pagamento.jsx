@@ -27,6 +27,7 @@ function Pagamento(props) {
 
   function gerarQRcode() {
     carregar()
+    console.log(state.idComanda)
     api
       .put("/pagamentos/criar-cobranca", {
         idRestaurante: sessionStorage.userId,

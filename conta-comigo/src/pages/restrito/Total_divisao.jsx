@@ -101,7 +101,7 @@ function Total_divisao() {
                             <button className={styles.button_two} onClick={
                                 ()=>{
                                     // state.personaliz ? navigate("/pagamentoClientes", {state : {valor: }})
-                                    navigate("/pagamentoClientes", {state : {valor: pedido.preco / clientes.length, opcao: state.opcao, personaliz: state.personaliz, resposta: state.resposta, mesa: state.mesa}})
+                                    navigate("/pagamentoClientes", {state : {valor: pedido.preco / clientes.length, opcao: state.opcao, personaliz: state.personaliz? state.personaliz : false, resposta: state.resposta, mesa: state.mesa}})
                                 }
                             }>Próximo</button>
                         </div>
