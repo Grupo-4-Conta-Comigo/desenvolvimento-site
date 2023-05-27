@@ -57,10 +57,14 @@
     align-content: flex-start;
     /* padding: 0px 20px;  */
     flex-direction: column;
- 
-
 
 } 
+.container	.bot .card p{
+    font-size: 16px;
+    text-align:left;
+    color: gray;
+}
+
 
 .card .card_main{
     width: 100%;
@@ -372,7 +376,10 @@ select{
             display: flex;
             align-items: center;
             justify-content: center;
+           
         }
+
+        
 
         .rightSide .valor{
             display: none;
@@ -417,11 +424,22 @@ select{
             background-color: white;
             width: 42%;
             height: 170px;
+            justify-content: center;
             border-radius: 15px;
             display: flex;
             align-items: center;
+            margin-left: 200px;
         
         }
+        .container	.bot .card{
+            width: 42%;
+            margin-left: 0px;
+            display: flex;
+            /* align-content: flex-start; */
+            /* padding: 0px 20px;  */
+            flex-direction: column;
+        
+        } 
 
     }
 }

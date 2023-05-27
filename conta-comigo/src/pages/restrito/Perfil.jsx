@@ -22,6 +22,7 @@ function Perfil() {
                 <Bot />
             </div> */}
             <div className={styles.main}>
+                
                 <div className={styles.container}>
                     <div className={styles.up}>
                         <div className={styles.card}>
@@ -140,7 +141,7 @@ function Perfil() {
                     <div className={styles.bot}>
                         <div className={styles.lineGreen}></div>
                         <div className={styles.card}>
-                            <div className={styles.containerHead}>
+                            <div   onClick={() => { navigate("/cadastrarPix") }}className={styles.containerHead}>
 
 
                                 <div className={styles.card_titulo}>Dados Transacionais</div>
@@ -153,34 +154,12 @@ function Perfil() {
                                 </div>
 
                             </div>
-                            <p>Chaves PIX cadastradas </p>
+                             <p>Cadastre aqui sua chave PIX para receber pagamentos</p>
 
 
 
-                            <div className={styles.select}>
-                                <div className={styles.grupo}>
-                                    <label for="f-option" className="l-radio">
-                                        <input type="radio" checked="checked" />
-                                        <span>Celular</span>
-                                    </label>
-                                    <label for="s-option" className="l-radio">
-                                        <input type="radio" />
-                                        <span>CPF/CNPJ</span>
-                                    </label>
-                                    <label for="t-option" className="l-radio">
-                                        <input type="radio" />
-                                        <span>E-mail</span>
-                                    </label>
-                                    <label for="t-option" className="l-radio">
-                                        <input type="radio" />
-                                        <span>Chave aleatória</span>
-                                    </label>
-                                </div>
-                            </div>
-                            {/* <div className={styles.valor}>Cadastrar chave</div> */}
-                            {/* <button className={styles.add_cliente}> */}
-                            {/* <img src={add} alt="" /> */}
-                            {/* </button> */}
+              
+                          
                         </div>
                     </div>
                 </div>

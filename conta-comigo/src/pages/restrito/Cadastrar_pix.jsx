@@ -1,19 +1,72 @@
 import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/core modules/cadastrar_pix.module.css"
-import  cll_qr from "../../_assets/img/icons/qr.png"
+import pasta from "../../_assets/img/icons/pasta.png"
+import voltar from "../../_assets/img/icons/setaVoltar.png"
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
+import api from "../../config/api";
+import { useState } from "react";
 
 
 
 function Cadastrar_pix() {
+    const navigate = useNavigate()
+    const [chavepix, setChavepix] = useState()
+    const [clienteid, setClienteid] = useState()
+    const [clienteSecret, setClienteSecret] = useState()
+
+    const changeChave = (event) => {
+        setChavepix(event.target.value);
+    };
+
+    const changeId = (event) => {
+        setClienteid(event.target.value);
+    };
+
+    const changeSecret = (event) => {
+        setClienteSecret(event.target.value);
+    };
+
+    function cadastrarChave(){
+        console.log(chavepix, clienteid, clienteSecret)
+        api.put("/detalhes-pagamento/criar/"+ sessionStorage.userId, {
+            chavePix : chavepix,
+            clientId : clienteid,
+            clientSecret : clienteSecret
+        })
+            .then((response) => {
+                console.log("RESPONSE: ", response)
+                Swal.fire(
+                    'Chave pix cadastrada!',
+                    '',
+                    'success'
+                ).then((value) => {
+                    navigate("/perfil")
+                })
+                // getPedidos();
+                
+            }).catch((err) => {
+                console.log("TINHA QUE ENTRAR AQUI")
+                console.log(err.response.data.errors[0].defaultMessage)
+
+
+                
+            })
+    }
     if (sessionStorage.length > 0) {
 
         // var infoAtv = 'infoAtv';
         return (
-            <div className="fBody">          
+
+            <div className="fBody">
                 <LateralMenu />
                 <div className={styles.main}>
+                    <div onClick={() => { navigate("/perfil") }} className={"voltar"}>
+                        <img src={voltar} alt="" />
+                        <p>voltar</p>
+                    </div>
                     <div className={styles.container}>
-                    <div className={styles.container_top}>
+                        <div className={styles.container_top}>
                             <p>Cadastre aqui a sua chave PIX!</p>
                             <div className={styles.passagem}>
                                 <div className={styles.line}></div>
@@ -22,35 +75,72 @@ function Cadastrar_pix() {
                             </div>
 
                         </div>
-                        <div className={styles.container_head}>
-                            
-                         
-                        </div>
-                     
-                        <div className={styles.container_main}>
-                            <div className={styles.select}>
-                                    <select name="format" id="format">
-                                        <option selected disabled>Larissa</option>
-                                        <option value="damasceno">Damasceno</option>
-                                        <option value="rafael">Rafael</option>
-                                        <option value="lucas">Lucas</option>
-                                        <option value="pinheiro">Pinehiro</option>
-                                        <option value="valentim">Valentim</option>
-                                    </select>
-                                </div>
-                    
-                                <input type="number" className="input_valor" placeholder="Digite o valor a pagar..."/>
 
-                      
+                        <div className={styles.container_main}>
+
+
+                            <input type="text" className={styles.input_valor} placeholder="Digite a chave PIX:" onChange={changeChave}/>
+                            <input type="text" className={styles.input_valor} placeholder="Client ID:" onChange={changeId}/>
+                            <input type="text" className={styles.input_valor} placeholder="Client Secret:" onChange={changeSecret}/>
+                         
+
+                            {/* <div className={styles.file}>
+
+                                <form>
+                                    <label for="file"> Certificado:
+                                        <img src={pasta} alt="" />
+                                    </label>
+                                    <input type="file" className={styles.input_file} />
+                                </form>
+
+                            </div> */}
+
+                            <div className={styles.arquivo} onClick={async ()=>{
+                                const { value: file } = await Swal.fire({
+                                    title: 'Select image',
+                                    input: 'file',
+                                    inputAttributes: {
+                                      'accept': '*',
+                                      'aria-label': 'Adicione o certificado'
+                                    }
+                                  })
+
+                                  if (file) {
+                                    // const reader = new FileReader()
+                                    // reader.onload = (e) => {
+                                    //   Swal.fire({
+                                    //     title: 'Certificado adicionado'
+                                    //   })
+                                    // }
+                                    // reader.readAsDataURL(file)
+                                    // console.log(reader.readAsDataURL(file))
+                                    // const form = new FormData();
+                                    // form.append('certificado', file);
+                                    // api.put("/detalhes-pagamento/certificados/criar/"+ sessionStorage.userId, form, {
+                                    //     headers: {
+                                    //       'Content-Type': 'multipart/form-data'
+                                    //     })
+                                    //     .then((response) => {
+                                    //         console.log("RESPONSE: ", response)
+                                    //         // getPedidos();
+                                            
+                                    //     }).catch((err) => {
+                                    //         console.log("TINHA QUE ENTRAR AQUI")
+                                    //         console.log(err.response.data.errors[0].defaultMessage)                                          
+                                    //     })
+                                  }
+                            }}>
+                                <p>Adicionar certificado</p>
+                                <img src={pasta} alt="" />
+                            </div>
                         </div>
                         <div className={styles.buttons}>
-                            <button className={styles.button_one}>Voltar</button>
-                            <button className={styles.button_two}>Próximo</button>
+                            <button className={styles.button_two} onClick={cadastrarChave}>Cadastrar Chave</button>
                         </div>
-                      
+
                     </div>
 
-                   
+
                 </div>
             </div>
         );
