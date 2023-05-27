@@ -18,6 +18,9 @@ function Inicio() {
 
     const [numero, setNumero] = useState("")
 
+    const [chaveCadastrada, setChaveCadastrada] = useState()
+
+
     const changeNumero = (event) => {
         setNumero(event.target.value);
     };
@@ -38,8 +41,22 @@ function Inicio() {
 
     }
 
+    function getChaveCadastrada(){
+        api.get("/detalhes-pagamento/" + sessionStorage.userId)
+        .then((response) => {
+            setChaveCadastrada(response.data)
+        }).catch((err) => {
+            if (err.response.status === 404) {
+                console.log("Este endpoint não existe")
+            } else {
+                console.error(err)
+            }
+        })
+    }
+
     useEffect(() => {
         getPedidos()
+        getChaveCadastrada()
       }, []);
 
 
@@ -68,6 +85,7 @@ function Inicio() {
                             <button onClick={
                                 () => {
 
+                                   if(chaveCadastrada){
                                     Swal.fire({
                                         title: 'Digite o número da mesa',
                                         input: 'number',
@@ -99,6 +117,13 @@ function Inicio() {
                                             }
                                         }
                                     })
+                                   }else{
+                                    Swal.fire(
+                                        'Cadastre uma chave pix!',
+                                        '',
+                                        'warning'
+                                    )
+                                   }
 
 
                                 }

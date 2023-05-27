@@ -6,6 +6,54 @@
     float: right;
 }
 
+.cardAtencao{
+    width: 400px;
+    margin-top: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    padding: 20px 50px;
+}
+
+.cardAtencao img{
+    width: 40px;
+    margin-top: -20px;
+    margin-left: -30px;
+}
+
+.cardAtencao .titulo{
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 10px;
+    color: #424242;
+}
+
+.cardAtencao .text{
+    font-size: 18px;
+    color: #4b4b4b;
+    margin-top: 10px;
+}
+
+.mainAtencao{
+    width: 89%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardAtencao button{
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    background-color: var(--secundary-color);
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 .main .main_head{
     font-size: 16px;
     color: #888888;
