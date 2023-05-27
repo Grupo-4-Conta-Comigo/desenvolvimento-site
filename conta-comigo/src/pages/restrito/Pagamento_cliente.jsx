@@ -17,6 +17,9 @@ function Pagamento_cliente() {
     const [pedido, setPedido] = useState([])
     const { state } = useLocation();
     const navigate = useNavigate()
+    const [pagamentoConcluido, setPagamentoConcluido] = useState(true)
+
+    console.log("mesa" + state.mesa)
 
     function getClientes() {
         if (state.personaliz) {
@@ -80,7 +83,9 @@ function Pagamento_cliente() {
 
                             {
                                 clientes.map((cliente) => {
-                                    console.log(cliente)
+                                    if(cliente.status == "ativo"){
+                                        setPagamentoConcluido(false)
+                                    }
                                     return (
                                         <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} />
                                     )
@@ -92,6 +97,31 @@ function Pagamento_cliente() {
                             <button className={styles.button_one} onClick={()=>{window.history.back()}}>Voltar</button>
                             <button className={styles.button_two} onClick={
                                 () => {
+                                    pagamentoConcluido ? 
+
+                                    api.put("/pedidos/editar/"+ sessionStorage.pedidoAtual, {
+                                        status : "finalizado", //AQUI TEM QUE MUDAR
+                                        mesa : state.mesa
+                                    })
+                                        .then((response) => {
+                                            console.log("RESPONSE: ", response)
+                                            Swal.fire(
+                                                'Mesa finalizada!',
+                                                '',
+                                                'success'
+                                            ).then(()=>{
+                                                navigate("/pedidos")
+                                            })
+                                            
+                                            // getPedidos();
+                                            
+                                        }).catch((err) => {
+                                            console.log(err.response.data.errors[0].defaultMessage)
+
+    
+                                        })
+                                    :                                    
+                                    
                                     Swal.fire({
                                         icon: 'error',
                                         title: 'Oops...',

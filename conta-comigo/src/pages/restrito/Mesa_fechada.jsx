@@ -97,8 +97,8 @@ function Mesas() {
 
                         </div>
                         <div className={styles.buttons}>
-                            <button onClick={()=>{navigate("/pagamentoSingular")}} className={styles.btnSingular}>Pagamento singular</button>
-                            <button onClick={()=>{navigate("/opcaoDivisao")}}>Dividir em conjunto</button>
+                            <button onClick={()=>{navigate("/pagamentoSingular", {state : {mesa : pedido.mesa}})}} className={styles.btnSingular}>Pagamento singular</button>
+                            <button onClick={()=>{navigate("/opcaoDivisao", {state : {mesa : pedido.mesa}})}}>Dividir em conjunto</button>
                         </div>
                     </div>
                 </div>

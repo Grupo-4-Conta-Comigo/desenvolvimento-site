@@ -2,7 +2,7 @@ import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/divisao modules/pag_singular.module.css"
 import { useState, useEffect } from "react";
 import api from "../../config/api";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 import ListaPessoasOption from "../../components/Listas/Lista_Pessoas_Option";
 import Swal from "sweetalert2";
@@ -18,7 +18,10 @@ function Pagamento_singular() {
     const [clientes, setClientes] = useState([])
     const [comanda, setComanda] = useState([])
     const [pagante, setPagante] = useState()
+    const { state } = useLocation()
     const navigate = useNavigate()
+
+    console.log("amo que amo " + state.mesa)
 
 
 

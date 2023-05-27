@@ -2,7 +2,7 @@ import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/divisao modules/opcao_divisao.module.css"
 import { useState, useEffect } from "react";
 import api from "../../config/api";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 import Swal from "sweetalert2";
 
@@ -16,6 +16,8 @@ function Opcao_divisao() {
     const [pedido, setPedido] = useState([])
     const [opcao, setOpcao] = useState()
     const navigate = useNavigate()
+    const { state } = useLocation()
+
 
     function getPedido() {
         api.get("pedidos/" + sessionStorage.pedidoAtual)
@@ -86,7 +88,7 @@ function Opcao_divisao() {
                                     navigate("/divisaoPersonalizada")
                                 }
                                 else{
-                                    navigate("/totalDivisao", {state : opcao})
+                                    navigate("/totalDivisao", {state : {opcao : opcao, mesa : state.mesa}})
                                 }
                             }
                         } className={styles.button_two}>Próximo</button>

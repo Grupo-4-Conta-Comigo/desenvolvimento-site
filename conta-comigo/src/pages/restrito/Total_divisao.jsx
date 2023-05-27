@@ -17,6 +17,7 @@ function Total_divisao() {
     const { state } = useLocation();
     const navigate = useNavigate()
 
+
     function getClientes() {
        if(state.personaliz){
         setClientes(state.resposta);
@@ -85,7 +86,7 @@ function Total_divisao() {
                                 {
                                         clientes.map((cliente) => {
                                             return (
-                                                <TotalPessoas cliente={cliente} key={cliente.id} valor={pedido.preco} opcao={state} qtd={clientes.length} personalizada = {state}/>
+                                                <TotalPessoas cliente={cliente} key={cliente.id} valor={pedido.preco} opcao={state.opcao} qtd={clientes.length} personalizada = {state}/>
                                             )
                                         })
                                 }
@@ -97,7 +98,7 @@ function Total_divisao() {
                             <button className={styles.button_two} onClick={
                                 ()=>{
                                     // state.personaliz ? navigate("/pagamentoClientes", {state : {valor: }})
-                                    navigate("/pagamentoClientes", {state : {valor: pedido.preco / clientes.length, opcao: state, personaliz: state.personaliz, resposta: state.resposta}})
+                                    navigate("/pagamentoClientes", {state : {valor: pedido.preco / clientes.length, opcao: state.opcao, personaliz: state.personaliz, resposta: state.resposta, mesa: state.mesa}})
                                 }
                             }>Próximo</button>
                         </div>
