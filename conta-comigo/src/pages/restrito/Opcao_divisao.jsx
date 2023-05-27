@@ -62,18 +62,12 @@ function Opcao_divisao() {
 
                                 <div className={styles.select}>
                                     <div>
-                                        <label for="f-option" className="l-radio">
                                             <input name="teste" value="igualmente" type="radio" onChange={texto => setOpcao(texto.target.value)} />
                                             <span>Igualmente</span>
-                                        </label>
-                                        <label for="s-option" className="l-radio">
                                             <input name="teste" value="consumo" type="radio" onChange={texto => setOpcao(texto.target.value)}/>
                                             <span>Por consumo</span>
-                                        </label>
-                                        <label for="t-option" className="l-radio">
                                             <input name="teste" value="personalizada" type="radio" onChange={texto => setOpcao(texto.target.value)}/>
                                             <span>Personalizada</span>
-                                        </label>
                                     </div>
                                 </div>
                             </div>

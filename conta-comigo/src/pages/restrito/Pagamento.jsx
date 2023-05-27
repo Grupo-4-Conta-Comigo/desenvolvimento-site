@@ -14,18 +14,17 @@ function Pagamento(props) {
   const navigate = useNavigate()
 
 
-  function carregar(){
+  function carregar() {
     setCarregando(true);
-}
+  }
 
 
-function pararLoading(){
-  setCarregando(false);
-}
+  function pararLoading() {
+    setCarregando(false);
+  }
 
   function gerarQRcode() {
     carregar()
-    console.log("testando amor" + state.idComanda)
     api
       .put("/pagamentos/criar-cobranca", {
         idRestaurante: sessionStorage.userId,
@@ -49,7 +48,7 @@ function pararLoading(){
             let qrCodeString = URL.createObjectURL(response.data);
             setQrcode(qrCodeString);
             pararLoading()
-            })
+          })
           .catch((err) => {
             console.log("TINHA QUE ENTRAR AQUI");
             console.log(err.response.data.errors[0].defaultMessage);
@@ -98,13 +97,13 @@ function pararLoading(){
                   <div className={styles.squareBotLeft}></div>
                   <div className={styles.squareBotRigth}></div>
                 </div>
-                <div className={carregando? styles.loading : "btn_d"}>
-                <img src={spin} alt="" />
+                <div className={carregando ? styles.loading : "btn_d"}>
+                  <img src={spin} alt="" />
                 </div>
-                <img className={qrcode? "" : "btn_d"} src={qrcode} alt="" />
+                <img className={qrcode ? "" : "btn_d"} src={qrcode} alt="" />
               </div>
 
-              <div className={styles.aponte} onClick={()=>{
+              <div className={styles.aponte} onClick={() => {
                 const Toast = Swal.mixin({
                   toast: true,
                   position: 'top-end',
@@ -115,12 +114,23 @@ function pararLoading(){
                     toast.addEventListener('mouseenter', Swal.stopTimer)
                     toast.addEventListener('mouseleave', Swal.resumeTimer)
                   },
-                  didClose: (toast) =>{
+                  didClose: (toast) => {
                     console.log("eita")
+                    api.put("/comandas/editar/" + state.idComanda, {
+                      status: "finalizado",
+                      nomeDono: state.nome
+                    })
+                      .then((response) => {
+                        console.log("RESPONSE: ", response)
+                        // getPedidos();
+
+                      }).catch((err) => {
+                        console.log(err.response.data.errors[0].defaultMessage)
+                      })
                     window.history.back()
                   }
                 })
-                
+
                 Toast.fire({
                   icon: 'success',
                   title: 'Pagamento registrado'

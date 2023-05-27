@@ -166,6 +166,8 @@
     cursor: pointer;
 }
 
+
+
 .pessoa:hover .number{
     background-color: var(--paletaNum3);
 }
@@ -189,6 +191,19 @@
     height: 33px;
     font-size: 20px;
     background-color: var(--paletaNum2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 100%;
+}
+
+.pessoa .iconFechado{
+    width: 33px;
+    height: 33px;
+    font-size: 20px;
+    background-color: var(--paletaNum1);
     display: flex;
     justify-content: center;
     align-items: center;
