@@ -4,6 +4,7 @@
     align-items: center;
     flex-direction: column;
     float: right;
+    
 }
 
 .main .main_head {
@@ -35,7 +36,6 @@
     font-size: 25px;
     font-weight: bold;
     width: 300px;
-    
 }
 
 .container_head .desc{
@@ -155,11 +155,11 @@
 @media screen and (max-width: 1150px) {
 
     .main {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 
     .container {
-        margin-top: 150px;
+        margin-top: 40px;
     }
 
 }
@@ -183,7 +183,6 @@
     .container {
         width: 400px;
         height: 480px;
-        margin-top: 120px;
 
     }
 
@@ -255,9 +254,8 @@
     }
 
     .container {
-        width: 284px;
+        width: 254px;
         height: 440px;
-        margin-top: 90px;
 
     }
 
