@@ -155,6 +155,7 @@ function Cadastro() {
                     <button onClick={cadastrar}>Cadastrar</button>
                 </div>
                 <span class={carregando ? "loader" : ""}></span>
+                
                 <p className={carregando ? "disable" : ""} onClick={irLogin}>Já possui conta?</p>
                 <div onClick={irLogin} className={styles.btn}>Entrar</div>
             </div>

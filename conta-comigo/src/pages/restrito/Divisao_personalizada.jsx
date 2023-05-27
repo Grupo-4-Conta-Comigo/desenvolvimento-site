@@ -99,6 +99,7 @@ function Divisao_personalizada() {
       .post("calculos/calculo-personalizado", corpoCalculo)
       .then((response) => {
         navigate("/totalDivisao", { state: {resposta : response.data, personaliz : true} })
+        // console.log("AQUI FIIIIIIII" + corpoCalculo)
       })
       .catch((err) => {
         if (err.response.status === 404) {

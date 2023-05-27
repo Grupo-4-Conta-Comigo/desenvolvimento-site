@@ -42,7 +42,6 @@ function Inicio() {
         getPedidos()
       }, []);
 
-    sessionStorage.setItem("qtdPedidos",pedidos.length)
 
 
 

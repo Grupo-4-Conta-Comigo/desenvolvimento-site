@@ -106,8 +106,19 @@
 
 .QRbox img{
     position: absolute;
-    margin-left: 21px;
-    margin-top: 21px;
+    width: 160px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.loading{
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.loading img{
+    width: 60px;
 }
 
 .QRbox .squares{

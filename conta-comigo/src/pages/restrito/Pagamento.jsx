@@ -1,19 +1,35 @@
 import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/divisao modules/pagamento.module.css";
 import person from "../../_assets/img/icons/person.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import api from "../../config/api";
 import { useEffect, useState } from "react";
+import spin from "../../_assets/img/icons/spin.gif"
+import Swal from "sweetalert2";
 
-function Pagamento() {
+function Pagamento(props) {
   const { state } = useLocation();
   const [qrcode, setQrcode] = useState();
+  const [carregando, setCarregando] = useState(false)
+  const navigate = useNavigate()
+
+
+  function carregar(){
+    setCarregando(true);
+}
+
+
+function pararLoading(){
+  setCarregando(false);
+}
 
   function gerarQRcode() {
+    carregar()
+    console.log("testando amor" + state.idComanda)
     api
       .put("/pagamentos/criar-cobranca", {
         idRestaurante: sessionStorage.userId,
-        idComanda: sessionStorage.clienteAtual,
+        idComanda: state.idComanda,
         valor: state.valor.toFixed(2),
       })
       .then((response) => {
@@ -22,7 +38,7 @@ function Pagamento() {
           .put(
             "/pagamentos/qr-code",
             {
-              idComanda: sessionStorage.clienteAtual,
+              idComanda: state.idComanda,
               idRestaurante: sessionStorage.userId,
             },
             {
@@ -32,10 +48,12 @@ function Pagamento() {
           .then((response) => {
             let qrCodeString = URL.createObjectURL(response.data);
             setQrcode(qrCodeString);
+            pararLoading()
             })
           .catch((err) => {
             console.log("TINHA QUE ENTRAR AQUI");
             console.log(err.response.data.errors[0].defaultMessage);
+            pararLoading()
           });
       })
       .catch((err) => {
@@ -80,19 +98,34 @@ function Pagamento() {
                   <div className={styles.squareBotLeft}></div>
                   <div className={styles.squareBotRigth}></div>
                 </div>
-
-                <button
-                  onClick={() => {
-                    console.log(qrcode);
-                  }}
-                >
-                  teste
-                </button>
-
-                <img src={qrcode} alt="" />
+                <div className={carregando? styles.loading : "btn_d"}>
+                <img src={spin} alt="" />
+                </div>
+                <img className={qrcode? "" : "btn_d"} src={qrcode} alt="" />
               </div>
 
-              <div className={styles.aponte}>Pagamento concluído</div>
+              <div className={styles.aponte} onClick={()=>{
+                const Toast = Swal.mixin({
+                  toast: true,
+                  position: 'top-end',
+                  showConfirmButton: false,
+                  timer: 2000,
+                  timerProgressBar: true,
+                  didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                  },
+                  didClose: (toast) =>{
+                    console.log("eita")
+                    window.history.back()
+                  }
+                })
+                
+                Toast.fire({
+                  icon: 'success',
+                  title: 'Pagamento registrado'
+                })
+              }}>Pagamento concluído</div>
 
               {/* <span class="loader"></span>  */}
             </div>

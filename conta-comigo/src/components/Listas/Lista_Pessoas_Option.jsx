@@ -2,7 +2,7 @@
 
 function Lista_Pessoas_Option(props){
     return (
-            <option value={props.cliente.nomeDono}>{props.cliente.nomeDono}</option>
+            <option value={props.cliente.id}>{props.cliente.nomeDono}</option>
     );
 }
 

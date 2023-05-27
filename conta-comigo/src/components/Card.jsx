@@ -16,6 +16,7 @@ function Card(props) {
     new Map([[item.nomeDono, item.produto.preco]])
   );
   const [clienteAtual, setClienteAtual] = useState("");
+  const [comanda, setComanda] = useState([])
 
   function onPrecoChange(cliente, valor) {
     setPagantes(new Map(pagantes.set(cliente, valor)));
@@ -53,6 +54,22 @@ function Card(props) {
     props.onAddPagante(item.id, cliente, valor);
   }
 
+  function getComanda(comanda) {
+    api.get("comandas/" + comanda)
+        .then((response) => {
+            setComanda(response.data)
+            console.log(response.data)
+            addCliente(response.data.nomeDono, 0);
+        }).catch((err) => {
+            if (err.response.status === 404) {
+                console.log("Este endpoint não existe")
+            } else {
+                console.error(err)
+            }
+        })
+
+}
+
   useEffect(() => {
     getClientes();
   }, []);
@@ -88,7 +105,7 @@ function Card(props) {
             <div
               className={styles.btn}
               onClick={() => {
-                addCliente(clienteAtual, 0);
+                getComanda(clienteAtual)
               }}
             >
               <img src={mais} alt="" />

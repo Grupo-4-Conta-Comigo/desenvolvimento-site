@@ -18,7 +18,6 @@ function Pagamento_cliente() {
     const { state } = useLocation();
     const navigate = useNavigate()
 
-    console.log("aaa " + state)
     function getClientes() {
         if (state.personaliz) {
             setClientes(state.resposta);
@@ -81,6 +80,7 @@ function Pagamento_cliente() {
 
                             {
                                 clientes.map((cliente) => {
+                                    console.log(cliente)
                                     return (
                                         <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} />
                                     )

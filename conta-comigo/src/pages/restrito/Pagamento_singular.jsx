@@ -16,6 +16,7 @@ import Swal from "sweetalert2";
 function Pagamento_singular() {
     const [pedido, setPedido] = useState([])
     const [clientes, setClientes] = useState([])
+    const [comanda, setComanda] = useState([])
     const [pagante, setPagante] = useState()
     const navigate = useNavigate()
 
@@ -25,6 +26,23 @@ function Pagamento_singular() {
         api.get("comandas/todas/" + sessionStorage.pedidoAtual)
             .then((response) => {
                 setClientes(response.data)
+            }).catch((err) => {
+                if (err.response.status === 404) {
+                    console.log("Este endpoint não existe")
+                } else {
+                    console.error(err)
+                }
+            })
+
+    }
+
+
+    function getComanda(comanda) {
+        api.get("comandas/" + comanda)
+            .then((response) => {
+                setComanda(response.data)
+                console.log(response.data)
+                navigate("/pagamento", {state: {nome : response.data.nomeDono, valor : pedido.preco, idComanda : response.data.id}})
             }).catch((err) => {
                 if (err.response.status === 404) {
                     console.log("Este endpoint não existe")
@@ -47,6 +65,7 @@ function Pagamento_singular() {
                 }
             })
     }
+
 
     useEffect(() => {
         getPedido()
@@ -106,7 +125,7 @@ function Pagamento_singular() {
                                     text: 'Selecione um pagante'
                                         })
                                 }else{
-                                    navigate("/pagamento", {state: {nome : pagante, valor : pedido.preco}})
+                                    getComanda(pagante)
                                 }
                                  }}>Pagar</button>
                         </div>
