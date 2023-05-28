@@ -12,7 +12,7 @@ import cuidado from "../../_assets/img/icons/warning.png"
 function Inicio() {
     const navigate = useNavigate();
     const [qtdPedidos, setQtdPedidos] = useState();
-    const [chaveCadastrada, setChaveCadastrada] = useState()
+    const [chaveCadastrada, setChaveCadastrada] = useState(true)
     const [pagamentos, setPagamentos] = useState()
 
     function irPedidos(){
@@ -51,11 +51,12 @@ function Inicio() {
     function getChaveCadastrada(){
         api.get("/detalhes-pagamento/" + sessionStorage.userId)
         .then((response) => {
-            console.log("qtd: "+ response.data)
+            console.log("chave: "+ response.data)
             setChaveCadastrada(response.data)
         }).catch((err) => {
             if (err.response.status === 404) {
                 console.log("Este endpoint não existe")
+                setChaveCadastrada(false)
             } else {
                 console.error(err)
             }

@@ -56,7 +56,7 @@ function Pagamento_cliente() {
     useEffect(() => {
         getClientes()
         // getPedido()
-    });
+    },[]);
 
     if (sessionStorage.length > 0) {
         return (

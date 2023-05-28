@@ -218,9 +218,10 @@
 
 }
 
-.card p {
-    font-size: 18px;
-    margin-top: 15px;
+.card_header p {
+    font-size: 16px;
+    margin-top: 7px;
+    color: rgb(146, 146, 146);
 }
 
 .select {
@@ -238,12 +239,11 @@
     color: var(--paletaNum1);
 }
 
-.select span {
-    padding: 20px;
-}
+
 
 .chave {
-    margin-left: 230px;
+    margin-top: 15px;
+    margin-left: 2px;
     margin-right: 30px;
     font-size: 16px;
 }
@@ -257,7 +257,7 @@
     border: none;
     background-color: var(--secundary-color);
     border-radius: 15px;
-    margin-top: 5px;
+    margin-top: 15px;
     cursor: pointer;
 }
 
@@ -274,87 +274,48 @@
 
 }
 
-.containerHead .titulo {
-    font-size: 27px;
-    font-weight: bold;
-}
-
-.containerHead .cadastrar {
+ .card_dados .cadastrar {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
     font-size: 22px;
     cursor: pointer;
+    width: 220px;
+
+
+}
+ .card_dados2 {
+display: flex;
+flex-direction: column;
+
 }
 
-
-.card_editar .popup {
-    background-color: white;
-    padding: 50px;
-    border-radius: 10px;
-}
-
-.popup .header_popup {
+.baixar {
     display: flex;
-    justify-content: space-between;
-    width: 350px;
-    margin-top: 40px;
-}
+    flex-direction: row;
 
-.popup .header_popup .line {
-    width: 9px;
-    height: 69px;
-    background-color: var(--paletaNum2);
-    border-radius: 20px;
+    margin-left: -62px;
+    margin-top: 10px;
+    
 }
+.baixar img{
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
 
-.popup .header_popup .titulo {
-    width: 310px;
-    font-size: 28px;
-    font-weight: bold;
 }
-
-.popup .inputs {
+.importacao {
+    margin-left: -58px;
+    margin-top: 15px;
     display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+
+}
+.importacao img{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
 }
 
-.popup .inputs input {
-    width: 300px;
-    height: 45px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
-    margin-top: 20px;
-    font-size: 18px;
-    padding: 0px 20px;
-}
-
-select {
-    width: 150px;
-    height: 45px;
-    padding: 0px 20px;
-    font-size: 18px;
-    margin-top: 20px;
-    border: none;
-}
-
-.popup button {
-    width: 340px;
-    height: 45px;
-    background-color: var(--secundary-color);
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 40px;
-    cursor: pointer;
-}
 
 
 @media screen and (max-width: 1150px) {
@@ -480,6 +441,7 @@ select {
         font-size: 16px;
         margin-top: 50px;
         width: 150px;
+        background-color: aqua;
         
     }
 
