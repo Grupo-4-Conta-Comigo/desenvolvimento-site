@@ -79,6 +79,7 @@ function Total_divisao() {
 
                                 {
                                         clientes.map((cliente) => {
+                                            console.log(cliente)
                                             return (
                                                 <TotalPessoas cliente={cliente} key={cliente.id} valor={pedido.preco} opcao={state.opcao} qtd={clientes.length} personalizada = {state}/>
                                             )

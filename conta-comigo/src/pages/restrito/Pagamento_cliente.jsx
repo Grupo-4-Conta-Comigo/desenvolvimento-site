@@ -37,6 +37,7 @@ function Pagamento_cliente() {
         }
     }
 
+    
     function getPedido() {
         api.get("pedidos/" + sessionStorage.pedidoAtual)
             .then((response) => {
@@ -85,6 +86,7 @@ function Pagamento_cliente() {
                                     // if(cliente.status === "ativo"){
                                     //     setPagamentoConcluido(false)
                                     // }
+                                    console.log(cliente)
                                     return (
                                         <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} idComanda={cliente.idComanda}/>
                                     )
