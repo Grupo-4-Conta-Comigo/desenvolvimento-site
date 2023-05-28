@@ -22,7 +22,6 @@
 
 
 .container {
-
     background-color: white;
     border-radius: 16px;
     width: 400px;
@@ -53,14 +52,12 @@
 
 
 .buttons {
-    margin-top: 35px;
+    margin-top: 0px;
     width: 340px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-right: 265px;
-
-
 }
 
 .buttons .button_one {
@@ -133,13 +130,14 @@
 }
 
 .container_main {
-    /* background-color: brown; */
-    width: 320px;
-    height: 255px;
+    width: 310px;
+    height: 250px;
+    overflow: auto;
+    margin-top: 40px;
     display: flex;
-    margin-top: 20px;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    padding: 5px 0px;
 }
 
 .container_head .passagem .line{
@@ -153,22 +151,86 @@
 }
 
 
-.pessoa{
-    height: 68px;
+/* .pessoa{
+    height: 70px;
     display: flex;
-    background-color: white;
-    width: 330px;
+    width: 320px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    margin-top: 30px;
+    padding: 5px 0px;
+    justify-content: space-around;
+    border-radius: 10px;
+    cursor: pointer;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
     margin-top: 30px;
+    cursor: pointer;
+} */
+
+.pessoa{
+    width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
     box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
     cursor: pointer;
 }
 
+.pessoa .iconFechado{
+    width: 30px;
+    height: 30px;
+    background-color: var(--paletaNum1);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pessoa .iconFechado img{
+    width: 22px;
+    height: 22px;
+}
+
+.pessoa .icon{
+    width: 30px;
+    height: 30px;
+    background-color: var(--paletaNum2);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pessoa .icon img{
+    width: 22px;
+    height: 22px;
+}
+
+.pessoa img{
+    width: 30px;
+    height: 30px;
+}
+
+.pessoa .nome{
+    margin-left: 10px;
+    width: 150px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.pessoa .valor{
+    font-size: 14px;
+    color: var(--secundaryColor);
+    font-weight: bold;
+}
 
 
-.pessoa:hover .number{
+
+/* .pessoa:hover .number{
     background-color: var(--paletaNum3);
 }
 
@@ -184,9 +246,9 @@
 
 .pessoa img{
     width: 17px;
-}
+} */
 
-.pessoa .icon{
+/* .pessoa .icon{
     width: 33px;
     height: 33px;
     font-size: 20px;
@@ -234,7 +296,7 @@
 
 .pessoa .icon img{
     width: 20px;
-}
+} */
 @media screen and (max-width: 1150px) {
 
     .main {
@@ -288,7 +350,7 @@
 @media screen and (max-width: 600px) {
 
     .pessoa{
-       width: 270px;
+        width: 200px;
     }
 
     .container {
