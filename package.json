@@ -9,5 +9,9 @@
     "react-responsive-carousel": "^3.2.23",
     "react-to-pdf": "^0.0.14"
   },
+  "scripts": {
+    "start": "cd ./site && npm start",
+    "postinstall": "cd ./site && npm install"
+  },
   "proxy": "http://localhost:8080"
 }
