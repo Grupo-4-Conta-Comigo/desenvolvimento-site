@@ -17,7 +17,7 @@ function Lista_pessoas_fechada(props){
                     navigate("/comanda", {state : {nome: props.cliente.nomeDono, idCliente: props.cliente.id, preco: props.cliente.preco}})
                 }
             }>
-                <div className={styles.icon}> <img src={person} alt="" /></div>
+                <div><div className={styles.icon}> <img src={person} alt="" /></div></div>
                 <div className={styles.nome}>{props.cliente.nomeDono}</div>
                 <div className={styles.valor}> R${props.cliente.preco.toFixed(2)}</div>
                 <img src={seta} alt="" />
