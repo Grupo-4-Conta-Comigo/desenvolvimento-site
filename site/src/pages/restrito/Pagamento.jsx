@@ -128,6 +128,19 @@ function Pagamento(props) {
                     })
                       .then((response) => {
                         console.log("RESPONSE: ", response)
+                        api.post("/pagamentos/criar", {
+                          idRestaurante: sessionStorage.userId,
+                          numeroMesa: 2,
+                          nomePagante: state.nome,
+                          chavePix: "sei la",
+                          valorPagamento: state.valor.toFixed(2),
+                          pagamentoConcluido: true,
+                          pix: true
+                        }).then((response)=>{
+                          console.log("RESPONSE: ", response)
+                        }).catch((err)=>{
+                          console.log(err)
+                        })
 
                         // getPedidos();
 

@@ -6,12 +6,15 @@ import cadeado from "../../_assets/img/icons/cadeado.png"
 import add from "../../_assets/img/icons/mais.png"
 import seta from "../../_assets/img/icons/setaDireita.png"
 import { useNavigate } from "react-router-dom";
+import api from "../../config/api"
+import { useState } from "react"
 // import voltar from "../../_assets/img/icons/setaVoltar.png"
 // import { useState } from "react";
 
 
 function Perfil() {
     const navigate = useNavigate()
+    const [relatorio, setRelatorio] = useState()
 
     // const [popup, setPopup] = useState(false)
 
@@ -22,15 +25,27 @@ function Perfil() {
                 <Bot />
             </div> */}
             <div className={styles.main}>
-
                 <div className={styles.container}>
+                    <button onClick={() => {
+                        api.get("/arquivos-pagamento/exportar-relatorio/" + sessionStorage.userId)
+                            .then((response) => {
+                                console.log(response)
+                                setRelatorio(response.data)
+                            }).catch((err) => {
+                                if (err.response.status === 404) {
+                                    console.log("Este endpoint não existe")
+                                } else {
+                                    console.error(err)
+                                }
+                            })
+                    }}>gerar</button>
                     <div className={styles.up}>
                         <div className={styles.card}>
                             <div className={styles.lineRed}></div>
                             <div className={styles.card_main}>
                                 <div className={styles.card_header}>
                                     <div className={styles.card_titulo}>Detalhes restaurante</div>
-                                            {/* <div className={styles.card_editar}>
+                                    {/* <div className={styles.card_editar}>
                                             <div className={styles.btn}>
                                         <img src={editar} alt="" />
                                     </div>
