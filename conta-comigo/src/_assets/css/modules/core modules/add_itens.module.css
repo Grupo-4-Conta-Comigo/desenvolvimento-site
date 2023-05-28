@@ -135,8 +135,9 @@
 
 
 table{
-    width: 100%;
+    width: 400px;
     margin-top: 40px;
+    overflow: auto;
 
 }
 
@@ -308,4 +309,47 @@ table img{
     padding: 10px;
     max-height: 76px;
     overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+    .container{
+        /* background-color: red; */
+        width: 400px;
+    }
+
+    .container_table{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        width: 230px;
+    }
+
+    .container_table{
+        width: 400px;
+    }
+
+    .container .containerHead{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerHead .containerHead_right{
+        margin-top: 20px;
+    }
+
+    .valor{
+        margin-right: 10px;
+    }
+
+    .container_table{
+        width: 300px;
+    }
+
+    .container_table table{
+        width: 350px;
+    }
 }
