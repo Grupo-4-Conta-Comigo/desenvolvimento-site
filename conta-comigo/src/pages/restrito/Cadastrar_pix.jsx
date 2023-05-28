@@ -34,11 +34,17 @@ function Cadastrar_pix() {
         clientSecret: clienteSecret,
       })
       .then((response) => {
-        console.log("RESPONSE: ", response);
-        Swal.fire("Chave pix cadastrada!", "", "success").then((value) => {
-          navigate("/perfil");
-        });
-        // getPedidos();
+        api
+          .put("/detalhes-pagamento/testar-pagamentos/" + sessionStorage.userId)
+          .then((response)=>{
+            console.log(response)
+            Swal.fire("Chave pix cadastrada!", "", "success").then((value) => {
+              navigate("/perfil");
+            });
+            // getPedidos();
+          }).catch(()=>{
+            Swal.fire("As informações são inválidas!", "", "warning")
+          })
       })
       .catch((err) => {
         console.log("TINHA QUE ENTRAR AQUI");
