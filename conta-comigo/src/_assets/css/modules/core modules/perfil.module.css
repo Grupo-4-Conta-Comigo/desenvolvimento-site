@@ -360,6 +360,7 @@ select {
 @media screen and (max-width: 1150px) {
     .container {
         margin-top: 140px;
+        background-color: red;
     }
 }
 

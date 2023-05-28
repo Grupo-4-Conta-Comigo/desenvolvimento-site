@@ -1,8 +1,10 @@
 .main{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .container{
@@ -168,7 +170,7 @@
 
 @media screen and (max-width: 1150px){
     .container{
-        margin-top: 140px;
+        margin-top: 40px;
         width: 300px;
     }
 

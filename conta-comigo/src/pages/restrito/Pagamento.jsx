@@ -6,6 +6,8 @@ import api from "../../config/api";
 import { useEffect, useState } from "react";
 import spin from "../../_assets/img/icons/spin.gif"
 import Swal from "sweetalert2";
+import voltar from "../../_assets/img/icons/setaVoltar.png"
+
 
 function Pagamento(props) {
   const { state } = useLocation();
@@ -71,6 +73,10 @@ function Pagamento(props) {
       <div className="fBody">
         <LateralMenu />
         <div className={styles.main}>
+          <div onClick={() => { window.history.back() }} className={"voltar"}>
+            <img src={voltar} alt="" />
+            <p>voltar</p>
+          </div>
           <div className={styles.container}>
             <div className={styles.pagante}>
               <div className={styles.profile}>
@@ -128,29 +134,29 @@ function Pagamento(props) {
                       }).catch((err) => {
                         console.log(err.response.data.errors[0].defaultMessage)
                       })
-                    if(state.singular){
-                      api.put("/pedidos/editar/"+ sessionStorage.pedidoAtual, {
-                        status : "finalizado", //AQUI TEM QUE MUDAR
-                        mesa : state.mesa
-                    })
+                    if (state.singular) {
+                      api.put("/pedidos/editar/" + sessionStorage.pedidoAtual, {
+                        status: "finalizado", //AQUI TEM QUE MUDAR
+                        mesa: state.mesa
+                      })
                         .then((response) => {
-                            console.log("RESPONSE: ", response)
-                            Swal.fire(
-                                'Mesa finalizada!',
-                                '',
-                                'success'
-                            ).then(()=>{
-                                navigate("/pedidos")
-                            })
-                            
-                            // getPedidos();
-                            
+                          console.log("RESPONSE: ", response)
+                          Swal.fire(
+                            'Mesa finalizada!',
+                            '',
+                            'success'
+                          ).then(() => {
+                            navigate("/pedidos")
+                          })
+
+                          // getPedidos();
+
                         }).catch((err) => {
-                            console.log(err.response.data.errors[0].defaultMessage)
+                          console.log(err.response.data.errors[0].defaultMessage)
 
 
                         })
-                    }else{
+                    } else {
                       window.history.back()
                     }
                   }

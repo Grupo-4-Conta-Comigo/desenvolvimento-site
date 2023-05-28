@@ -35,7 +35,6 @@
     width: 800px;
     padding: 70px 0px 50px 80px;
     margin-top: 20px;
-    height: 400px;
     z-index: 0;
 }
 
@@ -206,52 +205,47 @@
 @media screen and (max-width: 600px) {
 
     .buttons {
-        width: 150;
-        float: right;
-        margin-top: -20px;
+        width: 250px;
+        margin-top: 10px;
         margin-bottom: 20px;
-
-
+        flex-direction: column;
     }
 
     .buttons button {
         width: 153px;
         height: 46px;
-
-
+        margin-top: 0;
     }
 
     .buttons .btnSingular {
         width: 153px;
         height: 46px;
-        margin-left: 193px;
+        margin-left: 0;
     }
 
     .container {
-        width: 320px;
+        width: 250px;
     }
 
     .container .container_right {
         margin-top: 30px;
-        width: 240px;
-        margin-left: 45px;
+        margin-left: 0;
     }
 
     .container_right .total {
         font-size: 16px;
-
     }
 
     .pessoas {
         width: 250px;
-        margin-left: -15px;
+        margin-left: -50px;
     }
 
     .container_head{
         font-size: 25px;
         font-weight: bold;
         width: 100px;
-        margin-left: 80px;
+        margin-left: 50px;
         
         
     }

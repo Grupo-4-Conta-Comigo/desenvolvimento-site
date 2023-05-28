@@ -35,7 +35,6 @@
 }
 
 .pessoa .nome{
-    margin-right: 130px;
     color: #888888;
     font-size: 15px;
     font-weight: 600;
@@ -56,4 +55,13 @@
 
 .pessoa .icon img{
     width: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .pessoa{
+        margin-left: -20px;
+    }
+
+    .pessoa .icon{
+    }
 }

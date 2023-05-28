@@ -254,7 +254,7 @@
     }
 
     .container {
-        width: 254px;
+        width: 200px;
         height: 440px;
 
     }
@@ -262,7 +262,7 @@
     .container .container_right {
         margin-top: 30px;
         width: 240px;
-        margin-left: 55px;
+        margin-left: 20px;
     }
 
     .container_right .total {
@@ -275,7 +275,7 @@
         font-size: 25px;
         font-weight: bold;
         width: 250px;
-        margin-left: 40px;
+        margin-left: 0px;
         /* background-color: brown; */
 
     }
@@ -299,14 +299,14 @@
 
     .center {
         /* background-color: blue; */
-        width: 300px;
-        margin-top: 90px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        width: 220px;
     }
 
+    .select {
+       width: 250px;
+       height: 60px;
+    }
+    
 
 
 }
