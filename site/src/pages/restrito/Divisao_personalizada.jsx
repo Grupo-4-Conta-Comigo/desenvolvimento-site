@@ -1,11 +1,7 @@
 import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/divisao modules/divisao_pers.module.css";
 import voltar from "../../_assets/img/icons/setaVoltar.png";
-import Card from "../../components/Card";
-import ReactCardCarousel from "react-card-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "react-alice-carousel/lib/alice-carousel.css";
-import "pure-react-carousel/dist/react-carousel.es.css";
+import Card from "../../components/Card"; 
 import { useEffect, useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";
@@ -131,7 +127,7 @@ function Divisao_personalizada() {
           </div>
           <div className={styles.container}>
             <div className={styles.container_head}>
-              <p>Divisão personalizada</p>
+              <p>Divisão Personalizada</p>
               <div className={styles.passagem}>
                 <div className={styles.line}></div>
               </div>
@@ -144,13 +140,13 @@ function Divisao_personalizada() {
               </div>
             </div>
             <div className={styles.container_main}>
-              <div className={styles.carrossel}>
+              {/* <div className={styles.carrossel}> */}
                 <div className={styles.cards}>
-                  <ReactCardCarousel
+                  {/* <ReactCardCarousel
                     autoplay={false}
                     autoplay_speed={2500}
                     spread="medium"
-                  >
+                  > */}
                     {itens
                       ? itens.map((item, i) => {
                         return (
@@ -160,12 +156,12 @@ function Divisao_personalizada() {
                             onAddPagante={onAddPagante}
                             onValorChange={onValorChange}
                           />
-                        );
+                         );
                       })
-                      : ""}
-                  </ReactCardCarousel>
+                      : ""} 
+                  {/* </ReactCardCarousel> */}
                 </div>
-              </div>
+              {/* </div> */}
             </div>
 
             <div className={styles.buttons}>

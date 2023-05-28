@@ -149,7 +149,7 @@ html{
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--secundary-color) rgba(0, 0, 0, 0);
+    scrollbar-color: var(--secundary-color) rgba(0, 0, 0, 0) ;
   }
   
   /* Works on Chrome, Edge, and Safari */
