@@ -74,7 +74,7 @@ function Lista_itens(props) {
                     props.item.nome + ' deletado!',
                     'O item foi deletado do seu cardápio',
                     'success'
-                  );
+                  ).then(()=>{window.location.reload()})
                 }).catch((err) => {
                   console.error(err)
                 })

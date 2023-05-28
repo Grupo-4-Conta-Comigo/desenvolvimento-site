@@ -33,6 +33,11 @@ function Cardapio() {
         setCtg(event.target.value);
     };
 
+    function conexaoFormCadastroItem(e){
+        cadastrarItem()
+        e.preventDefault();
+      }
+
     function cadastrarItem() {
         if (!nomeIpt) {
             Swal.fire({
@@ -60,6 +65,7 @@ function Cardapio() {
                             setNome("")
                             setPreco("")
                             setCadastroAberto(false)
+                            window.location.reload()
                         })
                     }).catch((err) => {
                         console.log(err.response.data.errors[0].defaultMessage)
@@ -113,6 +119,7 @@ function Cardapio() {
                         <div className={styles.titulo}>Cadastrar novo item ao cardápio</div>
                     </div>
 
+                    <form>
                     <div className={styles.inputs}>
                         <select name="tipo" id="format" onChange={texto => setTipo(texto.target.value)}>
                             <option selected disabled>Categoria</option>
@@ -127,7 +134,8 @@ function Cardapio() {
                     </div>
 
 
-                    <button onClick={cadastrarItem}>Cadastrar</button>
+                    <button onClick={conexaoFormCadastroItem}>Cadastrar</button>
+                    </form>
                 </div>
             </div>
             <div className={styles.main}>

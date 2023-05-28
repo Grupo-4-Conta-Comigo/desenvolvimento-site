@@ -14,6 +14,7 @@ function Login() {
     const [senhaIpt, setSenha] = useState('')
     const [erro, setErro] = useState('');
 
+
     const [carregando, setCarregando] = useState(false)
 
     function carregar() {
@@ -66,6 +67,12 @@ function Login() {
             })
     }
 
+    function conexaoFormLogin(e){
+        logar()
+        e.preventDefault();
+      }
+
+
     if (sessionStorage.length > 0) {
         window.location.href = "http://localhost:3000/inicio";
     } else {
@@ -77,10 +84,12 @@ function Login() {
                     </div>
                     <p className={styles.login}>Login</p>
 
+                        <form onSubmit={logar}>
                         <input type="text" placeholder="Email" onChange={changeUsuario} />
                         <input type="password" placeholder="Senha" onChange={changeSenha} />
                         <p className={styles.ativo}>{erro}</p>
-                        <button onClick={logar}>Entrar</button>
+                        <button onClick={conexaoFormLogin}>Entrar</button>
+                        </form>
 
                     <span className={carregando ? "loader" : ""}></span>
                     <p className={carregando ? "disable" : styles.fpsw}>Esqueceu a senha?</p>
