@@ -1,6 +1,6 @@
 import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/divisao modules/pagamento_cliente.module.css"
-import TotalPessoas from "../../components/Total_pessoas";
+// import TotalPessoas from "../../components/Total_pessoas";
 import { useState, useEffect } from "react";
 import api from "../../config/api";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -14,10 +14,10 @@ import voltar from "../../_assets/img/icons/setaVoltar.png";
 function Pagamento_cliente() {
 
     const [clientes, setClientes] = useState([])
-    const [pedido, setPedido] = useState([])
+    // const [pedido, setPedido] = useState([])
     const { state } = useLocation();
     const navigate = useNavigate()
-    const [pagamentoConcluido, setPagamentoConcluido] = useState(true)
+    const pagamentoConcluido = true;
 
 
     function getClientes() {
@@ -38,25 +38,25 @@ function Pagamento_cliente() {
     }
 
     
-    function getPedido() {
-        api.get("pedidos/" + sessionStorage.pedidoAtual)
-            .then((response) => {
-                setPedido(response.data)
-            }).catch((err) => {
-                if (err.response.status === 404) {
-                    console.log("Este endpoint não existe")
-                } else {
-                    console.error(err)
-                }
-            })
+    // function getPedido() {
+    //     api.get("pedidos/" + sessionStorage.pedidoAtual)
+    //         .then((response) => {
+    //             setPedido(response.data)
+    //         }).catch((err) => {
+    //             if (err.response.status === 404) {
+    //                 console.log("Este endpoint não existe")
+    //             } else {
+    //                 console.error(err)
+    //             }
+    //         })
 
 
-    }
+    // }
 
     useEffect(() => {
         getClientes()
-        getPedido()
-    }, []);
+        // getPedido()
+    });
 
     if (sessionStorage.length > 0) {
         return (
@@ -88,7 +88,7 @@ function Pagamento_cliente() {
                                     // }
                                     console.log(cliente)
                                     return (
-                                        <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao == "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} idComanda={cliente.idComanda}/>
+                                        <Lista_pagamento_cliente cliente={cliente} key={cliente.id} preco={state.opcao === "igualmente" ? state.valor : state.personaliz ? cliente.valorAPagar : cliente.preco} personaliz={state.personaliz} idComanda={cliente.idComanda}/>
                                     )
                                 })
                             }

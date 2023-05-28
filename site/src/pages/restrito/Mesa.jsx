@@ -2,11 +2,11 @@ import LateralMenu from "../../components/Lateral_menu"
 import styles from "../../_assets/css/modules/core modules/add_cliente.module.css"
 import ListaPessoas from "../../components/Listas/Lista_pessoas"
 import add from "../../_assets/img/icons/mais.png"
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import Swal from "sweetalert2";
 import { useState, useEffect } from "react";
 import api from "../../config/api";
-import Bot from "../../components/Bot/Bot"
+// import Bot from "../../components/Bot/Bot"
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 // function irPedidos() {

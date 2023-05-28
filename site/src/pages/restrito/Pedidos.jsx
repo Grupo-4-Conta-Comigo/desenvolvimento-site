@@ -6,7 +6,7 @@ import styles from "../../_assets/css/modules/core modules/pedidos.module.css"
 import { useEffect, useState } from "react"
 import api from "../../config/api"
 import Swal from "sweetalert2"
-import Bot from "../../components/Bot/Bot"
+// import Bot from "../../components/Bot/Bot"
 import { useNavigate } from "react-router-dom"
 
 
@@ -154,7 +154,7 @@ function Inicio() {
                             {
                                 pedidos ? (
                                     pedidos.map((pedido) => {
-                                        if((pedido.mesa).toString().includes(numero) && (pedido.status == "ativo" || pedido.status == "fechado")){
+                                        if((pedido.mesa).toString().includes(numero) && (pedido.status === "ativo" || pedido.status === "fechado")){
                                             return (
                                                 <Pedidos pedido={pedido} key={pedido.id} />
                                             )

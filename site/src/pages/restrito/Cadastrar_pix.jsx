@@ -12,6 +12,7 @@ function Cadastrar_pix() {
   const [chavepix, setChavepix] = useState();
   const [clienteid, setClienteid] = useState();
   const [clienteSecret, setClienteSecret] = useState();
+  const [carregando, setCarregando] = useState(false)
 
   const changeChave = (event) => {
     setChavepix(event.target.value);
@@ -26,6 +27,7 @@ function Cadastrar_pix() {
   };
 
   function cadastrarChave() {
+    setCarregando(true)
     console.log(chavepix, clienteid, clienteSecret);
     api
       .put("/detalhes-pagamento/criar/" + sessionStorage.userId, {
@@ -41,12 +43,15 @@ function Cadastrar_pix() {
             Swal.fire("Chave pix cadastrada!", "", "success").then((value) => {
               navigate("/perfil");
             });
+            setCarregando(false)
             // getPedidos();
           }).catch(()=>{
             Swal.fire("As informações são inválidas!", "", "warning")
+            setCarregando(false)
           })
       })
       .catch((err) => {
+        setCarregando(false)
         console.log("TINHA QUE ENTRAR AQUI");
         console.log(err.response.data.errors[0].defaultMessage);
       });
@@ -147,6 +152,7 @@ function Cadastrar_pix() {
                 <p>Adicionar certificado</p>
                 <img src={pasta} alt="" />
               </div>
+              <span className={carregando ? "loader" : ""}></span>
             </div>
             <div className={styles.buttons}>
               <button className={styles.button_two} onClick={cadastrarChave}>

@@ -77,14 +77,14 @@ function Opcao_divisao() {
                         <div className={styles.buttons}>
                             <button onClick={()=>{navigate("/mesas")}} className={styles.button_one}>Voltar</button>
                             <button onClick={()=>{               
-                                if(opcao == undefined){
+                                if(opcao === undefined){
                                     Swal.fire({
                                         icon: 'error',
                                     title: 'Oops...',
                                     text: 'Selecione uma opção'
                                         })
                                 }
-                                else if(opcao == "personalizada"){
+                                else if(opcao === "personalizada"){
                                     navigate("/divisaoPersonalizada", {state : {mesa : state.mesa}})
                                 }
                                 else{

@@ -12,7 +12,7 @@ function Suporte() {
                     <iframe width='560' height='580'
                         src='https://app.pipefy.com/public/form/oIG9s064?embedded=true'
                         frameborder='0'
-                    ></iframe>
+                    />
                 </div>
             </div>
         </div>

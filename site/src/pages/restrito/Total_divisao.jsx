@@ -53,7 +53,7 @@ function Total_divisao() {
     useEffect(() => {
         getClientes()
         getPedido()
-    }, []);
+    });
 
 
     if (sessionStorage.length > 0) {

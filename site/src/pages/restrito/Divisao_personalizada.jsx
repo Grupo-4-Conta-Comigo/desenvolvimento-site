@@ -14,7 +14,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 function Divisao_personalizada() {
   const [itens, setItens] = useState([]);
   const [corpoCalculo, setCorpoCalculo] = useState({});
-  const [total, setTotal] = useState();
+  // const [total, setTotal] = useState();
   const { state } = useLocation();
 
 

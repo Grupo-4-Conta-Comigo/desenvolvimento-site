@@ -1,12 +1,12 @@
 import Menu from "../../components/Lateral_menu"
 import styles from "../../_assets/css/modules/core modules/funcionarios.module.css";
-import Lista_itens from "../../components/Listas/Lista_itens";
+// import Lista_itens from "../../components/Listas/Lista_itens";
 import { useEffect, useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";
 import add from "../../_assets/img/icons/mais.png"
 import Lista_funcionarios from "../../components/Listas/Lista_funcionarios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 
@@ -18,8 +18,8 @@ function Funcionarios() {
     const [nomeIpt, setNomeIpt] = useState()
     const [emailIpt, setEmailIpt] = useState()
     const [senhaIpt, setSenhaIpt] = useState()
-    const [cpfIpt, setCpfIpt] = useState("094.700.440-88")
-    const navigate = useNavigate()
+    const cpfIpt = "094.700.440-88" // arrumar isso
+    // const navigate = useNavigate()
 
     function getGarcons() {
         api.get("/restaurantes/garcons/todos/" + sessionStorage.userId)

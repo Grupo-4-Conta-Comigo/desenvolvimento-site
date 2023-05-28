@@ -3,7 +3,7 @@ import styles from "../../_assets/css/modules/core modules/mesas.module.css"
 import ListaPessoas from "../../components/Listas/Lista_pessoas_fechada";
 import api from "../../config/api";
 import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 
@@ -17,7 +17,7 @@ function Mesas() {
     const [clientes, setClientes] = useState([])
     const [pedido, setPedido] = useState([])
 
-    const { state } = useLocation()
+    // const { state } = useLocation()
 
     const navigate = useNavigate()
 

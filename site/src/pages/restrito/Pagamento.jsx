@@ -66,7 +66,7 @@ function Pagamento(props) {
 
   useEffect(() => {
     gerarQRcode();
-  }, []);
+  });
 
   if (sessionStorage.length > 0) {
     return (

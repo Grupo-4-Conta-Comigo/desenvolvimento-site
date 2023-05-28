@@ -1,19 +1,19 @@
 import Menu from "../../components/Lateral_menu"
-import Bot from "../../components/Bot/Bot";
+// import Bot from "../../components/Bot/Bot";
 import styles from "../../_assets/css/modules/core modules/perfil.module.css"
-import editar from "../../_assets/img/icons/btnEditar.png"
+// import editar from "../../_assets/img/icons/btnEditar.png"
 import cadeado from "../../_assets/img/icons/cadeado.png"
 import add from "../../_assets/img/icons/mais.png"
 import seta from "../../_assets/img/icons/setaDireita.png"
 import { useNavigate } from "react-router-dom";
-import voltar from "../../_assets/img/icons/setaVoltar.png"
-import { useEffect, useState } from "react";
+// import voltar from "../../_assets/img/icons/setaVoltar.png"
+// import { useState } from "react";
 
 
 function Perfil() {
     const navigate = useNavigate()
 
-    const [popup, setPopup] = useState(false)
+    // const [popup, setPopup] = useState(false)
 
     return (
         <div className="fBody">

@@ -1,7 +1,7 @@
 import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/core modules/inicio.module.css"
 import ListaPagamentos from "../../components/Listas/Lista_pagamentos";
-import Bot from "../../components/Bot/Bot";
+// import Bot from "../../components/Bot/Bot";
 import { useNavigate } from "react-router-dom";
 import api from "../../config/api";
 import { useState, useEffect} from "react";
