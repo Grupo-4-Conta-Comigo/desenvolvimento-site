@@ -5,13 +5,12 @@
     flex-direction: column;
 }
 
-.select{
+.select {
     font-size: 15px;
     margin-left: -20px;
 }
 
-.cardzin {
-}
+.cardzin {}
 
 .msg {
     font-size: 20px;
@@ -91,24 +90,29 @@
     color: var(--secundary-color);
 }
 
-.carrossel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .cards {
-    width: 430px;
+    margin-top: 10px;
+    width: 610px;
     height: 290px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: scroll;
+
+
 }
 
-.cardzin{
-      text-align: center;
-      background: white;
-      color: #FFF;
-      height: 220px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+.cardzin {
+    text-align: center;
+    background: white;
+    color: #FFF;
+    height: 210px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+    width: 250px;
+    margin-top: 25px;
 
 }
 
@@ -196,6 +200,9 @@
     width: 100%;
     max-height: 100px;
     overflow: auto;
+   ;
+
+
 }
 
 .card_pessoa {
@@ -264,119 +271,205 @@
     margin-right: 30px;
 }
 
-.wrapper {
-
-    margin-top: 30px;
-    max-width: 1100px;
-    width: 100%;
-    position: relative;
-    margin-left: -50px;
-
-}
-
-
-.wrapper i {
-    top: 50%;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    font-size: 1.25rem;
-    position: absolute;
-    text-align: center;
-    line-height: 50px;
-
-    transform: translateY(-50%);
-    transition: transform 0.1s linear;
-}
-
-.wrapper i:active {
-    transform: translateY(-50%) scale(0.85);
-}
-
-.wrapper i:first-child {
-    left: -22px;
-}
-
-.wrapper i:last-child {
-    right: -22px;
-}
-
-.wrapper .carousel {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc((100% / 2) - 9px);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    border-radius: 8px;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.carousel.no-transition {
-    scroll-behavior: auto;
-}
-
-.carousel.dragging {
-    scroll-snap-type: none;
-    scroll-behavior: auto;
-}
-
-.carousel.dragging .card {
-    cursor: grab;
-    user-select: none;
-}
-
-.carousel :where(.card, .img) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel .card {
-    scroll-snap-align: start;
-    height: 280px;
-    list-style: none;
-    background: #fff;
-    cursor: pointer;
-    padding-bottom: 15px;
-    flex-direction: column;
-    border-radius: 8px;
-}
-
-.popup{
-    width: 200px;
-    height: 300px;
-    background-color: red;
-    position: absolute;
-}
 
 
 @media screen and (max-width: 900px) {
-    .wrapper .carousel {
-        grid-auto-columns: calc((100% / 2) - 9px);
-        
-        margin-top: 150%;
+
+
+    .cards {
+        margin-top: 20px;
+        width: 490px;
+        height: 290px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        overflow: scroll;
+
     }
 
-    .container {
-        background-color: white;
-        border-radius: 16px;
-        width: 500px;
-        padding: 70px 0px 50px 80px;
-        margin-top: 20px;
-        height: 400px;
-        z-index: 0;
+    .cardzin {
+        text-align: center;
+        background: white;
+        color: #FFF;
+        height: 210px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgb(0, 0, 0, 25%);
+        width: 210px;
+        margin-top: 25px;
+
     }
-    
+
+    .container .container_right {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        margin-top: -30px;
+        margin-left: 300px;
+        width: 200px;
+    }
+
+    .container_right .total {
+        color: var(--paletaNum1);
+        font-weight: bold;
+        font-size: 25px;
+        margin-left: 20px;
+    }
+
+
+    .card_header {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card_header .icon {
+        width: 70px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card_header .preco {
+        width: 100px;
+        font-size: 18px;
+        color: var(--paletaNum1);
+        font-weight: bold;
+
+    }
+
+    .card_header .precoErro {
+        width: 100px;
+        font-size: 18px;
+        color: red;
+        font-weight: bold;
+    }
+
+    .card_main {}
+
+    .card_titulo {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card_titulo p {
+        font-weight: bold;
+        margin-right: 10px;
+
+    }
+
+
+    .container {
+        width: 560px;
+        margin-top: 20px;
+        height: 450px;
+    }
+
+    .buttons {
+        width: 400px;
+        float: right;
+        margin-top: 15px;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
-    .wrapper .carousel {
-        grid-auto-columns: 100%;
+
+    .cards {
+        margin-top: 50px;
+        width: 300px;
+        height: 290px;
+
+
     }
+
+    .cardzin {
+        height: 210px;
+        width: 210px;
+        margin-top: 25px;
+        margin-right: 70px;
+
+    }
+
+    .container .container_right {
+        height: 30px;
+        margin-top: -30px;
+        margin-left: 300px;
+        width: 200px;
+    }
+
+    .container_right .total {
+        color: var(--paletaNum1);
+        font-weight: bold;
+        font-size: 25px;
+        margin-left: 20px;
+    }
+
+
+
+    .card_header .preco {
+        width: 100px;
+        font-size: 18px;
+
+
+    }
+
+    .card_header .precoErro {
+        width: 100px;
+        font-size: 18px;
+
+    }
+
+
+
+    .container {
+        width: 300px;
+        height: 500px;
+
+    }
+
+    .buttons {
+        width: 330px;
+        float: right;
+        margin-top: 15px;
+    }
+
+    .buttons button {
+        width: 120px;
+        height: 45px;
+        margin-top: 30px;
+
+    }
+
+    .buttons .btnSingular {
+        width: 120px;
+        height: 45px;
+
+    }
+
+    .container_head .passagem .line {
+        width: 255px;
+        height: 5px;
+        margin-top: 5px;
+        margin-left: 2px;
+    }
+
+    .container .container_right {
+        height: 30px;
+        margin-top: 25px;
+        margin-left: 25px;
+
+    }
+
+    .container_right .total {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+
+
+
 }
