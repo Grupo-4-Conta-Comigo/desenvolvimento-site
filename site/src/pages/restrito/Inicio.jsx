@@ -97,7 +97,7 @@ function Inicio() {
                                                 <ListaPagamentos pagamento={pagamento}/>
                                             )
                                     })
-                                ) : <div className={styles.msg}>Não há pedidos em andamento</div>
+                                ) : <div className={styles.msg}>Não há pagamentos</div>
                             }
                         </div>
                     </div>

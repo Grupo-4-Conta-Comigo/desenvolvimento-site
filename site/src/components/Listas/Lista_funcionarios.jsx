@@ -87,9 +87,9 @@ function atualizar() {
         <div className={styles.nome}>{props.garcom.nome}</div>
         <div className={styles.email}>{props.garcom.email}</div>
       </div>
-      <div className={styles.editar} onClick={()=>{setPopup(true)}}>
+      {/* <div className={styles.editar} onClick={()=>{setPopup(true)}}>
         <img src={editar} />
-      </div>
+      </div> */}
       <div onClick={() => {
         Swal.fire({
           title: 'Apagar ' + props.garcom.nome + '?',

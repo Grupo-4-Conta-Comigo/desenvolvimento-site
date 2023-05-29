@@ -138,9 +138,9 @@ function Add_itens() {
                                 <div className={styles.nome}>
                                     {sessionStorage.nomeClienteAtual}
                                 </div>
-                                <div className={styles.editar}>
+                                {/* <div className={styles.editar}>
                                     <img src={editar} alt="" />
-                                </div>
+                                </div> */}
                             </div>
                             <div onClick={()=>{setCadastroAberto(true)}} className={styles.containerHead_right}>
                                 <div className={styles.valor}>Adicionar item</div>
@@ -152,13 +152,13 @@ function Add_itens() {
 
                         <div className={styles.selecionar}>
                             <img src={hamburguer} alt="" />
-                            <p>-- Selecionar categoria --</p>
-                            <select name="format" id="format">
+                            <p>-- Produtos do {sessionStorage.nomeClienteAtual} --</p>
+                            {/* <select name="format" id="format">
                                 <option value="tudo">Tudo</option>
                                 <option value="comida">Comida</option>
                                 <option value="bebida">Bebida</option>
                                 <option value="outro">Outro</option>
-                            </select>
+                            </select> */}
                         </div>
 
 

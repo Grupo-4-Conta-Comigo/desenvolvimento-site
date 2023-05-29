@@ -73,7 +73,6 @@
 
 .cadastrarItem{
     position: absolute;
-    background-color: rgb(0, 0, 0,60%);
     width: 100vw;
     height: 100vh;
     display: flex;

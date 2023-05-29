@@ -132,7 +132,7 @@ function Pagamento(props) {
                           idRestaurante: sessionStorage.userId,
                           numeroMesa: 2,
                           nomePagante: state.nome,
-                          chavePix: "sei la",
+                          chavePix: "",
                           valorPagamento: state.valor.toFixed(2),
                           pagamentoConcluido: true,
                           pix: true
@@ -179,7 +179,7 @@ function Pagamento(props) {
                   icon: 'success',
                   title: 'Pagamento registrado'
                 })
-              }}>Pagamento concluído</div>
+              }}>Confirmar pagamento</div>
 
               {/* <span class="loader"></span>  */}
             </div>

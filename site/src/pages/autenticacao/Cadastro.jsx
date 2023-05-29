@@ -33,6 +33,11 @@ function Cadastro() {
     }
 
 
+    function conexaoFormCadastro(e){
+        cadastrar()
+        e.preventDefault();
+      }
+
 
 
     const changeNome = (event) => {
@@ -139,6 +144,7 @@ function Cadastro() {
                     <img src={logotipo} alt="" />
                     <span>| Cadastro</span>
                 </div>
+                <form>
                 <div className={styles.form}>
                     <input id="nomeid" type="text" placeholder="Nome do restaurante" onChange={changeNome} />
                     <p className={styles.erro} id="erroNome"></p>
@@ -152,8 +158,9 @@ function Cadastro() {
                     </div>
                     <p style={senhaErradaIguais ? erro : null} className={styles.erro}>As senhas precisam ser iguais</p>
                     <p style={senhaErradaTamanho ? erro : null} className={styles.erro}>A senha deve ter mais de 8 caracteres</p>
-                    <button onClick={cadastrar}>Cadastrar</button>
+                    <button onClick={conexaoFormCadastro}>Cadastrar</button>
                 </div>
+                </form>
                 <span className={carregando ? "loader" : ""}></span>
                 
                 <p className={carregando ? "disable" : ""} onClick={irLogin}>Já possui conta?</p>

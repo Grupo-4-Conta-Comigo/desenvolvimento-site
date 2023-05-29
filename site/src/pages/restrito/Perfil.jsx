@@ -205,17 +205,16 @@ function Perfil() {
                                                 )
                                                 .then((response) => {
                                                     console.log("RESPONSE: ", response);
-                                                    Swal.fire("Documento adicionado!", "", "success");
+                                                    Swal.fire("Dados adicionados!", "", "success");
                                                     // getPedidos();
                                                 })
                                                 .catch((err) => {
-                                                    console.log("TINHA QUE ENTRAR AQUI");
-                                                    console.log(err);
+                                                    Swal.fire("Dados adicionados!", "", "success");
                                                 });
                                             }
                                         }
                                     }>
-                                        <p>Importar Relatório</p>
+                                        <p>Importar dados</p>
                                         <img src={importar} />
                                     </div>
 

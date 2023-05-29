@@ -50,8 +50,8 @@ function Lateral_menu() {
             <div className={menuAberto? styles.listaPaginas : "btn_d"}>
                 <p onClick={irInicio}>Início</p>
                 <p onClick={irPedido}>Pedidos</p>
-                <p onClick={irCardapio}>Cardápio</p>
-                <p onClick={irPerfil}>Perfil</p>
+                <p className={sessionStorage.cargo == "admin"? "" : "btn_d"} onClick={irCardapio}>Cardápio</p>
+                <p className={sessionStorage.cargo == "admin"? "" : "btn_d"} onClick={irPerfil}>Perfil</p>
             </div>
             <div className={styles.menu_lateral}>
                 <div className={styles.head}>

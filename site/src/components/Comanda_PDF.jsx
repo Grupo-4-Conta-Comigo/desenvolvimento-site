@@ -32,9 +32,8 @@ function Comanda_PDF(props) {
 
     const ref = createRef();
     const options = {
-        orientation: 'landscape',
-        unit: 'in',
-        format: [4,3]
+        orientation: 'portrait',
+        format: [100,65]
     };
 
     return (
