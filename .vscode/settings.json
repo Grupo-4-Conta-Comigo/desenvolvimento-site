@@ -1,1 +1,8 @@
-{}
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/fbe94530-3442-4710-bc32-89d229b4b5f6/resourceGroups/projeto-conta-comigo/providers/Microsoft.Web/sites/ContaComigo",
+    "appService.deploySubpath": "site\\build"
+}

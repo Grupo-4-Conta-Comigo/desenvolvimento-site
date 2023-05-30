@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "../../_assets/css/modules/core modules/login.module.css"
 import logomarca from "../../_assets/img/logo-logotipo/logomarca.png"
 import api from "../../config/api";
+import { useNavigate } from "react-router-dom";
 
 function goCadastro() {
     window.location.href = "http://localhost:3000/cadastro";
@@ -13,6 +14,8 @@ function Login() {
     const [usuario, setUsuario] = useState('')
     const [senhaIpt, setSenha] = useState('')
     const [erro, setErro] = useState('');
+
+    const navigate = useNavigate()
 
 
     const [carregando, setCarregando] = useState(false)
@@ -60,7 +63,8 @@ function Login() {
                     sessionStorage.setItem("userId", response.data.restauranteId)
                 }
                 pararLoading()
-                window.location.href = "http://localhost:3000/inicio";
+                navigate("/inicio")
+                
 
             }).catch((err) => {
                 getErro();
