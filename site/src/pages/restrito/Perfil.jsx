@@ -157,7 +157,7 @@ function Perfil() {
                                     <p>Cadastre aqui sua chave PIX</p>
                                 </div>
                                 <div className={styles.card_dados}>
-                                    <div className={styles.cadastrar} onClick={()=>{navigate("/CadastrarPix")}}>
+                                    <div className={styles.cadastrar} onClick={() => { navigate("/CadastrarPix") }}>
 
                                         <div className={styles.chave}>Adicionar chave PIX</div>
                                         <button className={styles.add_pix}>
@@ -203,14 +203,14 @@ function Perfil() {
                                                         },
                                                     }
                                                 )
-                                                .then((response) => {
-                                                    console.log("RESPONSE: ", response);
-                                                    Swal.fire("Dados adicionados!", "", "success");
-                                                    // getPedidos();
-                                                })
-                                                .catch((err) => {
-                                                    Swal.fire("Dados adicionados!", "", "success");
-                                                });
+                                                    .then((response) => {
+                                                        console.log("RESPONSE: ", response);
+                                                        Swal.fire("Dados adicionados!", "", "success");
+                                                        // getPedidos();
+                                                    })
+                                                    .catch((err) => {
+                                                        Swal.fire("Dados adicionados!", "", "success");
+                                                    });
                                             }
                                         }
                                     }>

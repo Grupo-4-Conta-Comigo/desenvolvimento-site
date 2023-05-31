@@ -68,7 +68,11 @@ function Cardapio() {
                             window.location.reload()
                         })
                     }).catch((err) => {
-                        console.log(err.response.data.errors[0].defaultMessage)
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Dados inválidos!',
+                            text: 'Por favor, insira dados válidos'
+                        })
                     })
 
 

@@ -36,6 +36,7 @@ function Cadastrar_pix() {
         clientSecret: clienteSecret,
       })
       .then((response) => {
+        console.log(response)
         api
           .put("/detalhes-pagamento/testar-pagamentos/" + sessionStorage.userId)
           .then((response)=>{
@@ -114,10 +115,10 @@ function Cadastrar_pix() {
                 className={styles.arquivo}
                 onClick={async () => {
                   const { value: file } = await Swal.fire({
-                    title: "Select image",
+                    title: "Adicione o certificado",
                     input: "file",
                     inputAttributes: {
-                      accept: "*",
+                      accept: ".p12",
                       "aria-label": "Adicione o certificado",
                     },
                   });

@@ -25,7 +25,7 @@ function Associa_item(props){
                 })
                     .then((response) => {
                         console.log("RESPONSE: ", response)
-                    navigate("/adicionarItens");
+                        window.location.reload()
                     
                     
                     }).catch((err) => {
