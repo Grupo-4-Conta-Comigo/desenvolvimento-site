@@ -13,13 +13,13 @@ import ItensIndv from "../../components/ItensIndv"
 import lupa from "../../_assets/img/icons/lupa.png"
 import Lista_search from "../../components/Listas/Lista_search"
 import voltar from "../../_assets/img/icons/setaVoltar.png"
+import { useNavigate } from "react-router-dom"
 
 
-// function irPedidos() {
-//     window.location.href = "http://localhost:3000/pedidos";
-// }
 
 function Add_itens() {
+
+    const navigate = useNavigate()
 
     const [itens, setItens] = useState([])
     const [produtos, setProdutos] = useState([])
@@ -193,7 +193,7 @@ function Add_itens() {
     }
 
     else {
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 }
 

@@ -9,9 +9,7 @@ import api from "../../config/api";
 // import Bot from "../../components/Bot/Bot"
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 
-// function irPedidos() {
-//     window.location.href = "http://localhost:3000/pedidos";
-// }
+
 
 function Add_clientes(props) {
     

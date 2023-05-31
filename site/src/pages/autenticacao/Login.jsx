@@ -4,11 +4,6 @@ import logomarca from "../../_assets/img/logo-logotipo/logomarca.png"
 import api from "../../config/api";
 import { useNavigate } from "react-router-dom";
 
-function goCadastro() {
-    window.location.href = "http://localhost:3000/cadastro";
-}
-
-
 
 function Login() {
     const [usuario, setUsuario] = useState('')
@@ -78,7 +73,7 @@ function Login() {
 
 
     if (sessionStorage.length > 0) {
-        window.location.href = "http://localhost:3000/inicio";
+        navigate("/inicio")
     } else {
         return (
             <div className={styles.bodyF}>
@@ -97,8 +92,8 @@ function Login() {
 
                     <span className={carregando ? "loader" : ""}></span>
                     <p className={carregando ? "disable" : styles.fpsw}>Esqueceu a senha?</p>
-                    <p className={carregando ? "disable" : styles.novaConta} onClick={goCadastro}>Não possui conta?</p>
-                    <div className={styles.btn} onClick={goCadastro}>Cadastre-se</div>
+                    <p className={carregando ? "disable" : styles.novaConta} onClick={()=>{navigate("/cadastro")}}>Não possui conta?</p>
+                    <div className={styles.btn} onClick={()=>{navigate("/cadastro")}}>Cadastre-se</div>
 
 
                 </div>

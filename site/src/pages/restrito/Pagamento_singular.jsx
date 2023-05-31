@@ -9,9 +9,6 @@ import Swal from "sweetalert2";
 // import Lista_pessoas from "../../components/Listas/Lista_pessoas";
 
 
-// function irPedidos() {
-//     window.location.href = "http://localhost:3000/pedidos";
-// }
 
 function Pagamento_singular() {
     const [pedido, setPedido] = useState([])
@@ -134,7 +131,7 @@ function Pagamento_singular() {
     }
 
     else {
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 }
 

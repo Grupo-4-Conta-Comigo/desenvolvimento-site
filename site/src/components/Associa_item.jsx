@@ -1,8 +1,11 @@
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 import api from "../config/api";
+import { useNavigate } from "react-router-dom";
 
 function Associa_item(props){
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         Swal.fire({
@@ -22,7 +25,9 @@ function Associa_item(props){
                 })
                     .then((response) => {
                         console.log("RESPONSE: ", response)
-                    window.location.href = "http://localhost:3000/adicionarItens";
+                    navigate("/adicionarItens");
+                    
+                    
                     }).catch((err) => {
                         console.log(err.response.data.errors[0].defaultMessage)
                     })

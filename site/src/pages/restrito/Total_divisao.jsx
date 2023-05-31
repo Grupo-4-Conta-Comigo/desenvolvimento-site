@@ -6,9 +6,7 @@ import api from "../../config/api";
 import voltar from "../../_assets/img/icons/setaVoltar.png";
 import { useLocation, useNavigate } from "react-router-dom";
 
-// function irPedidos() {
-//     window.location.href = "http://localhost:3000/pedidos";
-// }
+
 
 function Total_divisao() {
 
@@ -104,7 +102,7 @@ function Total_divisao() {
     }
 
     else {
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 }
 

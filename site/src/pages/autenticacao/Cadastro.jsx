@@ -4,12 +4,11 @@ import styles from "../../_assets/css/modules/core modules/cadastro.module.css"
 import { useState } from "react";
 import api from "../../config/api";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
-function irLogin(){
-    window.location.href = "http://localhost:3000/login";
-}
 
 function Cadastro() {
+    const navigate = useNavigate();
     const [nomeIpt, setNome] = useState('');
     const [cnpjIpt, setCnpj] = useState('');
     const [emailIpt, setEmail] = useState('');
@@ -100,7 +99,7 @@ function Cadastro() {
                     '',
                     'success'
                 ).then((value) => {
-                    irLogin()
+                    navigate("/login")
                 })
             }).catch((err) => {
                 console.log("TINHA QUE ENTRAR AQUI")
@@ -163,8 +162,8 @@ function Cadastro() {
                 </form>
                 <span className={carregando ? "loader" : ""}></span>
                 
-                <p className={carregando ? "disable" : ""} onClick={irLogin}>Já possui conta?</p>
-                <div onClick={irLogin} className={styles.btn}>Entrar</div>
+                <p className={carregando ? "disable" : ""} onClick={()=>{navigate("/login")}}>Já possui conta?</p>
+                <div onClick={()=>{navigate("/login")}} className={styles.btn}>Entrar</div>
             </div>
             <div className={styles.right_side}>
                 <img src={cmMobile} alt="" />

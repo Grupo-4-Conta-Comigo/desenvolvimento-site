@@ -7,10 +7,6 @@ import { useNavigate } from "react-router-dom";
 import voltar from "../../_assets/img/icons/setaVoltar.png"
 
 
-// function irPedidos() {
-//     window.location.href = "http://localhost:3000/pedidos";
-// }
-
 
 function Mesas() {
 

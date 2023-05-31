@@ -1,6 +1,6 @@
 import LateralMenu from "../../components/Lateral_menu";
 import styles from "../../_assets/css/modules/core modules/comanda.module.css"
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import api from "../../config/api";
 import { useState, useEffect } from "react";
 import logotipo from "../../_assets/img/logo-logotipo/logotipo.png"
@@ -13,6 +13,8 @@ function Comanda() {
     const { state } = useLocation();
 
     const [itens, setItens] = useState([])
+
+    const navigate = useNavigate()
 
     function getItens() {
         api.get("/itens-comanda/todos/" + state.idCliente)
@@ -57,7 +59,7 @@ function Comanda() {
     }
 
     else {
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 }
 

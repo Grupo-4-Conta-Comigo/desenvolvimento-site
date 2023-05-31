@@ -188,7 +188,7 @@ function Pagamento(props) {
       </div>
     );
   } else {
-    window.location.href = "http://localhost:3000/login";
+    navigate("/login")
   }
 }
 

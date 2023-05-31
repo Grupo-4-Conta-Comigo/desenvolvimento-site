@@ -9,7 +9,6 @@ function Lista_pessoas_fechada(props){
     // function irPessoa(){
     //     sessionStorage.setItem("clienteAtual",props.cliente.id)
     //     sessionStorage.setItem("nomeClienteAtual",props.cliente.nomeDono)
-    //     window.location.href = "http://localhost:3000/adicionarItens";
     // }
     return(
             <div className={styles.pessoa} onClick={

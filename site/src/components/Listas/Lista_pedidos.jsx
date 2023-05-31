@@ -35,7 +35,6 @@ function Lista_pedidos(props){
         sessionStorage.setItem("pedidoAtual",props.pedido.id);
 
         if(props.pedido.status === "ativo"){
-            // window.location.href = "http://localhost:3000/adicionarClientes/" + props.pedido.mesa;
             navigate("/adicionarClientes", {state: props.pedido.mesa})
             
         }else{

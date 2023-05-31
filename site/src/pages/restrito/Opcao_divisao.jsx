@@ -8,10 +8,6 @@ import Swal from "sweetalert2";
 
 
 
-// function irPedidos() {
-//     window.location.href = "http://localhost:3000/pedidos";
-// }
-
 function Opcao_divisao() {
     const [pedido, setPedido] = useState([])
     const [opcao, setOpcao] = useState()
@@ -100,7 +96,7 @@ function Opcao_divisao() {
     }
 
     else {
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 }
 

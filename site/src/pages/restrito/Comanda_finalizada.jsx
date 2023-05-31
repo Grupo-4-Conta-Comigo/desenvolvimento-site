@@ -4,8 +4,12 @@ import Lista_itens_comanda from "../../components/Listas/Lista_itens_comanda";
 import hamburguer from "../../_assets/img/icons/hamburguer.png"
 import coquetel from "../../_assets/img/icons/bebida-de-coquetel.png"
 import person from "../../_assets/img/icons/person.png"
+import { useNavigate } from "react-router-dom";
 
 function Comanda_Finalizada() {
+
+    const navigate = useNavigate()
+    
     if (sessionStorage.length > 0) {
 
         return (
@@ -60,7 +64,7 @@ function Comanda_Finalizada() {
     }
 
     else {
-        window.location.href = "http://localhost:3000/login";
+        navigate("/login")
     }
 }
 
