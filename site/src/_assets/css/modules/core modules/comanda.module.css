@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+.pdf{
+    background-color: red;
+}
+
 .container{
     width: 400px;
     padding: 0px 60px;
@@ -112,7 +116,7 @@
     justify-content: center;
 }
 
-
+/* 
 @media screen and (max-width: 600px) {
     .container{
         width: 250px;
@@ -132,4 +136,4 @@
         height: 4px;
         background-color: var(--secundary-color);
     }
-}
+} */

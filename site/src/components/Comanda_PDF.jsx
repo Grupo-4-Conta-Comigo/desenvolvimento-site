@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import api from "../config/api";
 import Lista_itens_comanda from "./Listas/Lista_itens_comanda";
 
+
 function Comanda_PDF(props) {
 
     const { state } = useLocation();
@@ -32,48 +33,49 @@ function Comanda_PDF(props) {
 
     const ref = createRef();
     const options = {
-        orientation: 'portrait',
-        format: [100,65]
+        orientation: 'landscape',
+        unit: 'in',
+        format: [5,5]
     };
 
     return (
         <div className={styles.teste}>
             <div className={styles.comanda} ref={ref}>
-            <div className={styles.comandaHeader}>
-                <div className={styles.titulo}>
-                    <b>COMANDA</b>
-                    <div className={styles.line}></div>
-                    <p>Cliente: {state.nome}</p>
+                <div className={styles.comandaHeader}>
+                    <div className={styles.titulo}>
+                        <b>COMANDA</b>
+                        <div className={styles.line}></div>
+                        <p>Cliente: {state.nome}</p>
+                    </div>
+
+                    <div className={styles.preco}>
+                        R${Number(state.preco).toFixed(2)}
+                    </div>
                 </div>
 
-                <div className={styles.preco}>
-                    R${Number(state.preco).toFixed(2)}
+                <div className={styles.listaItens}>
+                    {
+                        itens.map((item) => {
+                            return (
+                                <Lista_itens_comanda item={item} key={item.id} />
+                            )
+                        })
+                    }
+
                 </div>
             </div>
+            {/* <button>Baixar PDF</button> */}
 
-            <div className={styles.listaItens}>
-                {
-                    itens.map((item) => {
-                        return (
-                            <Lista_itens_comanda item={item} key={item.id} />
-                        )
-                    })
-                }
-            
+            <div className={styles.btn}>
+                <Pdf targetRef={ref} filename="Comanda.pdf" options={options} style={styles.pdf} >
+                    {({ toPdf }) =>
+                        <button
+                            onClick={toPdf}>
+                            Baixar PDF
+                        </button>
+                    }
+                </Pdf>
             </div>
-        </div>
-        {/* <button>Baixar PDF</button> */}
-
-        <div className={styles.btn}>
-        <Pdf targetRef={ref} filename="Comanda.pdf" options={options} >
-                {({ toPdf }) =>
-                    <button
-                        onClick={toPdf}>
-                        Baixar PDF
-                    </button>
-                }
-            </Pdf>
-        </div>
         </div>
     );
 }
